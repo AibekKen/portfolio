@@ -11,25 +11,25 @@
 
       <div class="hidden md:flex items-center gap-8">
         <a
-          href="#services"
+          href="/#services"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.services') }}
         </a>
         <a
-          href="#cases"
+          href="/#cases"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.cases') }}
         </a>
         <a
-          href="#process"
+          href="/#process"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.process') }}
         </a>
         <a
-          href="#contact"
+          href="/#contact"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.contact') }}
@@ -80,28 +80,28 @@
       >
         <div class="flex flex-col gap-3">
           <a
-            href="#services"
+            href="/#services"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.services') }}
           </a>
           <a
-            href="#cases"
+            href="/#cases"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.cases') }}
           </a>
           <a
-            href="#process"
+            href="/#process"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.process') }}
           </a>
           <a
-            href="#contact"
+            href="/#contact"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
@@ -142,9 +142,17 @@ import { languageOptions } from '~/i18n/messages'
 
 const isMenuOpen = ref(false)
 const { locale, setLocale, t } = useI18n()
+const route = useRoute()
+const router = useRouter()
 
 const scrollToContact = () => {
   isMenuOpen.value = false
+
+  if (route.path !== '/') {
+    router.push('/#contact')
+    return
+  }
+
   const element = document.getElementById('contact')
   element?.scrollIntoView({ behavior: 'smooth' })
 }

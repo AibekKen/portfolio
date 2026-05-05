@@ -190,6 +190,9 @@ export const messages = {
       privacy: 'Privacy policy',
       terms: 'Terms of use',
     },
+    legal: {
+      back: 'Back to home',
+    },
   },
   ru: {
     seo: {
@@ -374,6 +377,9 @@ export const messages = {
       privacy: 'Политика приватности',
       terms: 'Условия использования',
     },
+    legal: {
+      back: 'На главную',
+    },
   },
   kk: {
     seo: {
@@ -557,6 +563,9 @@ export const messages = {
       copyright: 'Барлық құқықтар қорғалған.',
       privacy: 'Құпиялылық саясаты',
       terms: 'Пайдалану шарттары',
+    },
+    legal: {
+      back: 'Басты бетке',
     },
   },
 } as const
