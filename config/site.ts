@@ -10,8 +10,8 @@ export const siteConfig = {
   contacts: {
     whatsapp: {
       label: 'WhatsApp',
-      href: 'https://wa.me/77713582648?text=Hello!%20I%20want%20to%20discuss%20a%20project',
-      display: '+7 771 358 26 48',
+      href: 'https://wa.me/77713856909?text=Hello!%20I%20want%20to%20discuss%20a%20project',
+      display: '+7 771 385 69 09',
     },
     telegram: {
       label: 'Telegram',
