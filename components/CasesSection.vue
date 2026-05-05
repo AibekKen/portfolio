@@ -270,14 +270,14 @@
                 <figcaption class="px-4 py-3 text-sm font-semibold text-brand-700">
                   {{ activeMonitoringImage.caption }}
                   <span class="font-normal text-brand-500">
-                    {{ activeMonitoringImageIndex + 1 }} / {{ monitoringCase.value.images.length }}
+                    {{ activeMonitoringImageIndex + 1 }} / {{ monitoringCase.images.length }}
                   </span>
                 </figcaption>
               </figure>
 
               <div class="mt-3 flex gap-3 overflow-x-auto pb-1">
                 <button
-                  v-for="(image, index) in monitoringCase.value.images"
+                  v-for="(image, index) in monitoringCase.images"
                   :key="image.src"
                   type="button"
                   :class="[
@@ -390,14 +390,14 @@
                 <figcaption class="px-4 py-3 text-sm font-semibold text-brand-700">
                   {{ activeCourierImage.caption }}
                   <span class="font-normal text-brand-500">
-                    {{ activeCourierImageIndex + 1 }} / {{ courierCase.value.images.length }}
+                    {{ activeCourierImageIndex + 1 }} / {{ courierCase.images.length }}
                   </span>
                 </figcaption>
               </figure>
 
               <div class="mt-3 flex gap-3 overflow-x-auto pb-1">
                 <button
-                  v-for="(image, index) in courierCase.value.images"
+                  v-for="(image, index) in courierCase.images"
                   :key="image.src"
                   type="button"
                   :class="[
@@ -574,14 +574,14 @@
                 <figcaption class="px-4 py-3 text-sm font-semibold text-brand-700">
                   {{ activeB2bPage.title }}
                   <span class="font-normal text-brand-500">
-                    {{ activeB2bPageIndex + 1 }} / {{ b2bCase.value.pages.length }}
+                    {{ activeB2bPageIndex + 1 }} / {{ b2bCase.pages.length }}
                   </span>
                 </figcaption>
               </figure>
 
               <div class="mt-3 flex gap-3 overflow-x-auto pb-1">
                 <button
-                  v-for="(page, index) in b2bCase.value.pages"
+                  v-for="(page, index) in b2bCase.pages"
                   :key="page.title"
                   type="button"
                   :class="[
