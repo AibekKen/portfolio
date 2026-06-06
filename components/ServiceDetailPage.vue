@@ -123,10 +123,7 @@
           </div>
 
           <div class="rounded-brand-lg border border-brand-100 bg-brand-900 p-6 text-white shadow-sm md:p-8">
-            <h2 class="text-3xl font-bold md:text-4xl">
-              {{ t('servicePages.stackTitle') }}
-            </h2>
-            <div class="mt-6 flex flex-wrap gap-3">
+            <div class="flex flex-wrap gap-3">
               <span
                 v-for="item in page.stack"
                 :key="item"
