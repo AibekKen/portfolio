@@ -188,10 +188,55 @@
               Напишите, для кого приложение, какие действия должен выполнять пользователь и есть ли уже сайт, CRM или backend. Ответим с уточняющими вопросами и вариантом следующего шага.
             </p>
 
-            <div class="mt-6 space-y-3 text-blue-100">
-              <p class="text-base">WhatsApp: {{ siteConfig.contacts.whatsapp.display }}</p>
-              <p class="text-base">Telegram: {{ siteConfig.contacts.telegram.display }}</p>
-              <p class="text-base">Email: {{ siteConfig.contacts.email.display }}</p>
+            <div class="mt-6 grid gap-3 text-brand-100">
+              <a
+                :href="siteConfig.contacts.whatsapp.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
+              >
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-primary">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                    <path d="M12.04 2c-5.54 0-10.04 4.5-10.04 10.04 0 1.77.46 3.44 1.27 4.9L2 22l4.98-1.3a10.02 10.02 0 0 0 4.5 1.07h.06c5.54 0 10.04-4.5 10.04-10.04S17.58 2 12.04 2Zm5.3 13.95c-.23.65-1.3 1.23-1.8 1.32-.48.09-1.05.12-2.1-.06-2.7-.44-4.43-2.38-4.57-2.53-.14-.15-1.12-1.24-1.12-2.37 0-1.12.67-1.66.91-1.9.24-.24.52-.31.7-.31.18 0 .36 0 .52.01.16.01.38-.06.59.44.2.5.67 1.74.73 1.87.05.13.09.3.02.47-.06.18-.09.3-.18.43-.09.13-.18.28-.25.38-.06.1-.12.22-.02.35.1.13.44.72.95 1.17.65.62 1.2.85 1.43.97.23.12.36.1.5-.06.14-.16.58-.68.74-.92.16-.24.33-.2.55-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.29.07.11.07.64-.16 1.29Z" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="text-sm font-semibold">WhatsApp</div>
+                  <div class="text-sm text-blue-100">{{ siteConfig.contacts.whatsapp.display }}</div>
+                </div>
+              </a>
+
+              <a
+                :href="siteConfig.contacts.telegram.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
+              >
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-primary">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                    <path d="M21.1 3.3c-.2-.5-.6-.6-1-.5L3.1 9.2c-.8.3-.8.6-.1.8l4.6 1.5 1.7 5c.2.5.5.5.9.4l2.9-2.2 3.8 2.7c.7.4 1.2.2 1.4-.6l2.6-12.1c.2-.7-.1-1.1-.8-1.3Zm-6.3 8.8-1.9 1.4c-.2.2-.4.3-.6.2l-.9-1.3-.4 1.1c-.1.4-.2.7-.8.7-.3 0-.7-.1-.9-.2l-.5-.5-.8 1.2c-.4.6-.7.8-1.4.5-.3-.1-.7-.4-.7-.8 0-.1 0-.2.1-.4l3.6-5.2c.1-.3.3-.4.6-.4.2 0 .4.1.6.2l2.6 1.5c.6.4.6.8.2 1.2l-1.9 1.5Z" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="text-sm font-semibold">Telegram</div>
+                  <div class="text-sm text-blue-100">{{ siteConfig.contacts.telegram.display }}</div>
+                </div>
+              </a>
+
+              <a
+                :href="siteConfig.contacts.email.href"
+                class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
+              >
+                <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-primary">
+                  <svg viewBox="0 0 24 24" class="h-5 w-5" fill="currentColor" aria-hidden="true">
+                    <path d="M4 5.25C4 4.56 4.56 4 5.25 4h13.5c.69 0 1.25.56 1.25 1.25v13.5c0 .69-.56 1.25-1.25 1.25H5.25A1.25 1.25 0 0 1 4 18.75V5.25Zm1.5.56v12.44h13V5.81l-6.5 4.52L5.5 5.81Zm.72-.77 5.28 3.67 5.28-3.67H6.22Z" />
+                  </svg>
+                </span>
+                <div>
+                  <div class="text-sm font-semibold">Email</div>
+                  <div class="text-sm text-blue-100">{{ siteConfig.contacts.email.display }}</div>
+                </div>
+              </a>
             </div>
           </div>
 
