@@ -10,7 +10,7 @@
         </p>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-3 md:gap-6">
+      <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3 md:gap-6">
         <BaseCard v-for="service in mainServices" :key="service.title">
           <div class="flex min-h-56 flex-col">
             <div class="mb-5 flex h-12 w-12 items-center justify-center rounded-brand bg-blue-50 text-xl font-bold text-brand-primary">
@@ -31,6 +31,13 @@
                 {{ tool }}
               </span>
             </div>
+            <NuxtLink
+              v-if="service.href"
+              :to="service.href"
+              class="mt-6 inline-flex min-h-10 w-fit items-center rounded-brand border border-brand-primary px-4 text-sm font-bold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white"
+            >
+              {{ t('services.more') }}
+            </NuxtLink>
           </div>
         </BaseCard>
       </div>
@@ -44,6 +51,7 @@ type Service = {
   title: string
   text: string
   tools: string[]
+  href?: string
 }
 
 const { t, tm } = useI18n()

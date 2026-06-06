@@ -23,7 +23,7 @@
           <h4 class="mb-3 font-semibold">{{ t('footer.services') }}</h4>
           <ul class="space-y-2 text-sm">
             <li v-for="service in footerServices" :key="service.title">
-              <a href="/#services" class="text-blue-200 transition-colors hover:text-white">{{ service.title }}</a>
+              <NuxtLink :to="service.href || '/#services'" class="text-blue-200 transition-colors hover:text-white">{{ service.title }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -68,6 +68,7 @@ import { siteConfig } from '~/config/site'
 
 type FooterService = {
   title: string
+  href?: string
 }
 
 const { t, tm } = useI18n()
