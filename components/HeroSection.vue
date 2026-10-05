@@ -1,8 +1,6 @@
 <template>
   <section class="section-padding relative overflow-hidden bg-brand-50">
-    <ClientOnly>
-      <HeroThreeScene class="absolute inset-0 opacity-40 md:opacity-80" />
-    </ClientOnly>
+    <HeroBackdrop />
     <div class="section-container relative z-10">
       <div class="grid min-w-0 items-center gap-8 md:grid-cols-2 md:gap-12">
         <div class="flex min-w-0 max-w-[calc(100vw-2rem)] flex-col gap-6 md:max-w-none md:gap-8">
