@@ -286,6 +286,11 @@
                 <p v-if="errors.description" class="mt-2 text-sm text-red-900">{{ errors.description }}</p>
               </div>
 
+              <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+                <label :for="honeypotId">Subject</label>
+                <input :id="honeypotId" v-model="honeypot" type="text" name="subject" tabindex="-1" autocomplete="off" />
+              </div>
+
               <BaseButton variant="primary" size="md" type="submit" class="w-full" :disabled="isSubmitting">
                 {{ isSubmitting ? 'Отправляем...' : 'Получить оценку проекта' }}
               </BaseButton>
@@ -359,6 +364,8 @@ const isSubmitting = ref(false)
 const showSuccess = ref(false)
 const submitError = ref('')
 const csrfToken = ref('')
+const honeypot = ref('')
+const honeypotId = 'mobile-app-subject'
 
 const offerPoints = [
   'MVP без лишних функций',
@@ -524,6 +531,7 @@ const handleSubmit = async () => {
       body: {
         name: form.name,
         contact: form.contact,
+        subject: honeypot.value,
         description: `Лендинг Google Ads: разработка мобильного приложения\n\n${form.description}`,
       },
     })

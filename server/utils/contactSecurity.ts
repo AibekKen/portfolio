@@ -7,24 +7,28 @@ const localizedErrors: Record<ContactLocale, {
   invalid: string
   telegramMissing: string
   telegramRejected: string
+  tooManyRequests: string
 }> = {
   en: {
     forbidden: 'Request rejected.',
     invalid: 'Invalid form data.',
     telegramMissing: 'Telegram is not configured.',
     telegramRejected: 'Telegram did not accept the message.',
+    tooManyRequests: 'Too many requests. Please try again later or message us on WhatsApp.',
   },
   ru: {
     forbidden: 'Запрос отклонён.',
     invalid: 'Некорректные данные формы.',
     telegramMissing: 'Telegram не настроен.',
     telegramRejected: 'Telegram не принял сообщение.',
+    tooManyRequests: 'Слишком много заявок. Попробуйте позже или напишите нам в WhatsApp.',
   },
   kk: {
     forbidden: 'Сұрау қабылданбады.',
     invalid: 'Форма деректері дұрыс емес.',
     telegramMissing: 'Telegram бапталмаған.',
     telegramRejected: 'Telegram хабарламаны қабылдамады.',
+    tooManyRequests: 'Сұраулар тым көп. Кейінірек қайталаңыз немесе WhatsApp-қа жазыңыз.',
   },
 }
 
@@ -92,4 +96,33 @@ export const assertSameSiteContactRequest = (event: Parameters<typeof getHeader>
       statusMessage: messages.forbidden,
     })
   }
+}
+
+const rateLimitWindowMs = 10 * 60 * 1000
+const rateLimitMaxRequests = 3
+
+// In-memory, so limits are per server instance; enough to stop simple floods.
+const contactRequestLog = new Map<string, number[]>()
+
+export const assertContactRateLimit = (event: Parameters<typeof getHeader>[0]) => {
+  const ip = getRequestIP(event, { xForwardedFor: true }) || 'unknown'
+  const now = Date.now()
+
+  for (const [key, timestamps] of contactRequestLog) {
+    if (timestamps.every((timestamp) => now - timestamp >= rateLimitWindowMs)) {
+      contactRequestLog.delete(key)
+    }
+  }
+
+  const recent = (contactRequestLog.get(ip) || []).filter((timestamp) => now - timestamp < rateLimitWindowMs)
+
+  if (recent.length >= rateLimitMaxRequests) {
+    throw createError({
+      statusCode: 429,
+      statusMessage: getContactErrorMessages(event).tooManyRequests,
+    })
+  }
+
+  recent.push(now)
+  contactRequestLog.set(ip, recent)
 }

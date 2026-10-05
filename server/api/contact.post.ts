@@ -1,14 +1,18 @@
-import { assertSameSiteContactRequest, getContactErrorMessages } from '../utils/contactSecurity'
+import { assertContactRateLimit, assertSameSiteContactRequest, getContactErrorMessages } from '../utils/contactSecurity'
 
 interface ContactPayload {
   name?: string
   contact?: string
   description?: string
+  // Honeypot: hidden from people, so only bots fill it
+  subject?: string
 }
 
 interface TelegramResponse {
   ok: boolean
   description?: string
+  // Honeypot: hidden from people, so only bots fill it
+  subject?: string
 }
 
 const normalizeField = (value: unknown, maxLength: number) => {
@@ -20,6 +24,13 @@ export default defineEventHandler(async (event) => {
   const messages = getContactErrorMessages(event)
 
   const body = await readBody<ContactPayload>(event)
+
+  if (normalizeField(body.subject, 200)) {
+    // Pretend success so bots don't learn they were filtered
+    return { ok: true }
+  }
+
+  assertContactRateLimit(event)
 
   const name = normalizeField(body.name, 120)
   const contact = normalizeField(body.contact, 180)

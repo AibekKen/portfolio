@@ -64,6 +64,11 @@
               </p>
             </div>
 
+            <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
+              <label :for="honeypotId">Subject</label>
+              <input :id="honeypotId" v-model="honeypot" type="text" name="subject" tabindex="-1" autocomplete="off" />
+            </div>
+
             <BaseButton
               variant="primary"
               size="md"
@@ -209,6 +214,8 @@ const isSubmitting = ref(false)
 const showSuccess = ref(false)
 const submitError = ref('')
 const csrfToken = ref('')
+const honeypot = ref('')
+const honeypotId = 'contact-subject'
 const { t } = useI18n()
 
 const validate = () => {
@@ -258,6 +265,7 @@ const handleSubmit = async () => {
       body: {
         name: form.name,
         contact: form.contact,
+        subject: honeypot.value,
         description: form.description,
       },
     })
