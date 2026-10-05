@@ -44,7 +44,7 @@ useHead({
     },
     {
       property: 'og:image',
-      content: siteConfig.logo.src,
+      content: `${siteConfig.url}${siteConfig.ogImage}`,
     },
   ],
   htmlAttrs: {

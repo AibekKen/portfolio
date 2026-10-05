@@ -5,6 +5,8 @@
         <img
           :src="siteConfig.logo.src"
           :alt="siteConfig.logo.alt"
+          :width="siteConfig.logo.width"
+          :height="siteConfig.logo.height"
           class="h-12 w-auto max-w-56 object-contain md:h-14 md:max-w-72"
         />
       </div>

@@ -6,6 +6,8 @@
           <img
             :src="siteConfig.logo.src"
             :alt="siteConfig.logo.alt"
+          :width="siteConfig.logo.width"
+          :height="siteConfig.logo.height"
             class="h-11 w-auto max-w-52 object-contain md:h-12 md:max-w-64"
           />
         </NuxtLink>
@@ -629,7 +631,7 @@ const handleSubmit = async () => {
   }
 }
 
-const canonicalUrl = 'https://kenzcore.studio/razrabotka-mobilnyh-prilozheniy'
+const canonicalUrl = `${siteConfig.url}/razrabotka-mobilnyh-prilozheniy`
 
 useHead({
   title: 'Разработка мобильных приложений под ключ | iOS и Android',
@@ -653,6 +655,10 @@ useHead({
     {
       property: 'og:url',
       content: canonicalUrl,
+    },
+    {
+      property: 'og:image',
+      content: `${siteConfig.url}${siteConfig.ogImage}`,
     },
   ],
   link: [

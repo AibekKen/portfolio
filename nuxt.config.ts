@@ -50,16 +50,6 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192x192.png' },
         { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/icon-512x512.png' }
       ],
-      script: [
-        {
-          async: true,
-          src: `https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`,
-        },
-        {
-          type: 'text/javascript',
-          innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${googleAdsId}');`,
-        } as any,
-      ]
     }
   }
 })

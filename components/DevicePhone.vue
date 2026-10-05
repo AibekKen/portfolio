@@ -27,16 +27,17 @@
           </div>
 
           <div class="phone-content">
-            <img
-              v-for="(screen, index) in screens"
-              :key="screen.src"
-              :src="screen.src"
-              :alt="index === activeIndex ? screen.alt : ''"
-              :aria-hidden="index !== activeIndex"
-              :class="['phone-image', index === activeIndex && 'is-active']"
-              :loading="eager ? 'eager' : 'lazy'"
-              decoding="async"
-            />
+            <template v-for="(screen, index) in screens" :key="screen.src">
+              <img
+                v-if="index === activeIndex || showAllScreens"
+                :src="screen.src"
+                :alt="index === activeIndex ? screen.alt : ''"
+                :aria-hidden="index !== activeIndex"
+                :class="['phone-image', index === activeIndex && 'is-active']"
+                :loading="eager ? 'eager' : 'lazy'"
+                decoding="async"
+              />
+            </template>
           </div>
 
           <span class="phone-home-indicator"></span>
@@ -62,7 +63,10 @@ const props = withDefaults(defineProps<{
 })
 
 const activeIndex = ref(props.startIndex % props.screens.length)
+// Other screens are mounted only after the page has loaded, so they don't compete with the first paint
+const showAllScreens = ref(false)
 let timer: ReturnType<typeof setInterval> | undefined
+let isUnmounted = false
 
 onMounted(() => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -71,16 +75,25 @@ onMounted(() => {
     return
   }
 
-  timer = setInterval(() => {
-    if (document.hidden) {
+  afterPageLoad(() => {
+    if (isUnmounted) {
       return
     }
 
-    activeIndex.value = (activeIndex.value + 1) % props.screens.length
-  }, props.interval)
+    showAllScreens.value = true
+
+    timer = setInterval(() => {
+      if (document.hidden) {
+        return
+      }
+
+      activeIndex.value = (activeIndex.value + 1) % props.screens.length
+    }, props.interval)
+  })
 })
 
 onBeforeUnmount(() => {
+  isUnmounted = true
   clearInterval(timer)
 })
 </script>

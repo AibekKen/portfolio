@@ -15,7 +15,7 @@
 
     <div v-if="secondaryPhoneScreens?.length" class="showcase-layer layer-phone-secondary">
       <div class="showcase-float float-delayed">
-        <DevicePhone :screens="secondaryPhoneScreens" :interval="3600" :start-index="1" eager />
+        <DevicePhone :screens="secondaryPhoneScreens" :interval="3600" :start-index="1" />
       </div>
     </div>
 

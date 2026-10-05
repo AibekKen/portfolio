@@ -1,9 +1,14 @@
 export const siteConfig = {
   name: 'Kenzcore Studio',
+  url: 'https://kenzcore.com',
   logo: {
-    src: '/brand/kenzcore-logo.png',
+    src: '/brand/kenzcore-logo.jpg',
     alt: 'Kenzcore Studio',
+    width: 576,
+    height: 210,
   },
+  // Full-size logo for link previews (Open Graph)
+  ogImage: '/brand/kenzcore-logo.png',
   tagline: 'Software Engineering for business',
   description:
     'CRM, admin panels, MVPs, integrations, and web application support for business.',
