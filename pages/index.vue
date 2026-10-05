@@ -3,12 +3,12 @@
     <AppHeader />
     <main>
       <HeroSection />
-      <ServicesSection />
-      <TrustSection />
-      <CasesSection />
-      <ProcessSection />
-      <TechStackSection />
-      <ContactSection />
+      <ServicesSection v-reveal />
+      <TrustSection v-reveal />
+      <CasesSection v-reveal />
+      <ProcessSection v-reveal />
+      <TechStackSection v-reveal />
+      <ContactSection v-reveal />
     </main>
     <AppFooter />
   </div>

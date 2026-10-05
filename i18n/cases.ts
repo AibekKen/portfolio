@@ -19,7 +19,7 @@ const shared = {
 export const caseMessages = {
   en: {
     title: 'Cases / task examples',
-    subtitle: 'Examples of interfaces and tasks that show the approach to CRM, monitoring, maps, and internal systems.',
+    subtitle: 'Examples of our work: from a courier delivery app to monitoring systems and internal services.',
     details: 'View details',
     b2bPreviewLimit: 'Limits',
     aria: {
@@ -365,7 +365,7 @@ export const caseMessages = {
   },
   ru: {
     title: 'Кейсы / примеры задач',
-    subtitle: 'Примеры интерфейсов и задач, которые показывают подход к CRM, мониторингу, картам и внутренним системам.',
+    subtitle: 'Примеры наших работ: от приложения для курьерской доставки до систем мониторинга и внутренних сервисов.',
     details: 'Смотреть детали',
     b2bPreviewLimit: 'Лимиты',
     aria: {
@@ -579,7 +579,7 @@ export const caseMessages = {
   },
   kk: {
     title: 'Кейстер / міндет үлгілері',
-    subtitle: 'CRM, мониторинг, карталар және ішкі жүйелерге деген тәсілді көрсететін интерфейс пен міндет үлгілері.',
+    subtitle: 'Жұмыстарымыздың үлгілері: курьерлік жеткізу қосымшасынан бастап мониторинг жүйелері мен ішкі сервистерге дейін.',
     details: 'Толығырақ көру',
     b2bPreviewLimit: 'Лимиттер',
     aria: {

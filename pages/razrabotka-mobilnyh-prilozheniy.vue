@@ -72,8 +72,15 @@
             </div>
           </div>
 
-          <div class="relative -mx-4 md:mx-0">
-            <MobileAppThreeScene class="w-full" />
+          <div class="relative mx-auto w-full max-w-[640px] lg:max-w-none">
+            <AppShowcase
+              variant="mobile"
+              :phone-screens="heroPhoneScreens"
+              :secondary-phone-screens="heroSecondaryScreens"
+              :laptop-screens="heroLaptopScreens"
+              :notifications="heroNotifications"
+              now-label="сейчас"
+            />
           </div>
         </div>
       </section>
@@ -81,11 +88,41 @@
       <section class="bg-white py-10 md:py-12">
         <div class="section-container">
           <div class="grid gap-4 md:grid-cols-3">
-            <div v-for="item in outcomeCards" :key="item.title" class="rounded-brand-lg border border-brand-100 bg-white p-6 shadow-sm">
+            <div v-for="(item, index) in outcomeCards" :key="item.title" v-reveal="index * 100" class="lift rounded-brand-lg border border-brand-100 bg-white p-6 shadow-sm">
               <div class="text-3xl font-black text-brand-primary">{{ item.value }}</div>
               <h2 class="mt-4 text-2xl font-bold text-brand-900">{{ item.title }}</h2>
               <p class="mt-3 text-base text-brand-600">{{ item.text }}</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-padding overflow-hidden bg-gradient-to-b from-white via-brand-50 to-white">
+        <div class="section-container">
+          <div v-reveal class="mx-auto mb-10 max-w-3xl text-center md:mb-14">
+            <span class="badge">Наши проекты</span>
+            <h2 class="mt-4 text-brand-900">
+              Реальные экраны приложения, которое мы разработали
+            </h2>
+            <p class="mt-4 text-brand-600">
+              Приложение для курьерской доставки в Алматы: вход, панель администратора, заказы, отгрузки и карта доставок. Так выглядит рабочий продукт, а не макет.
+            </p>
+          </div>
+
+          <div class="-mx-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden flex snap-x snap-mandatory gap-5 overflow-x-auto px-4 pb-6 md:mx-0 md:grid md:grid-cols-5 md:gap-6 md:overflow-visible md:px-0">
+            <figure
+              v-for="(screen, index) in courierScreens"
+              :key="screen.src"
+              v-reveal="index * 90"
+              :class="['w-[46vw] max-w-[220px] shrink-0 snap-center md:w-auto md:max-w-none', index % 2 === 1 && 'md:translate-y-10']"
+            >
+              <div class="transition-transform duration-500 hover:-translate-y-2 hover:rotate-[-1deg]">
+                <DevicePhone :screens="[screen]" />
+              </div>
+              <figcaption class="mt-4 text-center text-sm font-bold text-brand-700">
+                {{ screen.caption }}
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -103,7 +140,7 @@
           </div>
 
           <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            <div v-for="item in appTypes" :key="item.title" class="rounded-brand-lg border border-blue-800 bg-white p-6 text-brand-900 shadow-sm">
+            <div v-for="(item, index) in appTypes" :key="item.title" v-reveal="(index % 3) * 100" class="lift rounded-brand-lg border border-blue-800 bg-white p-6 text-brand-900 shadow-sm">
               <div class="flex h-11 w-11 items-center justify-center rounded-brand bg-blue-50 text-sm font-black text-brand-primary">
                 {{ item.number }}
               </div>
@@ -127,7 +164,7 @@
           </div>
 
           <div class="grid gap-4 sm:grid-cols-2">
-            <div v-for="item in advantages" :key="item.title" class="rounded-brand border border-brand-100 bg-white p-5 shadow-sm">
+            <div v-for="(item, index) in advantages" :key="item.title" v-reveal="(index % 2) * 100" class="lift rounded-brand border border-brand-100 bg-white p-5 shadow-sm">
               <h3 class="text-xl font-bold text-brand-900">{{ item.title }}</h3>
               <p class="mt-3 text-base text-brand-600">{{ item.text }}</p>
             </div>
@@ -145,7 +182,7 @@
           </div>
 
           <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <div v-for="step in processSteps" :key="step.title" class="rounded-brand-lg border border-brand-100 bg-white p-5 shadow-sm">
+            <div v-for="(step, index) in processSteps" :key="step.title" v-reveal="index * 100" class="lift rounded-brand-lg border border-brand-100 bg-white p-5 shadow-sm">
               <div class="text-sm font-black text-brand-primary">{{ step.number }}</div>
               <h3 class="mt-4 text-xl font-bold text-brand-900">{{ step.title }}</h3>
               <p class="mt-3 text-base text-brand-600">{{ step.text }}</p>
@@ -156,8 +193,17 @@
 
       <section class="overflow-hidden bg-brand-50 py-10 md:py-14">
         <div class="section-container grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr]">
-          <div class="relative min-h-[360px] md:min-h-[460px]">
-            <MobileAppThreeScene class="absolute inset-0 h-full w-full" />
+          <div v-reveal class="relative mx-auto flex w-full max-w-[520px] items-end justify-center py-6">
+            <div class="absolute inset-x-10 bottom-0 top-10 rounded-full bg-brand-primary/20 blur-3xl" aria-hidden="true"></div>
+            <div class="relative z-0 -mr-[9%] w-[34%] -rotate-6 translate-y-6">
+              <DevicePhone :screens="deliverableScreens.left" :interval="4400" :start-index="1" />
+            </div>
+            <div class="relative z-10 w-[40%]">
+              <DevicePhone :screens="deliverableScreens.center" :interval="3600" />
+            </div>
+            <div class="relative z-0 -ml-[9%] w-[34%] rotate-6 translate-y-6">
+              <DevicePhone :screens="deliverableScreens.right" :interval="4000" :start-index="1" />
+            </div>
           </div>
           <div>
             <span class="badge">Что будет на выходе</span>
@@ -168,7 +214,7 @@
               Фокусируемся на главном сценарии и стабильной основе: интерфейс, авторизация, данные, интеграции и понятный путь к дальнейшему развитию.
             </p>
             <div class="mt-6 space-y-3">
-              <div v-for="item in deliverables" :key="item" class="flex gap-3 rounded-brand border border-brand-100 bg-white p-4 shadow-sm">
+              <div v-for="(item, index) in deliverables" :key="item" v-reveal="index * 80" class="flex gap-3 rounded-brand border border-brand-100 bg-white p-4 shadow-sm">
                 <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-brand-primary"></span>
                 <span class="font-semibold text-brand-700">{{ item }}</span>
               </div>
@@ -366,6 +412,35 @@ const submitError = ref('')
 const csrfToken = ref('')
 const honeypot = ref('')
 const honeypotId = 'mobile-app-subject'
+
+const deviceScreens = {
+  login: { src: '/devices/courier-login.jpg', alt: 'Экран входа в приложение курьерской доставки', caption: 'Авторизация' },
+  admin: { src: '/devices/courier-admin.jpg', alt: 'Панель администратора с заявками курьеров', caption: 'Панель администратора' },
+  orders: { src: '/devices/courier-orders.jpg', alt: 'Фильтр заказов курьера с поиском и сканером QR', caption: 'Заказы' },
+  shipments: { src: '/devices/courier-shipments.jpg', alt: 'Список отгрузок с заказами и статусами', caption: 'Отгрузки' },
+  map: { src: '/devices/courier-map.jpg', alt: 'Карта Алматы с точками доставки', caption: 'Карта доставок' },
+}
+
+const heroPhoneScreens = [deviceScreens.map, deviceScreens.shipments, deviceScreens.orders]
+const heroSecondaryScreens = [deviceScreens.admin, deviceScreens.login, deviceScreens.shipments]
+const heroLaptopScreens = [
+  { src: '/devices/container-map.jpg', alt: 'Веб-панель мониторинга с картой площадок' },
+  { src: '/devices/container-grid.jpg', alt: 'Веб-панель с сеткой снимков камер' },
+  { src: '/devices/container-status-modal.jpg', alt: 'Веб-панель со сменой статуса площадки' },
+]
+const heroNotifications = [
+  { title: 'Новый заказ #1042', text: 'Клиент оформил доставку в приложении', tone: 'blue' as const },
+  { title: 'Курьер в пути', text: 'Заказ передан, клиент видит статус', tone: 'amber' as const },
+  { title: 'Заказ доставлен', text: 'Статус обновлён в админ-панели', tone: 'green' as const },
+]
+
+const courierScreens = [deviceScreens.login, deviceScreens.admin, deviceScreens.orders, deviceScreens.shipments, deviceScreens.map]
+
+const deliverableScreens = {
+  left: [deviceScreens.orders, deviceScreens.login],
+  center: [deviceScreens.map, deviceScreens.shipments, deviceScreens.admin],
+  right: [deviceScreens.shipments, deviceScreens.admin],
+}
 
 const offerPoints = [
   'MVP без лишних функций',

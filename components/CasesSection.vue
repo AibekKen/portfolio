@@ -17,36 +17,6 @@
               <button
                 type="button"
                 class="group mb-5 h-32 overflow-hidden rounded-brand bg-brand-50 text-left focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
-                :aria-label="t('cases.aria.openMonitoring')"
-                @click="openMonitoringModal"
-              >
-                <img
-                  :src="monitoringCase.cover.src"
-                  :alt="monitoringCase.cover.alt"
-                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                >
-              </button>
-              <h3 class="mb-4 text-2xl font-bold text-brand-900">
-                {{ monitoringCase.title }}
-              </h3>
-              <ul class="mb-5 space-y-3 text-base text-brand-600">
-                <li v-for="point in monitoringCase.cardPoints" :key="point" class="flex gap-2">
-                  <span class="font-bold text-brand-primary">-</span>
-                  <span>{{ point }}</span>
-                </li>
-              </ul>
-              <BaseButton class="mt-auto w-full" size="sm" @click="openMonitoringModal">
-                {{ t('cases.details') }}
-              </BaseButton>
-            </div>
-          </BaseCard>
-
-          <BaseCard class="flex w-[82vw] max-w-sm shrink-0 snap-start sm:w-80 md:w-[22rem] lg:w-[24rem]">
-            <div class="flex h-full min-h-[25rem] w-full flex-col">
-              <button
-                type="button"
-                class="group mb-5 h-32 overflow-hidden rounded-brand bg-brand-50 text-left focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
                 :aria-label="t('cases.aria.openCourier')"
                 @click="openCourierModal"
               >
@@ -67,6 +37,36 @@
                 </li>
               </ul>
               <BaseButton class="mt-auto w-full" size="sm" @click="openCourierModal">
+                {{ t('cases.details') }}
+              </BaseButton>
+            </div>
+          </BaseCard>
+
+          <BaseCard class="flex w-[82vw] max-w-sm shrink-0 snap-start sm:w-80 md:w-[22rem] lg:w-[24rem]">
+            <div class="flex h-full min-h-[25rem] w-full flex-col">
+              <button
+                type="button"
+                class="group mb-5 h-32 overflow-hidden rounded-brand bg-brand-50 text-left focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2"
+                :aria-label="t('cases.aria.openMonitoring')"
+                @click="openMonitoringModal"
+              >
+                <img
+                  :src="monitoringCase.cover.src"
+                  :alt="monitoringCase.cover.alt"
+                  class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                >
+              </button>
+              <h3 class="mb-4 text-2xl font-bold text-brand-900">
+                {{ monitoringCase.title }}
+              </h3>
+              <ul class="mb-5 space-y-3 text-base text-brand-600">
+                <li v-for="point in monitoringCase.cardPoints" :key="point" class="flex gap-2">
+                  <span class="font-bold text-brand-primary">-</span>
+                  <span>{{ point }}</span>
+                </li>
+              </ul>
+              <BaseButton class="mt-auto w-full" size="sm" @click="openMonitoringModal">
                 {{ t('cases.details') }}
               </BaseButton>
             </div>

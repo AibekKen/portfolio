@@ -37,7 +37,15 @@
           </div>
         </div>
 
-        <DashboardPreview />
+        <AppShowcase
+          variant="mobile"
+          class="mx-auto max-w-[640px] md:max-w-none"
+          :phone-screens="phoneScreens"
+          :secondary-phone-screens="secondaryPhoneScreens"
+          :laptop-screens="laptopScreens"
+          :notifications="notifications"
+          :now-label="t('showcase.now')"
+        />
       </div>
     </div>
   </section>
@@ -48,6 +56,30 @@ import { siteConfig } from '~/config/site'
 
 const { t } = useI18n()
 const { trackContactClick } = useAdsConversion()
+
+const laptopScreens = computed(() => [
+  { src: '/devices/container-map.jpg', alt: t('showcase.laptopMap') },
+  { src: '/devices/container-grid.jpg', alt: t('showcase.laptopGrid') },
+  { src: '/devices/container-status-modal.jpg', alt: t('showcase.laptopStatus') },
+])
+
+const phoneScreens = computed(() => [
+  { src: '/devices/courier-map.jpg', alt: t('showcase.phoneMap') },
+  { src: '/devices/courier-shipments.jpg', alt: t('showcase.phoneShipments') },
+  { src: '/devices/courier-orders.jpg', alt: t('showcase.phoneOrders') },
+])
+
+const secondaryPhoneScreens = computed(() => [
+  { src: '/devices/courier-admin.jpg', alt: t('showcase.phoneAdmin') },
+  { src: '/devices/courier-login.jpg', alt: t('showcase.phoneLogin') },
+  { src: '/devices/courier-shipments.jpg', alt: t('showcase.phoneShipments') },
+])
+
+const notifications = computed(() => [
+  { title: t('showcase.orderTitle'), text: t('showcase.orderText'), tone: 'blue' as const },
+  { title: t('showcase.courierTitle'), text: t('showcase.courierText'), tone: 'amber' as const },
+  { title: t('showcase.deliveredTitle'), text: t('showcase.deliveredText'), tone: 'green' as const },
+])
 
 const scrollToContact = () => {
   const element = document.getElementById('contact')
