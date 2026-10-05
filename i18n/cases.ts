@@ -18,7 +18,7 @@ const shared = {
 
 export const caseMessages = {
   en: {
-    title: 'Cases / task examples',
+    title: 'Cases: mobile apps and web systems',
     subtitle: 'Examples of our work: from a courier delivery app to monitoring systems and internal services.',
     details: 'View details',
     b2bPreviewLimit: 'Limits',
@@ -364,7 +364,7 @@ export const caseMessages = {
     ],
   },
   ru: {
-    title: 'Кейсы / примеры задач',
+    title: 'Кейсы: мобильные приложения и веб-системы',
     subtitle: 'Примеры наших работ: от приложения для курьерской доставки до систем мониторинга и внутренних сервисов.',
     details: 'Смотреть детали',
     b2bPreviewLimit: 'Лимиты',
@@ -578,7 +578,7 @@ export const caseMessages = {
     ],
   },
   kk: {
-    title: 'Кейстер / міндет үлгілері',
+    title: 'Кейстер: мобильді қосымшалар мен веб-жүйелер',
     subtitle: 'Жұмыстарымыздың үлгілері: курьерлік жеткізу қосымшасынан бастап мониторинг жүйелері мен ішкі сервистерге дейін.',
     details: 'Толығырақ көру',
     b2bPreviewLimit: 'Лимиттер',

@@ -1,0 +1,24 @@
+# Kenzcore Studio
+
+> Студия разработки мобильных приложений для бизнеса в Казахстане: iOS и Android приложения, MVP, серверная часть, админ-панели и интеграции. Работаем на русском, казахском и английском языках.
+
+## Услуги
+
+- [Разработка мобильных приложений под ключ](https://kenzcore.com/razrabotka-mobilnyh-prilozheniy): приложения для заказов, записи, доставки, личных кабинетов клиентов и сотрудников; от MVP до публикации в App Store и Google Play. Стоимость — от 300 000 ₸.
+- [Мобильные приложения](https://kenzcore.com/services/mobile-apps): логика продукта, мобильный интерфейс, backend и интеграции, сборка и выпуск.
+- [Сайты и лендинги для бизнеса](https://kenzcore.com/services/websites): быстрые сайты с адаптивным дизайном, SEO-базой и формами заявок.
+
+## Кейсы
+
+- Приложение для курьерской доставки в Алматы: вход, панель администратора, заказы, отгрузки, карта доставок.
+- Система мониторинга и контроля контейнерных площадок: карта площадок, архив снимков камер, статусы.
+
+## Контакты
+
+- WhatsApp: +7 771 385 69 09
+- Telegram: https://t.me/kenz_core
+- Email: kenzcorestudio@gmail.com
+
+## English
+
+Kenzcore Studio builds iOS and Android apps for businesses in Kazakhstan: MVPs, backend, admin panels, and integrations, from 300,000 KZT. English version of the site: https://kenzcore.com/en

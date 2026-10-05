@@ -156,6 +156,7 @@ type ServicePage = {
   title: string
   text: string
   meta: string
+  seoTitle: string
   illustrationLabel: string
   stats: { value: string; label: string }[]
   scope: { title: string; text: string }[]
@@ -176,7 +177,7 @@ const page = computed(() => tm(`servicePages.${props.pageKey}`) as ServicePage)
 const illustrationKind = computed(() => (props.pageKey === 'mobileApps' ? 'mobile' : 'website'))
 
 useHead({
-  title: () => `${page.value.title} — ${siteConfig.name}`,
+  title: () => page.value.seoTitle,
   meta: [
     {
       name: 'description',

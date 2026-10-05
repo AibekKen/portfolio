@@ -9,8 +9,8 @@ export const languageOptions = [
 export const messages = {
   en: {
     seo: {
-      title: 'Kenzcore Studio — mobile app development for iOS and Android',
-      description: 'Mobile app development for business: iOS and Android apps, MVPs, backend, admin panels, and integrations. From idea to release.',
+      title: 'Mobile App Development for iOS and Android — Kenzcore',
+      description: 'Mobile app development for businesses in Kazakhstan: iOS and Android apps, MVPs, backend, admin panels and integrations. Get a free project estimate.',
       ogTitle: 'Kenzcore Studio — mobile apps for business',
       ogDescription: 'We design and build iOS and Android apps with a backend, admin panel, and integrations.',
     },
@@ -50,13 +50,13 @@ export const messages = {
       phoneLogin: 'Sign-in screen of the delivery app',
     },
     services: {
-      title: 'What we build',
+      title: 'Mobile app development and everything around it',
       subtitle: 'Our focus is mobile apps. Around them we build everything the product needs: server, admin panel, integrations, and support.',
       items: [
         {
           number: '01',
           title: 'Mobile apps',
-          text: 'We build iOS and Android apps for customers and teams: orders, bookings, deliveries, personal accounts, and notifications.',
+          text: 'We build iOS and Android apps for customers and teams: orders, bookings, deliveries, personal accounts, and notifications. From 300 000 ₸.',
           tools: ['iOS', 'Android', 'Mobile UI', 'Push notifications'],
           href: '/services/mobile-apps',
         },
@@ -104,7 +104,8 @@ export const messages = {
         badge: 'Websites for business',
         title: 'Websites that explain the offer and bring real requests',
         text: 'We build company websites, service pages, portfolios, and landing pages with a clear route from first screen to contact.',
-        meta: 'Business websites, landing pages, portfolios, SEO-ready Nuxt pages.',
+        meta: 'Fast business websites and landing pages: clear structure, responsive design, SEO basics and lead forms. Send your task and get a free estimate.',
+        seoTitle: 'Business Website and Landing Page Development — Kenzcore',
         illustrationLabel: 'Website launch board',
         stats: [
           { value: '01', label: 'Structure before visuals' },
@@ -132,7 +133,8 @@ export const messages = {
         badge: 'Mobile apps',
         title: 'Mobile applications for products, teams, and customer workflows',
         text: 'We design and build practical iOS and Android apps around the core action: requests, profiles, orders, notifications, and integrations.',
-        meta: 'Mobile app development for iOS and Android with API integrations and product workflows.',
+        meta: 'iOS and Android apps for orders, bookings, deliveries and customer accounts: from MVP to release, with backend and integrations. Free estimate.',
+        seoTitle: 'Mobile App Development for Business — Kenzcore',
         illustrationLabel: 'Mobile app interface',
         stats: [
           { value: 'iOS', label: 'Apple-ready flow' },
@@ -201,7 +203,7 @@ export const messages = {
       ],
     },
     process: {
-      title: 'How we work',
+      title: 'How mobile app development works',
       subtitle: 'A transparent process without extra bureaucracy: from task analysis to launch and support.',
       steps: [
         { number: '01', label: 'Start', title: 'Analysis', text: 'We study the task, business goals, and constraints.' },
@@ -289,8 +291,8 @@ export const messages = {
   },
   ru: {
     seo: {
-      title: 'Kenzcore Studio — разработка мобильных приложений для iOS и Android',
-      description: 'Разработка мобильных приложений для бизнеса: iOS и Android, MVP, серверная часть, админ-панели и интеграции. От идеи до запуска.',
+      title: 'Разработка мобильных приложений iOS и Android — Kenzcore',
+      description: 'Разработка мобильных приложений для бизнеса в Казахстане: iOS и Android, MVP, сервер, админ-панель и интеграции. Получите бесплатную оценку проекта.',
       ogTitle: 'Kenzcore Studio — мобильные приложения для бизнеса',
       ogDescription: 'Проектируем и разрабатываем iOS и Android приложения с сервером, админ-панелью и интеграциями.',
     },
@@ -330,13 +332,13 @@ export const messages = {
       phoneLogin: 'Экран входа в приложение доставки',
     },
     services: {
-      title: 'Что мы делаем',
+      title: 'Разработка мобильных приложений и всё, что вокруг них',
       subtitle: 'Наш фокус — мобильные приложения. Вокруг них делаем всё, что нужно продукту: сервер, админ-панель, интеграции и поддержку.',
       items: [
         {
           number: '01',
           title: 'Мобильные приложения',
-          text: 'Разрабатываем iOS и Android приложения для клиентов и сотрудников: заказы, запись, доставка, личные кабинеты и уведомления.',
+          text: 'Разрабатываем iOS и Android приложения для клиентов и сотрудников: заказы, запись, доставка, личные кабинеты и уведомления. От 300 000 ₸.',
           tools: ['iOS', 'Android', 'Mobile UI', 'Push-уведомления'],
           href: '/services/mobile-apps',
         },
@@ -384,7 +386,8 @@ export const messages = {
         badge: 'Сайты для бизнеса',
         title: 'Сайты, которые объясняют предложение и приводят заявки',
         text: 'Создаём сайты компаний, страницы услуг, портфолио и лендинги с понятным маршрутом от первого экрана до контакта.',
-        meta: 'Сайты для бизнеса, лендинги, портфолио и SEO-ready страницы на Nuxt.',
+        meta: 'Быстрые сайты и лендинги для бизнеса: понятная структура, адаптивный дизайн, SEO-база и формы заявок. Опишите задачу — оценим бесплатно.',
+        seoTitle: 'Разработка сайтов и лендингов для бизнеса — Kenzcore',
         illustrationLabel: 'Панель запуска сайта',
         stats: [
           { value: '01', label: 'Структура до визуала' },
@@ -412,7 +415,8 @@ export const messages = {
         badge: 'Мобильные приложения',
         title: 'Мобильные приложения для продуктов, команд и клиентских сценариев',
         text: 'Проектируем и разрабатываем iOS/Android приложения вокруг главного действия: заявки, профили, заказы, уведомления и интеграции.',
-        meta: 'Разработка мобильных приложений для iOS и Android с API-интеграциями и продуктовыми сценариями.',
+        meta: 'iOS и Android приложения для заказов, записи, доставки и личных кабинетов: от MVP до запуска, с сервером и интеграциями. Бесплатная оценка.',
+        seoTitle: 'Мобильные приложения для бизнеса под ключ — Kenzcore',
         illustrationLabel: 'Интерфейс мобильного приложения',
         stats: [
           { value: 'iOS', label: 'Готовность к Apple flow' },
@@ -481,7 +485,7 @@ export const messages = {
       ],
     },
     process: {
-      title: 'Как работаем',
+      title: 'Как проходит разработка приложения',
       subtitle: 'Прозрачный процесс без лишней бюрократии: от разбора задачи до запуска и поддержки.',
       steps: [
         { number: '01', label: 'Старт', title: 'Анализ', text: 'Разбираем задачу, цели бизнеса и ограничения.' },
@@ -569,8 +573,8 @@ export const messages = {
   },
   kk: {
     seo: {
-      title: 'Kenzcore Studio — iOS және Android мобильді қосымшаларын әзірлеу',
-      description: 'Бизнеске арналған мобильді қосымшалар әзірлеу: iOS және Android, MVP, сервер бөлігі, админ-панельдер және интеграциялар. Идеядан іске қосуға дейін.',
+      title: 'iOS және Android мобильді қосымшаларын әзірлеу — Kenzcore',
+      description: 'Қазақстандағы бизнеске мобильді қосымшалар әзірлеу: iOS және Android, MVP, сервер, админ-панель және интеграциялар. Жобаны тегін бағалатыңыз.',
       ogTitle: 'Kenzcore Studio — бизнеске арналған мобильді қосымшалар',
       ogDescription: 'Сервері, админ-панелі және интеграциялары бар iOS және Android қосымшаларын жобалап, әзірлейміз.',
     },
@@ -610,13 +614,13 @@ export const messages = {
       phoneLogin: 'Жеткізу қосымшасына кіру экраны',
     },
     services: {
-      title: 'Не істейміз',
+      title: 'Мобильді қосымшалар әзірлеу және оған қажеттінің бәрі',
       subtitle: 'Біздің басты бағытымыз — мобильді қосымшалар. Олардың айналасында өнімге қажеттінің бәрін жасаймыз: сервер, админ-панель, интеграциялар және қолдау.',
       items: [
         {
           number: '01',
           title: 'Мобильді қосымшалар',
-          text: 'Клиенттер мен қызметкерлерге арналған iOS және Android қосымшаларын әзірлейміз: тапсырыстар, жазылу, жеткізу, жеке кабинеттер және хабарламалар.',
+          text: 'Клиенттер мен қызметкерлерге арналған iOS және Android қосымшаларын әзірлейміз: тапсырыстар, жазылу, жеткізу, жеке кабинеттер және хабарламалар. 300 000 ₸-ден бастап.',
           tools: ['iOS', 'Android', 'Mobile UI', 'Push-хабарламалар'],
           href: '/services/mobile-apps',
         },
@@ -664,7 +668,8 @@ export const messages = {
         badge: 'Бизнес сайттар',
         title: 'Ұсынысты түсіндіріп, нақты өтінім әкелетін сайттар',
         text: 'Бірінші экраннан байланысқа дейін түсінікті бағыты бар компания сайттарын, қызмет беттерін, портфолио және лендингтер жасаймыз.',
-        meta: 'Бизнес сайттар, лендингтер, портфолио және Nuxt негізіндегі SEO-ready беттер.',
+        meta: 'Бизнеске жылдам сайттар мен лендингтер: түсінікті құрылым, адаптив дизайн, SEO негізі және өтінім формалары. Міндетті жазыңыз — тегін бағалаймыз.',
+        seoTitle: 'Бизнеске сайттар мен лендингтер жасау — Kenzcore',
         illustrationLabel: 'Сайтты іске қосу панелі',
         stats: [
           { value: '01', label: 'Алдымен құрылым' },
@@ -692,7 +697,8 @@ export const messages = {
         badge: 'Мобильді қосымшалар',
         title: 'Өнімдерге, командаларға және клиент сценарийлеріне арналған мобильді қосымшалар',
         text: 'iOS/Android қосымшаларын негізгі әрекет айналасында жобалаймыз және әзірлейміз: өтінімдер, профильдер, тапсырыстар, хабарламалар және интеграциялар.',
-        meta: 'API интеграциялары және өнім сценарийлері бар iOS және Android мобильді қосымшаларын әзірлеу.',
+        meta: 'Тапсырыстар, жазылу, жеткізу және жеке кабинеттер үшін iOS және Android қосымшалары: MVP-ден іске қосуға дейін, сервермен және интеграциялармен. Тегін бағалау.',
+        seoTitle: 'Бизнеске арналған мобильді қосымшалар — Kenzcore',
         illustrationLabel: 'Мобильді қосымша интерфейсі',
         stats: [
           { value: 'iOS', label: 'Apple flow дайындығы' },
@@ -761,7 +767,7 @@ export const messages = {
       ],
     },
     process: {
-      title: 'Қалай жұмыс істейміз',
+      title: 'Қосымша әзірлеу қалай өтеді',
       subtitle: 'Артық бюрократиясыз ашық процесс: міндетті талдаудан бастап іске қосу мен қолдауға дейін.',
       steps: [
         { number: '01', label: 'Бастау', title: 'Талдау', text: 'Міндетті, бизнес мақсаттарын және шектеулерді талдаймыз.' },

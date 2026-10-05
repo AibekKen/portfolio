@@ -54,7 +54,7 @@ useHead({
             '@id': `${siteConfig.url}/#organization`,
             name: siteConfig.name,
             url: siteConfig.url,
-            logo: `${siteConfig.url}${siteConfig.ogImage}`,
+            logo: `${siteConfig.url}${siteConfig.logoFull}`,
             email: siteConfig.contacts.email.display,
             telephone: siteConfig.phone,
             areaServed: 'KZ',

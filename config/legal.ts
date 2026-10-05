@@ -19,7 +19,7 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
     title: 'Privacy Policy',
     description:
       'This policy explains what information Kenzcore Studio collects through the website and how it is used.',
-    updated: 'Last updated: May 6, 2026',
+    updated: 'Last updated: October 6, 2026',
     sections: [
       {
         title: 'Information we collect',
@@ -43,6 +43,13 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
         ],
       },
       {
+        title: 'Cookies and advertising measurement',
+        paragraphs: [
+          'The website uses the Google Ads tag (gtag.js) from Google LLC to measure how well our advertising works, for example whether a visit from an ad led to a request or a click on a messenger link. For this, Google may set cookies and process technical data such as IP address, browser information, and the ad click identifier.',
+          'A separate cookie remembers the website language you selected. You can delete or block cookies in your browser settings and limit personalized advertising at adssettings.google.com.',
+        ],
+      },
+      {
         title: 'Your choices',
         paragraphs: [
           'You may ask us to access, correct, or delete personal information that we hold about you, subject to legal and operational requirements.',
@@ -56,7 +63,7 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
     title: 'Политика приватности',
     description:
       'В этой политике описано, какие данные Kenzcore Studio получает через сайт и как они используются.',
-    updated: 'Обновлено: 6 мая 2026',
+    updated: 'Обновлено: 6 октября 2026',
     sections: [
       {
         title: 'Какие данные мы получаем',
@@ -80,6 +87,13 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
         ],
       },
       {
+        title: 'Cookie и измерение рекламы',
+        paragraphs: [
+          'Сайт использует тег Google Ads (gtag.js) компании Google LLC, чтобы оценивать эффективность нашей рекламы, например привёл ли переход из объявления к заявке или клику на ссылку мессенджера. Для этого Google может устанавливать cookie и обрабатывать технические данные: IP-адрес, сведения о браузере и идентификатор клика по объявлению.',
+          'Отдельный cookie запоминает выбранный язык сайта. Вы можете удалить или заблокировать cookie в настройках браузера и ограничить персонализированную рекламу на adssettings.google.com.',
+        ],
+      },
+      {
         title: 'Ваши возможности',
         paragraphs: [
           'Вы можете запросить доступ, исправление или удаление персональных данных, которые у нас есть, с учетом юридических и операционных требований.',
@@ -93,7 +107,7 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
     title: 'Құпиялылық саясаты',
     description:
       'Бұл саясат Kenzcore Studio сайт арқылы қандай деректер алатынын және оларды қалай қолданатынын түсіндіреді.',
-    updated: 'Жаңартылған күні: 2026 жылғы 6 мамыр',
+    updated: 'Жаңартылған күні: 2026 жылғы 6 қазан',
     sections: [
       {
         title: 'Қандай деректер аламыз',
@@ -114,6 +128,13 @@ export const privacyPolicyContent: Record<LegalLocale, LegalPageContent> = {
         paragraphs: [
           'Деректерді байланыс, қызмет көрсету, есеп жүргізу, заң талаптарын орындау және даулардың алдын алу үшін ақылға қонымды қажет мерзімде ғана сақтаймыз.',
           'Біз ақылға қонымды техникалық және ұйымдастырушылық қорғау шараларын қолданамыз, бірақ интернет арқылы дерек жіберу немесе сақтау толық қауіпсіз деп кепілдендірілмейді.',
+        ],
+      },
+      {
+        title: 'Cookie және жарнаманы өлшеу',
+        paragraphs: [
+          'Сайт жарнамамыздың тиімділігін бағалау үшін Google LLC компаниясының Google Ads тегін (gtag.js) пайдаланады, мысалы, хабарландырудан кіру өтінімге немесе мессенджер сілтемесін басуға әкелді ме. Ол үшін Google cookie орнатып, техникалық деректерді өңдеуі мүмкін: IP-мекенжай, браузер туралы мәліметтер және хабарландыруды басу идентификаторы.',
+          'Бөлек cookie сайттың таңдалған тілін есте сақтайды. Cookie файлдарын браузер параметрлерінде жоюға немесе бұғаттауға, ал жекелендірілген жарнаманы adssettings.google.com сайтында шектеуге болады.',
         ],
       },
       {

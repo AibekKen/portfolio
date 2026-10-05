@@ -7,8 +7,10 @@ export const siteConfig = {
     width: 576,
     height: 210,
   },
-  // Full-size logo for link previews (Open Graph)
-  ogImage: '/brand/kenzcore-logo.png',
+  // Full-size logo for structured data
+  logoFull: '/brand/kenzcore-logo.png',
+  // 1200×630 link preview image (Open Graph)
+  ogImage: '/brand/og-image.jpg',
   tagline: 'Software Engineering for business',
   description:
     'CRM, admin panels, MVPs, integrations, and web application support for business.',
