@@ -10,7 +10,7 @@
         </p>
       </div>
 
-      <div class="cases-scroll -mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth px-4 pb-3 md:-mx-6 md:px-6 lg:-mx-8 lg:px-8">
+      <div class="cases-scroll -mx-4 snap-x snap-mandatory overflow-x-auto overscroll-x-contain px-4 pb-3 md:-mx-6 md:px-6 lg:-mx-8 lg:px-8">
         <div class="flex gap-5 md:gap-6">
           <BaseCard class="flex w-[82vw] max-w-sm shrink-0 snap-start sm:w-80 md:w-[22rem] lg:w-[24rem]">
             <div class="flex h-full min-h-[25rem] w-full flex-col">
