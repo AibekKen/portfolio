@@ -47,6 +47,7 @@
 import { siteConfig } from '~/config/site'
 
 const { t } = useI18n()
+const { trackContactClick } = useAdsConversion()
 
 const scrollToContact = () => {
   const element = document.getElementById('contact')
@@ -54,6 +55,7 @@ const scrollToContact = () => {
 }
 
 const openWhatsApp = () => {
+  trackContactClick()
   window.open(siteConfig.contacts.whatsapp.href, '_blank', 'noopener,noreferrer')
 }
 </script>

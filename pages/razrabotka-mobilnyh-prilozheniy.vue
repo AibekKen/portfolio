@@ -13,6 +13,7 @@
         <div class="flex items-center gap-3">
           <a
             :href="siteConfig.contacts.whatsapp.href"
+            @click="trackContactClick"
             target="_blank"
             rel="noopener noreferrer"
             class="hidden min-h-11 items-center rounded-brand border border-brand-primary px-4 text-sm font-bold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white sm:inline-flex"
@@ -54,6 +55,7 @@
               </a>
               <a
                 :href="siteConfig.contacts.whatsapp.href"
+                @click="trackContactClick"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex min-h-12 items-center justify-center rounded-brand border-2 border-brand-primary bg-white px-6 py-3 text-center font-semibold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white md:px-8 md:py-4"
@@ -191,6 +193,7 @@
             <div class="mt-6 grid gap-3 text-brand-100">
               <a
                 :href="siteConfig.contacts.whatsapp.href"
+                @click="trackContactClick"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
@@ -208,6 +211,7 @@
 
               <a
                 :href="siteConfig.contacts.telegram.href"
+                @click="trackContactClick"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
@@ -225,6 +229,7 @@
 
               <a
                 :href="siteConfig.contacts.email.href"
+                @click="trackContactClick"
                 class="flex items-center gap-3 rounded-brand border border-white/20 bg-white/10 px-4 py-3 transition hover:border-white hover:bg-white/20"
               >
                 <span class="flex h-10 w-10 items-center justify-center rounded-full bg-white text-brand-primary">
@@ -334,6 +339,8 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { siteConfig } from '~/config/site'
+
+const { trackLead, trackContactClick } = useAdsConversion()
 
 type Form = {
   name: string
@@ -526,6 +533,7 @@ const handleSubmit = async () => {
     form.description = ''
     csrfToken.value = ''
     showSuccess.value = true
+    trackLead()
 
     setTimeout(() => {
       showSuccess.value = false

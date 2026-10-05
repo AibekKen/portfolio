@@ -111,6 +111,7 @@
         <div class="flex flex-col gap-4 md:gap-5">
           <a
             :href="siteConfig.contacts.whatsapp.href"
+            @click="trackContactClick"
             target="_blank"
             rel="noopener noreferrer"
             class="flex min-h-24 items-center gap-4 rounded-brand-lg bg-white p-5 transition-shadow hover:shadow-lg"
@@ -133,6 +134,7 @@
 
           <a
             :href="siteConfig.contacts.telegram.href"
+            @click="trackContactClick"
             target="_blank"
             rel="noopener noreferrer"
             class="flex min-h-24 items-center gap-4 rounded-brand-lg bg-white p-5 transition-shadow hover:shadow-lg"
@@ -155,6 +157,7 @@
 
           <a
             :href="siteConfig.contacts.email.href"
+            @click="trackContactClick"
             class="flex min-h-24 items-center gap-4 rounded-brand-lg bg-white p-5 transition-shadow hover:shadow-lg"
           >
             <div class="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-brand bg-brand-primary/10 text-brand-primary">
@@ -186,6 +189,8 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
 import { siteConfig } from '~/config/site'
+
+const { trackLead, trackContactClick } = useAdsConversion()
 
 interface Form {
   name: string
@@ -262,6 +267,7 @@ const handleSubmit = async () => {
     form.description = ''
     csrfToken.value = ''
     showSuccess.value = true
+    trackLead()
 
     setTimeout(() => {
       showSuccess.value = false

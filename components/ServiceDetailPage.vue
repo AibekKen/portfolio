@@ -31,6 +31,7 @@
                 </NuxtLink>
                 <a
                   :href="siteConfig.contacts.whatsapp.href"
+                  @click="trackContactClick"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex min-h-12 items-center justify-center rounded-brand border-2 border-brand-primary bg-white px-6 py-3 text-center font-semibold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 md:px-8 md:py-4"
@@ -145,6 +146,8 @@
 
 <script setup lang="ts">
 import { siteConfig } from '~/config/site'
+
+const { trackContactClick } = useAdsConversion()
 
 type ServicePageKey = 'websites' | 'mobileApps'
 

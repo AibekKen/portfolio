@@ -1,10 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const googleAdsId = 'AW-18212249649'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   runtimeConfig: {
     telegramBotToken: process.env.TELEGRAM_BOT_TOKEN,
     telegramId: process.env.TELEGRAM_ID,
+    public: {
+      googleAdsId,
+      // Conversion labels from Google Ads → Goals → Conversions → Tag setup
+      googleAdsLeadLabel: '',
+      googleAdsContactLabel: '',
+    },
   },
   css: ['~/assets/styles/main.css'],
   modules: ['@nuxtjs/i18n'],
@@ -45,11 +53,11 @@ export default defineNuxtConfig({
       script: [
         {
           async: true,
-          src: 'https://www.googletagmanager.com/gtag/js?id=AW-18212249649',
+          src: `https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`,
         },
         {
           type: 'text/javascript',
-          innerHTML: "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18212249649');",
+          innerHTML: `window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', '${googleAdsId}');`,
         } as any,
       ]
     }
