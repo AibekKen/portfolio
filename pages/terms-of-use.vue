@@ -22,8 +22,5 @@ useHead({
       content: () => content.value.description,
     },
   ],
-  htmlAttrs: {
-    lang: locale,
-  },
 })
 </script>

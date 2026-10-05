@@ -6,7 +6,7 @@
       <section class="overflow-hidden bg-brand-50 py-10 md:py-14 lg:py-18">
         <div class="section-container">
           <NuxtLink
-            to="/#services"
+            :to="`${localePath('/')}#services`"
             class="inline-flex min-h-10 items-center rounded-brand border border-brand-100 bg-white px-4 text-sm font-bold text-brand-700 transition-colors hover:border-brand-primary hover:text-brand-primary"
           >
             {{ t('servicePages.back') }}
@@ -24,7 +24,7 @@
 
               <div class="mt-8 flex flex-col gap-3 sm:flex-row">
                 <NuxtLink
-                  to="/#contact"
+                  :to="`${localePath('/')}#contact`"
                   class="inline-flex min-h-12 items-center justify-center rounded-brand bg-brand-primary px-6 py-3 text-center font-semibold text-white transition-colors hover:bg-brand-primary-dark focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 md:px-8 md:py-4"
                 >
                   {{ t('servicePages.discuss') }}
@@ -170,7 +170,8 @@ const props = defineProps<{
   pageKey: ServicePageKey
 }>()
 
-const { locale, tm, t } = useI18n()
+const { tm, t } = useI18n()
+const localePath = useLocalePath()
 const page = computed(() => tm(`servicePages.${props.pageKey}`) as ServicePage)
 const illustrationKind = computed(() => (props.pageKey === 'mobileApps' ? 'mobile' : 'website'))
 
@@ -189,9 +190,10 @@ useHead({
       property: 'og:description',
       content: () => page.value.meta,
     },
+    {
+      property: 'og:image',
+      content: `${siteConfig.url}${siteConfig.ogImage}`,
+    },
   ],
-  htmlAttrs: {
-    lang: locale,
-  },
 })
 </script>

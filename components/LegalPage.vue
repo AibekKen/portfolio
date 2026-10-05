@@ -5,7 +5,7 @@
       <section class="section-padding">
         <div class="section-container">
           <NuxtLink
-            to="/"
+            :to="localePath('/')"
             class="mb-8 inline-flex items-center text-sm font-semibold text-brand-primary hover:text-brand-primary-dark"
           >
             {{ backLabel }}
@@ -49,6 +49,8 @@
 
 <script setup lang="ts">
 import type { LegalPageContent } from '~/config/legal'
+
+const localePath = useLocalePath()
 
 defineProps<{
   content: LegalPageContent

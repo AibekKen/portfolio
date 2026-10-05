@@ -279,6 +279,13 @@ export const messages = {
     legal: {
       back: 'Back to home',
     },
+    error: {
+      notFoundTitle: 'Page not found',
+      notFoundText: 'The link may be outdated or contain a typo. Go to the home page or tell us about your project.',
+      genericTitle: 'Something went wrong',
+      genericText: 'Please try again in a minute or contact us in WhatsApp or Telegram.',
+      home: 'Go to home page',
+    },
   },
   ru: {
     seo: {
@@ -552,6 +559,13 @@ export const messages = {
     legal: {
       back: 'На главную',
     },
+    error: {
+      notFoundTitle: 'Страница не найдена',
+      notFoundText: 'Возможно, ссылка устарела или в ней опечатка. Перейдите на главную или расскажите нам о проекте.',
+      genericTitle: 'Что-то пошло не так',
+      genericText: 'Попробуйте ещё раз через минуту или напишите нам в WhatsApp или Telegram.',
+      home: 'На главную',
+    },
   },
   kk: {
     seo: {
@@ -824,6 +838,13 @@ export const messages = {
     },
     legal: {
       back: 'Басты бетке',
+    },
+    error: {
+      notFoundTitle: 'Бет табылмады',
+      notFoundText: 'Сілтеме ескірген немесе қате терілген болуы мүмкін. Басты бетке өтіңіз немесе жобаңыз туралы жазыңыз.',
+      genericTitle: 'Бірдеңе дұрыс болмады',
+      genericText: 'Бір минуттан кейін қайталап көріңіз немесе WhatsApp не Telegram арқылы жазыңыз.',
+      home: 'Басты бетке',
     },
   },
 } as const

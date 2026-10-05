@@ -13,25 +13,25 @@
 
       <div class="hidden md:flex items-center gap-8">
         <a
-          href="/#services"
+          :href="`${localePath('/')}#services`"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.services') }}
         </a>
         <a
-          href="/#cases"
+          :href="`${localePath('/')}#cases`"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.cases') }}
         </a>
         <a
-          href="/#process"
+          :href="`${localePath('/')}#process`"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.process') }}
         </a>
         <a
-          href="/#contact"
+          :href="`${localePath('/')}#contact`"
           class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
         >
           {{ t('nav.contact') }}
@@ -40,19 +40,19 @@
 
       <div class="hidden items-center gap-4 md:flex">
         <div class="flex rounded-brand border border-brand-100 bg-brand-50 p-1" :aria-label="t('nav.languageLabel')" role="group">
-          <button
+          <NuxtLink
             v-for="option in languageOptions"
             :key="option.code"
-            type="button"
+            :to="switchLocalePath(option.code)"
+            :hreflang="option.code"
             :class="[
-              'min-h-9 rounded-[6px] px-3 text-sm font-bold transition-colors',
+              'lang-link flex min-h-9 items-center rounded-[6px] px-3 text-sm font-bold transition-colors',
               locale === option.code ? 'bg-white text-brand-primary shadow-sm' : 'text-brand-600 hover:text-brand-900',
             ]"
-            :aria-pressed="locale === option.code"
-            @click="setLocale(option.code)"
+            :aria-current="locale === option.code ? 'true' : undefined"
           >
             {{ option.label }}
-          </button>
+          </NuxtLink>
         </div>
         <BaseButton variant="primary" @click="scrollToContact">
           {{ t('nav.cta') }}
@@ -82,47 +82,47 @@
       >
         <div class="flex flex-col gap-3">
           <a
-            href="/#services"
+            :href="`${localePath('/')}#services`"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.services') }}
           </a>
           <a
-            href="/#cases"
+            :href="`${localePath('/')}#cases`"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.cases') }}
           </a>
           <a
-            href="/#process"
+            :href="`${localePath('/')}#process`"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.process') }}
           </a>
           <a
-            href="/#contact"
+            :href="`${localePath('/')}#contact`"
             class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
             @click="isMenuOpen = false"
           >
             {{ t('nav.contact') }}
           </a>
           <div class="flex rounded-brand border border-brand-100 bg-brand-50 p-1" :aria-label="t('nav.languageLabel')" role="group">
-            <button
+            <NuxtLink
               v-for="option in languageOptions"
               :key="option.code"
-              type="button"
+              :to="switchLocalePath(option.code)"
+              :hreflang="option.code"
               :class="[
-                'min-h-10 flex-1 rounded-[6px] px-3 text-sm font-bold transition-colors',
+                'lang-link flex min-h-10 flex-1 items-center justify-center rounded-[6px] px-3 text-sm font-bold transition-colors',
                 locale === option.code ? 'bg-white text-brand-primary shadow-sm' : 'text-brand-600 hover:text-brand-900',
               ]"
-              :aria-pressed="locale === option.code"
-              @click="setLocale(option.code)"
+              :aria-current="locale === option.code ? 'true' : undefined"
             >
               {{ option.label }}
-            </button>
+            </NuxtLink>
           </div>
           <BaseButton
             variant="primary"
@@ -143,15 +143,17 @@ import { siteConfig } from '~/config/site'
 import { languageOptions } from '~/i18n/messages'
 
 const isMenuOpen = ref(false)
-const { locale, setLocale, t } = useI18n()
+const { locale, t } = useI18n()
+const localePath = useLocalePath()
+const switchLocalePath = useSwitchLocalePath()
 const route = useRoute()
 const router = useRouter()
 
 const scrollToContact = () => {
   isMenuOpen.value = false
 
-  if (route.path !== '/') {
-    router.push('/#contact')
+  if (route.path !== localePath('/')) {
+    router.push(`${localePath('/')}#contact`)
     return
   }
 
@@ -165,7 +167,7 @@ a {
   position: relative;
 }
 
-a::after {
+a:not(.lang-link)::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -176,7 +178,7 @@ a::after {
   transition: width 200ms ease;
 }
 
-a:hover::after {
+a:not(.lang-link):hover::after {
   width: 100%;
 }
 </style>

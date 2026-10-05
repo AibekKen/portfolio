@@ -17,11 +17,7 @@
 <script setup lang="ts">
 import { siteConfig } from '~/config/site'
 
-const { locale, t } = useI18n()
-
-definePageMeta({
-  layout: 'default',
-})
+const { t } = useI18n()
 
 useHead({
   title: () => t('seo.title'),
@@ -47,8 +43,41 @@ useHead({
       content: `${siteConfig.url}${siteConfig.ogImage}`,
     },
   ],
-  htmlAttrs: {
-    lang: locale,
-  },
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': `${siteConfig.url}/#organization`,
+            name: siteConfig.name,
+            url: siteConfig.url,
+            logo: `${siteConfig.url}${siteConfig.ogImage}`,
+            email: siteConfig.contacts.email.display,
+            telephone: siteConfig.phone,
+            areaServed: 'KZ',
+            sameAs: [siteConfig.contacts.telegram.href],
+            contactPoint: {
+              '@type': 'ContactPoint',
+              contactType: 'sales',
+              telephone: siteConfig.phone,
+              email: siteConfig.contacts.email.display,
+              availableLanguage: ['Russian', 'Kazakh', 'English'],
+            },
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${siteConfig.url}/#website`,
+            name: siteConfig.name,
+            url: siteConfig.url,
+            publisher: { '@id': `${siteConfig.url}/#organization` },
+            inLanguage: ['ru-RU', 'en-US', 'kk-KZ'],
+          },
+        ],
+      }),
+    },
+  ],
 })
 </script>

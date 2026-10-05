@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const googleAdsId = 'AW-18212249649'
+const siteUrl = 'https://kenzcore.com'
 
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -17,16 +18,19 @@ export default defineNuxtConfig({
   css: ['~/assets/styles/main.css'],
   modules: ['@nuxtjs/i18n'],
   i18n: {
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
+    // Russian lives at the root; other languages get their own URLs so each version is indexable
+    defaultLocale: 'ru',
+    strategy: 'prefix_except_default',
+    baseUrl: siteUrl,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'preferred-locale',
-      fallbackLocale: 'en',
+      redirectOn: 'root',
+      fallbackLocale: 'ru',
     },
     locales: [
-      { code: 'en', language: 'en-US', name: 'English' },
       { code: 'ru', language: 'ru-RU', name: 'Русский' },
+      { code: 'en', language: 'en-US', name: 'English' },
       { code: 'kk', language: 'kk-KZ', name: 'Қазақша' },
     ],
   },
@@ -40,7 +44,7 @@ export default defineNuxtConfig({
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
       htmlAttrs: {
-        lang: 'en'
+        lang: 'ru'
       },
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

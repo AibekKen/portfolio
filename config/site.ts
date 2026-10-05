@@ -12,6 +12,7 @@ export const siteConfig = {
   tagline: 'Software Engineering for business',
   description:
     'CRM, admin panels, MVPs, integrations, and web application support for business.',
+  phone: '+77713856909',
   contacts: {
     whatsapp: {
       label: 'WhatsApp',

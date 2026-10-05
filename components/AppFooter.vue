@@ -12,10 +12,10 @@
         <div>
           <h4 class="mb-3 font-semibold">{{ t('footer.navigation') }}</h4>
           <ul class="space-y-2 text-sm">
-            <li><a href="/#services" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.services') }}</a></li>
-            <li><a href="/#cases" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.cases') }}</a></li>
-            <li><a href="/#process" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.process') }}</a></li>
-            <li><a href="/#contact" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.contact') }}</a></li>
+            <li><a :href="`${localePath('/')}#services`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.services') }}</a></li>
+            <li><a :href="`${localePath('/')}#cases`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.cases') }}</a></li>
+            <li><a :href="`${localePath('/')}#process`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.process') }}</a></li>
+            <li><a :href="`${localePath('/')}#contact`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.contact') }}</a></li>
           </ul>
         </div>
 
@@ -23,7 +23,7 @@
           <h4 class="mb-3 font-semibold">{{ t('footer.services') }}</h4>
           <ul class="space-y-2 text-sm">
             <li v-for="service in footerServices" :key="service.title">
-              <NuxtLink :to="service.href || '/#services'" class="text-blue-200 transition-colors hover:text-white">{{ service.title }}</NuxtLink>
+              <NuxtLink :to="service.href ? localePath(service.href) : `${localePath('/')}#services`" class="text-blue-200 transition-colors hover:text-white">{{ service.title }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -55,8 +55,8 @@
           © 2026 {{ siteConfig.name }}. {{ t('footer.copyright') }}
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <NuxtLink to="/privacy-policy" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
-          <NuxtLink to="/terms-of-use" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.terms') }}</NuxtLink>
+          <NuxtLink :to="localePath('/privacy-policy')" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
+          <NuxtLink :to="localePath('/terms-of-use')" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.terms') }}</NuxtLink>
         </div>
       </div>
     </div>
@@ -72,5 +72,6 @@ type FooterService = {
 }
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 const footerServices = computed(() => tm('services.items') as FooterService[])
 </script>

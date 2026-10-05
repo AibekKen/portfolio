@@ -631,7 +631,9 @@ const handleSubmit = async () => {
   }
 }
 
-const canonicalUrl = `${siteConfig.url}/razrabotka-mobilnyh-prilozheniy`
+// Russian-only landing for Google Ads: no /en or /kk copies
+defineI18nRoute({ locales: ['ru'] })
+
 
 useHead({
   title: 'Разработка мобильных приложений под ключ | iOS и Android',
@@ -653,34 +655,21 @@ useHead({
       content: 'website',
     },
     {
-      property: 'og:url',
-      content: canonicalUrl,
-    },
-    {
       property: 'og:image',
       content: `${siteConfig.url}${siteConfig.ogImage}`,
     },
   ],
-  link: [
-    {
-      rel: 'canonical',
-      href: canonicalUrl,
-    },
-  ],
-  htmlAttrs: {
-    lang: 'ru',
-  },
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'Service',
         name: 'Разработка мобильных приложений',
         provider: {
           '@type': 'Organization',
           name: siteConfig.name,
-          url: canonicalUrl,
+          url: siteConfig.url,
           email: siteConfig.contacts.email.display,
         },
         areaServed: ['Kazakhstan', 'Worldwide'],
@@ -690,7 +679,7 @@ useHead({
     },
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
+      innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'FAQPage',
         mainEntity: faq.map((item) => ({

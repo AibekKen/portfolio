@@ -33,7 +33,7 @@
             </div>
             <NuxtLink
               v-if="service.href"
-              :to="service.href"
+              :to="localePath(service.href)"
               class="mt-6 inline-flex min-h-10 w-fit items-center rounded-brand border border-brand-primary px-4 text-sm font-bold text-brand-primary transition-colors hover:bg-brand-primary hover:text-white"
             >
               {{ t('services.more') }}
@@ -55,5 +55,6 @@ type Service = {
 }
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 const mainServices = computed(() => tm('services.items') as Service[])
 </script>
