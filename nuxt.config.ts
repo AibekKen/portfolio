@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 const googleAdsId = 'AW-18497285911'
+const gtmId = 'GTM-WQ4CN6C4'
 const siteUrl = 'https://kenzcore.com'
 
 export default defineNuxtConfig({
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
     telegramId: process.env.TELEGRAM_ID,
     public: {
       googleAdsId,
+      gtmId,
       // Conversion labels from Google Ads → Goals → Conversions → Tag setup
       googleAdsLeadLabel: '',
       googleAdsContactLabel: '',
@@ -53,6 +55,12 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192x192.png' },
         { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/icon-512x512.png' }
+      ],
+      noscript: [
+        {
+          tagPosition: 'bodyOpen',
+          innerHTML: `<iframe src="https://www.googletagmanager.com/ns.html?id=${gtmId}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+        },
       ],
     }
   }
