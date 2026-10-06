@@ -86,20 +86,6 @@
               leave-to-class="opacity-0 scale-95"
             >
               <div
-                v-if="showSuccess"
-                class="rounded-brand border border-green-200 bg-green-50 p-4 text-center text-base text-green-900"
-              >
-                {{ t('contact.success') }}
-              </div>
-            </transition>
-
-            <transition
-              enter-active-class="transition-all duration-300"
-              enter-from-class="opacity-0 scale-95"
-              leave-active-class="transition-all duration-300"
-              leave-to-class="opacity-0 scale-95"
-            >
-              <div
                 v-if="submitError"
                 class="rounded-brand border border-red-200 bg-red-50 p-4 text-center text-base text-red-900"
               >
@@ -211,12 +197,13 @@ const form = reactive<Form>({
 
 const errors = reactive<Partial<Record<keyof Form, string>>>({})
 const isSubmitting = ref(false)
-const showSuccess = ref(false)
 const submitError = ref('')
 const csrfToken = ref('')
 const honeypot = ref('')
 const honeypotId = 'contact-subject'
 const { t } = useI18n()
+const localePath = useLocalePath()
+const { getAdSource } = useAdSource()
 
 const validate = () => {
   errors.name = form.name.length >= 2 ? '' : t('contact.validation.name')
@@ -249,7 +236,6 @@ const handleSubmit = async () => {
 
   isSubmitting.value = true
   submitError.value = ''
-  showSuccess.value = false
 
   try {
     if (!csrfToken.value) {
@@ -267,19 +253,13 @@ const handleSubmit = async () => {
         contact: form.contact,
         subject: honeypot.value,
         description: form.description,
+        source: getAdSource(),
       },
     })
 
-    form.name = ''
-    form.contact = ''
-    form.description = ''
-    csrfToken.value = ''
-    showSuccess.value = true
     trackLead()
-
-    setTimeout(() => {
-      showSuccess.value = false
-    }, 5000)
+    // Full page load so the Google tag records the visit to the thank-you page as a conversion
+    window.location.assign(localePath('/spasibo'))
   } catch (error: unknown) {
     csrfToken.value = ''
     submitError.value = getSubmitErrorMessage(error)

@@ -6,17 +6,28 @@ interface ContactPayload {
   description?: string
   // Honeypot: hidden from people, so only bots fill it
   subject?: string
+  source?: { channel?: unknown, keyword?: unknown } | null
 }
 
 interface TelegramResponse {
   ok: boolean
   description?: string
-  // Honeypot: hidden from people, so only bots fill it
-  subject?: string
 }
 
 const normalizeField = (value: unknown, maxLength: number) => {
   return typeof value === 'string' ? value.trim().slice(0, maxLength) : ''
+}
+
+const getRefererPath = (referer: string | undefined) => {
+  if (!referer) {
+    return ''
+  }
+
+  try {
+    return decodeURIComponent(new URL(referer).pathname).slice(0, 120)
+  } catch {
+    return ''
+  }
 }
 
 export default defineEventHandler(async (event) => {
@@ -54,11 +65,18 @@ export default defineEventHandler(async (event) => {
     })
   }
 
+  const isAdLead = body.source?.channel === 'google_ads'
+  const keyword = normalizeField(body.source?.keyword, 80)
+  const pagePath = getRefererPath(getHeader(event, 'referer'))
+
   const message = [
     'Новая заявка с сайта Kenzcore Studio',
     '',
     `Имя: ${name}`,
     `Контакт: ${contact}`,
+    `Источник: ${isAdLead ? 'Google Ads' : 'сайт'}`,
+    ...(isAdLead && keyword ? [`Запрос: ${keyword}`] : []),
+    ...(pagePath ? [`Страница: ${pagePath}`] : []),
     '',
     'Описание задачи:',
     description,

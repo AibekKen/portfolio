@@ -31,6 +31,7 @@ export const messages = {
       noteText: 'Mobile UI, backend, database, integrations, and help with App Store and Google Play release.',
       primary: 'Discuss project',
       secondary: 'Write on WhatsApp',
+      price: 'Development from 300,000 ₸ · free project estimate',
     },
     showcase: {
       now: 'now',
@@ -248,6 +249,45 @@ export const messages = {
         },
       ],
     },
+    faq: {
+      title: 'Frequently asked questions',
+      items: [
+        {
+          question: 'How much does mobile app development cost?',
+          answer: 'Development starts from 300,000 ₸. The final price depends on the number of screens, user roles, integrations and release requirements: after a short task description we give an estimate by stages.',
+        },
+        {
+          question: 'Can we start with an MVP?',
+          answer: 'Yes. It is usually better to launch the first version with the main scenario to test demand faster and not spend the budget on extra features.',
+        },
+        {
+          question: 'Do you build apps for both iOS and Android?',
+          answer: 'Yes. We can prepare the app for both platforms and help with the technical side of the release.',
+        },
+        {
+          question: 'Can the app be connected to a website or CRM?',
+          answer: 'Yes. We connect APIs, personal accounts, requests, payments, notifications and other services the product needs.',
+        },
+        {
+          question: 'Will you help publish the app in the App Store and Google Play?',
+          answer: 'Yes. We prepare builds and help with publishing in the App Store and Google Play, or prepare the app for internal use in the company.',
+        },
+      ],
+    },
+    thanks: {
+      seoTitle: 'Request sent — Kenzcore Studio',
+      title: 'Thank you! Your request has been sent',
+      text: 'We have received your request and will contact you to clarify the project details.',
+      stepsTitle: 'What happens next',
+      steps: [
+        'We review your task and clarify the details',
+        'We prepare a plan for the first version and an estimate by stages',
+        'We agree on timing and the start of work',
+      ],
+      faster: 'Want to talk sooner? Message us:',
+      cases: 'See our cases',
+      home: 'Back to home',
+    },
     cases: caseMessages.en,
     contact: {
       title: 'Ready to discuss your project?',
@@ -260,7 +300,6 @@ export const messages = {
       descriptionPlaceholder: 'Tell us about the app: who it is for, what users should do, and whether you already have a website or backend.',
       submit: 'Send request',
       submitting: 'Sending...',
-      success: 'Thank you! Your request has been saved. We will contact you to clarify the details.',
       privacy: 'Data is used only to contact you about this request.',
       validation: {
         name: 'Please enter your name.',
@@ -313,6 +352,7 @@ export const messages = {
       noteText: 'Мобильный интерфейс, backend, база данных, интеграции и помощь с публикацией в App Store и Google Play.',
       primary: 'Обсудить проект',
       secondary: 'Написать в WhatsApp',
+      price: 'Разработка от 300 000 ₸ · оценка проекта бесплатно',
     },
     showcase: {
       now: 'сейчас',
@@ -530,6 +570,45 @@ export const messages = {
         },
       ],
     },
+    faq: {
+      title: 'Частые вопросы',
+      items: [
+        {
+          question: 'Сколько стоит разработка мобильного приложения?',
+          answer: 'Разработка стоит от 300 000 ₸. Итоговая цена зависит от количества экранов, ролей, интеграций и требований к запуску: после короткого описания задачи дадим оценку по этапам.',
+        },
+        {
+          question: 'Можно ли начать с MVP?',
+          answer: 'Да. Обычно лучше запускать первую версию с главным сценарием, чтобы быстрее проверить спрос и не тратить бюджет на лишние функции.',
+        },
+        {
+          question: 'Вы делаете приложения и для iOS, и для Android?',
+          answer: 'Да, можем подготовить приложение под обе платформы и помочь с технической частью выпуска.',
+        },
+        {
+          question: 'Можно подключить приложение к сайту или CRM?',
+          answer: 'Да. Подключаем API, личные кабинеты, заявки, оплату, уведомления и другие сервисы, если они нужны продукту.',
+        },
+        {
+          question: 'Поможете опубликовать приложение в App Store и Google Play?',
+          answer: 'Да. Готовим сборки и помогаем пройти публикацию в App Store и Google Play или подготовить приложение к внутреннему запуску в компании.',
+        },
+      ],
+    },
+    thanks: {
+      seoTitle: 'Заявка отправлена — Kenzcore Studio',
+      title: 'Спасибо! Заявка отправлена',
+      text: 'Мы получили вашу заявку и свяжемся с вами, чтобы уточнить детали проекта.',
+      stepsTitle: 'Что будет дальше',
+      steps: [
+        'Изучим описание задачи и уточним детали',
+        'Подготовим план первой версии и оценку по этапам',
+        'Обсудим сроки и старт работы',
+      ],
+      faster: 'Хотите обсудить быстрее? Напишите нам:',
+      cases: 'Посмотреть кейсы',
+      home: 'На главную',
+    },
     cases: caseMessages.ru,
     contact: {
       title: 'Готовы обсудить ваш проект?',
@@ -542,7 +621,6 @@ export const messages = {
       descriptionPlaceholder: 'Расскажите о приложении: для кого оно, что должен делать пользователь и есть ли уже сайт или backend.',
       submit: 'Отправить заявку',
       submitting: 'Отправляем...',
-      success: 'Спасибо! Заявка сохранена. Мы свяжемся с вами и уточним детали.',
       privacy: 'Данные используются только для связи по заявке.',
       validation: {
         name: 'Укажите имя.',
@@ -595,6 +673,7 @@ export const messages = {
       noteText: 'Мобильді интерфейс, backend, дерекқор, интеграциялар және App Store мен Google Play-ге жариялауға көмек.',
       primary: 'Жобаны талқылау',
       secondary: 'WhatsApp-қа жазу',
+      price: 'Әзірлеу 300 000 ₸-ден · жобаны бағалау тегін',
     },
     showcase: {
       now: 'қазір',
@@ -812,6 +891,45 @@ export const messages = {
         },
       ],
     },
+    faq: {
+      title: 'Жиі қойылатын сұрақтар',
+      items: [
+        {
+          question: 'Мобильді қосымша әзірлеу қанша тұрады?',
+          answer: 'Әзірлеу 300 000 ₸-ден басталады. Соңғы баға экрандар, рөлдер, интеграциялар саны мен іске қосу талаптарына байланысты: міндетті қысқаша сипаттағаннан кейін кезеңдер бойынша баға береміз.',
+        },
+        {
+          question: 'MVP-ден бастауға бола ма?',
+          answer: 'Иә. Әдетте сұранысты тезірек тексеру және бюджетті артық функцияларға жұмсамау үшін негізгі сценарийі бар алғашқы нұсқаны іске қосқан дұрыс.',
+        },
+        {
+          question: 'iOS үшін де, Android үшін де қосымша жасайсыздар ма?',
+          answer: 'Иә, қосымшаны екі платформаға да дайындап, шығарудың техникалық бөлігіне көмектесеміз.',
+        },
+        {
+          question: 'Қосымшаны сайтқа немесе CRM-ге қосуға бола ма?',
+          answer: 'Иә. Өнімге қажет болса, API, жеке кабинеттерді, өтінімдерді, төлемді, хабарламаларды және басқа сервистерді қосамыз.',
+        },
+        {
+          question: 'Қосымшаны App Store мен Google Play-ге жариялауға көмектесесіздер ме?',
+          answer: 'Иә. Құрастыруларды дайындап, App Store мен Google Play-ге жариялауға немесе компания ішінде іске қосуға көмектесеміз.',
+        },
+      ],
+    },
+    thanks: {
+      seoTitle: 'Өтінім жіберілді — Kenzcore Studio',
+      title: 'Рақмет! Өтінім жіберілді',
+      text: 'Өтініміңізді алдық, жоба мәліметтерін нақтылау үшін сізбен хабарласамыз.',
+      stepsTitle: 'Әрі қарай не болады',
+      steps: [
+        'Міндетті зерттеп, мәліметтерді нақтылаймыз',
+        'Алғашқы нұсқаның жоспары мен кезеңдер бойынша бағасын дайындаймыз',
+        'Мерзімдер мен жұмысты бастауды талқылаймыз',
+      ],
+      faster: 'Тезірек талқылағыңыз келе ме? Бізге жазыңыз:',
+      cases: 'Кейстерді қарау',
+      home: 'Басты бетке',
+    },
     cases: caseMessages.kk,
     contact: {
       title: 'Жобаңызды талқылауға дайынсыз ба?',
@@ -824,7 +942,6 @@ export const messages = {
       descriptionPlaceholder: 'Қосымша туралы жазыңыз: кімге арналған, пайдаланушы не істеуі керек және сайт немесе backend бар ма.',
       submit: 'Өтінім жіберу',
       submitting: 'Жіберіліп жатыр...',
-      success: 'Рахмет! Өтінім сақталды. Толығырақ нақтылау үшін сізбен байланысамыз.',
       privacy: 'Деректер тек осы өтінім бойынша байланысу үшін қолданылады.',
       validation: {
         name: 'Атыңызды жазыңыз.',

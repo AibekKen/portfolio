@@ -8,6 +8,7 @@
       <CasesSection v-reveal />
       <ProcessSection v-reveal />
       <TechStackSection v-reveal />
+      <FaqSection v-reveal />
       <ContactSection v-reveal />
     </main>
     <AppFooter />

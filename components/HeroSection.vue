@@ -33,6 +33,11 @@
               {{ t('hero.secondary') }}
             </BaseButton>
           </div>
+
+          <p class="-mt-2 flex items-center gap-2 text-sm font-semibold text-brand-700 md:-mt-4 md:text-base">
+            <span class="h-2 w-2 shrink-0 rounded-full bg-green-500" aria-hidden="true"></span>
+            {{ t('hero.price') }}
+          </p>
         </div>
 
         <AppShowcase

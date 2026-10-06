@@ -343,9 +343,6 @@
                 {{ isSubmitting ? 'Отправляем...' : 'Получить оценку проекта' }}
               </BaseButton>
 
-              <div v-if="showSuccess" class="rounded-brand border border-green-200 bg-green-50 p-4 text-center text-base text-green-900">
-                Спасибо! Заявка отправлена. Мы свяжемся с вами и уточним детали приложения.
-              </div>
               <div v-if="submitError" class="rounded-brand border border-red-200 bg-red-50 p-4 text-center text-base text-red-900">
                 {{ submitError }}
               </div>
@@ -394,6 +391,8 @@ import { reactive, ref } from 'vue'
 import { siteConfig } from '~/config/site'
 
 const { trackLead, trackContactClick } = useAdsConversion()
+const { getAdSource } = useAdSource()
+const localePath = useLocalePath()
 
 type Form = {
   name: string
@@ -409,7 +408,6 @@ const form = reactive<Form>({
 
 const errors = reactive<Partial<Record<keyof Form, string>>>({})
 const isSubmitting = ref(false)
-const showSuccess = ref(false)
 const submitError = ref('')
 const csrfToken = ref('')
 const honeypot = ref('')
@@ -600,7 +598,6 @@ const handleSubmit = async () => {
 
   isSubmitting.value = true
   submitError.value = ''
-  showSuccess.value = false
 
   try {
     if (!csrfToken.value) {
@@ -617,20 +614,14 @@ const handleSubmit = async () => {
         name: form.name,
         contact: form.contact,
         subject: honeypot.value,
-        description: `Лендинг Google Ads: разработка мобильного приложения\n\n${form.description}`,
+        description: form.description,
+        source: getAdSource(),
       },
     })
 
-    form.name = ''
-    form.contact = ''
-    form.description = ''
-    csrfToken.value = ''
-    showSuccess.value = true
     trackLead()
-
-    setTimeout(() => {
-      showSuccess.value = false
-    }, 5000)
+    // Full page load so the Google tag records the visit to the thank-you page as a conversion
+    window.location.assign(localePath('/spasibo'))
   } catch (error: unknown) {
     csrfToken.value = ''
     submitError.value = getSubmitErrorMessage(error)
@@ -639,7 +630,7 @@ const handleSubmit = async () => {
   }
 }
 
-// Russian-only landing for Google Ads: no /en or /kk copies
+// Russian-only landing for organic search: no /en or /kk copies
 defineI18nRoute({ locales: ['ru'] })
 
 
