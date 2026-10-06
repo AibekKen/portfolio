@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-const googleAdsId = 'AW-18212249649'
+const googleAdsId = 'AW-18497285911'
 const siteUrl = 'https://kenzcore.com'
 
 export default defineNuxtConfig({
