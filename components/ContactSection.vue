@@ -64,8 +64,7 @@
               </p>
             </div>
 
-            <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
-              <label :for="honeypotId">Subject</label>
+            <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true" inert>
               <input :id="honeypotId" v-model="honeypot" type="text" name="subject" tabindex="-1" autocomplete="off" />
             </div>
 
@@ -101,7 +100,7 @@
 
         <div class="flex flex-col gap-4 md:gap-5">
           <a
-            :href="siteConfig.contacts.whatsapp.href"
+            :href="whatsappLink(locale)"
             @click="trackContactClick"
             target="_blank"
             rel="noopener noreferrer"
@@ -179,7 +178,7 @@
 
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
-import { siteConfig } from '~/config/site'
+import { siteConfig, whatsappLink } from '~/config/site'
 
 const { trackLead, trackContactClick } = useAdsConversion()
 
@@ -201,7 +200,7 @@ const submitError = ref('')
 const csrfToken = ref('')
 const honeypot = ref('')
 const honeypotId = 'contact-subject'
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const localePath = useLocalePath()
 const { getAdSource } = useAdSource()
 

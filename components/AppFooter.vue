@@ -32,7 +32,7 @@
           <h4 class="mb-3 font-semibold">{{ t('footer.contacts') }}</h4>
           <ul class="space-y-2 text-sm">
             <li>
-              <a :href="siteConfig.contacts.whatsapp.href" target="_blank" rel="noopener noreferrer" class="text-blue-200 transition-colors hover:text-white">
+              <a :href="whatsappLink(locale)" target="_blank" rel="noopener noreferrer" class="text-blue-200 transition-colors hover:text-white">
                 WhatsApp
               </a>
             </li>
@@ -53,6 +53,7 @@
       <div class="flex flex-col items-center justify-between gap-4 border-t border-blue-800 pt-6 md:flex-row md:pt-8">
         <p class="text-sm text-blue-200">
           © 2026 {{ siteConfig.name }}. {{ t('footer.copyright') }}
+          <span class="block md:inline">{{ t('footer.legal') }}</span>
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <NuxtLink :to="localePath('/privacy-policy')" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
@@ -64,14 +65,14 @@
 </template>
 
 <script setup lang="ts">
-import { siteConfig } from '~/config/site'
+import { siteConfig, whatsappLink } from '~/config/site'
 
 type FooterService = {
   title: string
   href?: string
 }
 
-const { t, tm } = useI18n()
+const { t, tm, locale } = useI18n()
 const localePath = useLocalePath()
 const footerServices = computed(() => tm('services.items') as FooterService[])
 </script>

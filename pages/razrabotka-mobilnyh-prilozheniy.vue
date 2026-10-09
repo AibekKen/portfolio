@@ -225,6 +225,8 @@
         </div>
       </section>
 
+      <ReviewsSection />
+
       <section id="lead-form" class="section-padding bg-brand-900">
         <div class="section-container grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div class="text-white">
@@ -334,8 +336,7 @@
                 <p v-if="errors.description" class="mt-2 text-sm text-red-900">{{ errors.description }}</p>
               </div>
 
-              <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true">
-                <label :for="honeypotId">Subject</label>
+              <div class="absolute -left-[10000px] h-px w-px overflow-hidden" aria-hidden="true" inert>
                 <input :id="honeypotId" v-model="honeypot" type="text" name="subject" tabindex="-1" autocomplete="off" />
               </div>
 

@@ -6,6 +6,7 @@
       <ServicesSection v-reveal />
       <TrustSection v-reveal />
       <CasesSection v-reveal />
+      <ReviewsSection v-reveal />
       <ProcessSection v-reveal />
       <TechStackSection v-reveal />
       <FaqSection v-reveal />

@@ -1,3 +1,13 @@
+const whatsappMessages: Record<string, string> = {
+  ru: 'Здравствуйте! Хочу обсудить разработку мобильного приложения',
+  en: 'Hello! I would like to discuss a mobile app project',
+  kk: 'Сәлеметсіз бе! Мобильді қосымша жасау жобасын талқылағым келеді',
+}
+
+// WhatsApp link with a prefilled message in the visitor's language
+export const whatsappLink = (locale: string) =>
+  `https://wa.me/77713856909?text=${encodeURIComponent(whatsappMessages[locale] ?? whatsappMessages.ru)}`
+
 export const siteConfig = {
   name: 'Kenzcore Studio',
   url: 'https://kenzcore.com',
@@ -18,7 +28,7 @@ export const siteConfig = {
   contacts: {
     whatsapp: {
       label: 'WhatsApp',
-      href: 'https://wa.me/77713856909?text=Hello!%20I%20want%20to%20discuss%20a%20project',
+      href: `https://wa.me/77713856909?text=${encodeURIComponent(whatsappMessages.ru)}`,
       display: '+7 771 385 69 09',
     },
     telegram: {

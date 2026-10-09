@@ -55,9 +55,9 @@
 </template>
 
 <script setup lang="ts">
-import { siteConfig } from '~/config/site'
+import { whatsappLink } from '~/config/site'
 
-const { t } = useI18n()
+const { t, locale } = useI18n()
 const { trackContactClick } = useAdsConversion()
 
 const laptopScreens = computed(() => [
@@ -91,6 +91,6 @@ const scrollToContact = () => {
 
 const openWhatsApp = () => {
   trackContactClick()
-  window.open(siteConfig.contacts.whatsapp.href, '_blank', 'noopener,noreferrer')
+  window.open(whatsappLink(locale.value), '_blank', 'noopener,noreferrer')
 }
 </script>
