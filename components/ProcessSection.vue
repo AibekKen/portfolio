@@ -3,10 +3,10 @@
     <div class="section-container">
       <div class="mb-10 text-center md:mb-14">
         <h2 class="text-3xl font-bold text-brand-900 md:text-4xl lg:text-5xl">
-          {{ t('process.title') }}
+          {{ t(`${ns}.title`) }}
         </h2>
         <p class="mx-auto mt-4 max-w-2xl text-base text-brand-600 md:text-lg">
-          {{ t('process.subtitle') }}
+          {{ t(`${ns}.subtitle`) }}
         </p>
       </div>
 
@@ -73,6 +73,10 @@ type ProcessStep = {
   text: string
 }
 
+// ns lets other pages (e.g. /ai) reuse the section with their own copy
+const props = withDefaults(defineProps<{ ns?: string }>(), { ns: 'process' })
+const ns = computed(() => props.ns)
+
 const { t, tm } = useI18n()
-const steps = computed(() => tm('process.steps') as ProcessStep[])
+const steps = computed(() => tm(`${props.ns}.steps`) as ProcessStep[])
 </script>

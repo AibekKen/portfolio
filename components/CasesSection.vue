@@ -1,5 +1,5 @@
 <template>
-  <section id="cases" class="section-padding bg-white">
+  <section id="cases-dev" class="bg-slate-50 pb-16 pt-12 md:pb-24 md:pt-16">
     <div class="section-container">
       <div class="mb-10 text-center md:mb-14">
         <h2 class="text-3xl font-bold text-brand-900 md:text-4xl lg:text-5xl">

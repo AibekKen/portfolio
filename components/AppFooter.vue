@@ -1,63 +1,69 @@
 <template>
-  <footer class="bg-brand-900 py-8 text-white md:py-12">
+  <footer class="bg-ink py-12 text-white md:py-16">
     <div class="section-container">
-      <div class="mb-8 grid gap-8 md:grid-cols-4">
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
         <div>
-          <h3 class="mb-3 font-bold">{{ siteConfig.name }}</h3>
-          <p class="text-sm text-blue-200">
+          <p class="text-xl font-extrabold tracking-tight">
+            kenzcore <span class="text-gold-300">AI Studio</span>
+          </p>
+          <p class="mt-3 max-w-xs text-sm leading-relaxed text-slate-400">
             {{ t('footer.tagline') }}
           </p>
         </div>
 
         <div>
-          <h4 class="mb-3 font-semibold">{{ t('footer.navigation') }}</h4>
-          <ul class="space-y-2 text-sm">
-            <li><a :href="`${localePath('/')}#services`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.services') }}</a></li>
-            <li><a :href="`${localePath('/')}#cases`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.cases') }}</a></li>
-            <li><a :href="`${localePath('/')}#process`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.process') }}</a></li>
-            <li><a :href="`${localePath('/')}#contact`" class="text-blue-200 transition-colors hover:text-white">{{ t('nav.contact') }}</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="mb-3 font-semibold">{{ t('footer.services') }}</h4>
-          <ul class="space-y-2 text-sm">
-            <li v-for="service in footerServices" :key="service.title">
-              <NuxtLink :to="service.href ? localePath(service.href) : `${localePath('/')}#services`" class="text-blue-200 transition-colors hover:text-white">{{ service.title }}</NuxtLink>
+          <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ t('nav.services') }}</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li v-for="service in services" :key="service.id">
+              <a :href="`${localePath('/')}${service.href?.startsWith('#') ? service.href : '#services'}`" class="text-slate-300 transition-colors hover:text-white">{{ service.title }}</a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h4 class="mb-3 font-semibold">{{ t('footer.contacts') }}</h4>
-          <ul class="space-y-2 text-sm">
+          <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ t('nav.dev') }}</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
+            <li v-for="item in devItems" :key="item.title">
+              <NuxtLink
+                :to="item.href.startsWith('#') ? `${localePath('/')}${item.href}` : localePath(item.href)"
+                class="text-slate-300 transition-colors hover:text-white"
+              >
+                {{ item.title }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ t('footer.contacts') }}</h3>
+          <ul class="mt-4 space-y-2.5 text-sm">
             <li>
-              <a :href="whatsappLink(locale)" target="_blank" rel="noopener noreferrer" class="text-blue-200 transition-colors hover:text-white">
-                WhatsApp
+              <a :href="whatsappLink(locale, 'ai')" target="_blank" rel="noopener noreferrer" class="text-slate-300 transition-colors hover:text-white">
+                WhatsApp · {{ siteConfig.contacts.whatsapp.display }}
               </a>
             </li>
             <li>
-              <a :href="siteConfig.contacts.telegram.href" target="_blank" rel="noopener noreferrer" class="text-blue-200 transition-colors hover:text-white">
-                Telegram
+              <a :href="siteConfig.contacts.telegram.href" target="_blank" rel="noopener noreferrer" class="text-slate-300 transition-colors hover:text-white">
+                Telegram · {{ siteConfig.contacts.telegram.display }}
               </a>
             </li>
             <li>
-              <a :href="siteConfig.contacts.email.href" class="text-blue-200 transition-colors hover:text-white">
-                Email
+              <a :href="siteConfig.contacts.email.href" class="text-slate-300 transition-colors hover:text-white">
+                {{ siteConfig.contacts.email.display }}
               </a>
             </li>
           </ul>
         </div>
       </div>
 
-      <div class="flex flex-col items-center justify-between gap-4 border-t border-blue-800 pt-6 md:flex-row md:pt-8">
-        <p class="text-sm text-blue-200">
+      <div class="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+        <p>
           © 2026 {{ siteConfig.name }}. {{ t('footer.copyright') }}
           <span class="block md:inline">{{ t('footer.legal') }}</span>
         </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <NuxtLink :to="localePath('/privacy-policy')" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
-          <NuxtLink :to="localePath('/terms-of-use')" class="text-sm text-blue-200 transition-colors hover:text-white">{{ t('footer.terms') }}</NuxtLink>
+        <div class="flex flex-wrap gap-5">
+          <NuxtLink :to="localePath('/privacy-policy')" class="transition-colors hover:text-white">{{ t('footer.privacy') }}</NuxtLink>
+          <NuxtLink :to="localePath('/terms-of-use')" class="transition-colors hover:text-white">{{ t('footer.terms') }}</NuxtLink>
         </div>
       </div>
     </div>
@@ -67,12 +73,11 @@
 <script setup lang="ts">
 import { siteConfig, whatsappLink } from '~/config/site'
 
-type FooterService = {
-  title: string
-  href?: string
-}
+type FooterService = { id: string, title: string, href?: string }
+type DevItem = { title: string, href: string }
 
 const { t, tm, locale } = useI18n()
 const localePath = useLocalePath()
-const footerServices = computed(() => tm('services.items') as FooterService[])
+const services = computed(() => tm('ai.services.items') as FooterService[])
+const devItems = computed(() => tm('ai.dev.items') as DevItem[])
 </script>

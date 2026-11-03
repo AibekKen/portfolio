@@ -1,12 +1,12 @@
 <template>
-  <section id="contact" class="section-padding bg-gradient-to-br from-brand-dark via-brand-dark-alt to-blue-900">
+  <section id="contact" class="section-padding bg-cobalt-700">
     <div class="section-container">
       <div class="mb-10 text-center md:mb-14">
         <h2 class="text-3xl font-bold text-white md:text-4xl lg:text-5xl">
-          {{ t('contact.title') }}
+          {{ copy('title') }}
         </h2>
         <p class="mx-auto mt-4 max-w-2xl text-base text-blue-100 md:text-lg">
-          {{ t('contact.subtitle') }}
+          {{ copy('subtitle') }}
         </p>
       </div>
 
@@ -47,6 +47,29 @@
               </p>
             </div>
 
+            <fieldset v-if="topic === 'ai'">
+              <legend class="mb-2 block text-sm font-semibold text-brand-900">
+                {{ t('ai.contact.interestLabel') }}
+              </legend>
+              <div class="flex flex-wrap gap-2">
+                <button
+                  v-for="option in interestOptions"
+                  :key="option"
+                  type="button"
+                  :aria-pressed="interests.includes(option)"
+                  :class="[
+                    'min-h-10 rounded-full border px-4 text-sm font-semibold transition-colors',
+                    interests.includes(option)
+                      ? 'border-cobalt-700 bg-cobalt-700 text-white'
+                      : 'border-slate-200 bg-white text-slate-700 hover:border-cobalt-600',
+                  ]"
+                  @click="toggleInterest(option)"
+                >
+                  {{ option }}
+                </button>
+              </div>
+            </fieldset>
+
             <div>
               <label for="description" class="mb-2 block text-sm font-semibold text-brand-900">
                 {{ t('contact.descriptionLabel') }}
@@ -54,7 +77,7 @@
               <textarea
                 id="description"
                 v-model.trim="form.description"
-                :placeholder="t('contact.descriptionPlaceholder')"
+                :placeholder="copy('descriptionPlaceholder')"
                 rows="5"
                 class="w-full resize-none rounded-brand border border-brand-100 px-4 py-3 text-base outline-none transition-all focus:border-transparent focus:ring-2 focus:ring-brand-primary"
                 :aria-invalid="Boolean(errors.description)"
@@ -100,7 +123,7 @@
 
         <div class="flex flex-col gap-4 md:gap-5">
           <a
-            :href="whatsappLink(locale)"
+            :href="whatsappLink(locale, topic)"
             @click="trackContactClick"
             target="_blank"
             rel="noopener noreferrer"
@@ -180,6 +203,8 @@
 import { reactive, ref } from 'vue'
 import { siteConfig, whatsappLink } from '~/config/site'
 
+const props = withDefaults(defineProps<{ topic?: 'apps' | 'ai' }>(), { topic: 'apps' })
+
 const { trackLead, trackContactClick } = useAdsConversion()
 
 interface Form {
@@ -200,9 +225,22 @@ const submitError = ref('')
 const csrfToken = ref('')
 const honeypot = ref('')
 const honeypotId = 'contact-subject'
-const { t, locale } = useI18n()
+const { t, tm, locale } = useI18n()
 const localePath = useLocalePath()
 const { getAdSource } = useAdSource()
+
+const interests = ref<string[]>([])
+const interestOptions = computed(() => (props.topic === 'ai' ? tm('ai.contact.interests') as string[] : []))
+
+const toggleInterest = (option: string) => {
+  interests.value = interests.value.includes(option)
+    ? interests.value.filter((item) => item !== option)
+    : [...interests.value, option]
+}
+
+// The AI page overrides the heading and hint; every other string is shared
+const copy = (key: 'title' | 'subtitle' | 'descriptionPlaceholder') =>
+  props.topic === 'ai' ? t(`ai.contact.${key}`) : t(`contact.${key}`)
 
 const validate = () => {
   errors.name = form.name.length >= 2 ? '' : t('contact.validation.name')
@@ -252,6 +290,7 @@ const handleSubmit = async () => {
         contact: form.contact,
         subject: honeypot.value,
         description: form.description,
+        interest: interests.value.join(', '),
         source: getAdSource(),
       },
     })

@@ -7,7 +7,7 @@
   }
 
   body {
-    @apply bg-brand-50 text-brand-900 font-sans;
+    @apply bg-white text-ink font-sans antialiased;
   }
 
   h1 {
@@ -24,6 +24,10 @@
 
   h4 {
     @apply text-xl md:text-2xl font-semibold;
+  }
+
+  h1, h2, h3 {
+    text-wrap: balance;
   }
 
   p {
@@ -54,6 +58,10 @@
 
   .badge {
     @apply inline-block px-3 py-1 text-sm font-semibold text-brand-primary bg-blue-50 rounded-full;
+  }
+
+  .eyebrow {
+    @apply text-xs font-bold uppercase tracking-[0.18em] text-cobalt-600;
   }
 
   .section-container {

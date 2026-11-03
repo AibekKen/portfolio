@@ -4,6 +4,8 @@ interface ContactPayload {
   name?: string
   contact?: string
   description?: string
+  // Services the visitor ticked on the form
+  interest?: string
   // Honeypot: hidden from people, so only bots fill it
   subject?: string
   source?: { channel?: unknown, keyword?: unknown } | null
@@ -46,6 +48,7 @@ export default defineEventHandler(async (event) => {
   const name = normalizeField(body.name, 120)
   const contact = normalizeField(body.contact, 180)
   const description = normalizeField(body.description, 2000)
+  const interest = normalizeField(body.interest, 200)
 
   if (name.length < 2 || contact.length < 5 || description.length < 15) {
     throw createError({
@@ -70,10 +73,11 @@ export default defineEventHandler(async (event) => {
   const pagePath = getRefererPath(getHeader(event, 'referer'))
 
   const message = [
-    'Новая заявка с сайта Kenzcore Studio',
+    'Новая заявка с сайта kenzcore AI Studio',
     '',
     `Имя: ${name}`,
     `Контакт: ${contact}`,
+    ...(interest ? [`Интерес: ${interest}`] : []),
     `Источник: ${isAdLead ? 'Google Ads' : 'сайт'}`,
     ...(isAdLead && keyword ? [`Запрос: ${keyword}`] : []),
     ...(pagePath ? [`Страница: ${pagePath}`] : []),

@@ -1,137 +1,95 @@
 <template>
-  <header class="bg-white border-b border-brand-100 sticky top-0 z-50">
-    <nav class="section-container flex items-center justify-between py-4 md:py-5">
-      <div class="flex min-w-0 items-center">
-        <img
-          :src="siteConfig.logo.src"
-          :alt="siteConfig.logo.alt"
-          :width="siteConfig.logo.width"
-          :height="siteConfig.logo.height"
-          class="h-12 w-auto max-w-56 object-contain md:h-14 md:max-w-72"
-        />
-      </div>
+  <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <nav class="section-container flex items-center justify-between gap-6 py-3.5">
+      <BrandMark />
 
-      <div class="hidden md:flex items-center gap-8">
+      <div class="hidden items-center gap-7 whitespace-nowrap lg:flex">
         <a
-          :href="`${localePath('/')}#services`"
-          class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
+          v-for="link in links"
+          :key="link.hash"
+          :href="`${localePath('/')}#${link.hash}`"
+          class="nav-link text-[0.95rem] font-medium text-slate-600 transition-colors hover:text-ink"
         >
-          {{ t('nav.services') }}
-        </a>
-        <a
-          :href="`${localePath('/')}#cases`"
-          class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
-        >
-          {{ t('nav.cases') }}
-        </a>
-        <a
-          :href="`${localePath('/')}#process`"
-          class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
-        >
-          {{ t('nav.process') }}
-        </a>
-        <a
-          :href="`${localePath('/')}#contact`"
-          class="text-brand-700 hover:text-brand-primary font-medium transition-colors"
-        >
-          {{ t('nav.contact') }}
+          {{ t(link.label) }}
         </a>
       </div>
 
-      <div class="hidden items-center gap-4 md:flex">
-        <div class="flex rounded-brand border border-brand-100 bg-brand-50 p-1" :aria-label="t('nav.languageLabel')" role="group">
+      <div class="hidden items-center gap-3 lg:flex">
+        <div class="flex rounded-full border border-slate-200 p-0.5" :aria-label="t('nav.languageLabel')" role="group">
           <NuxtLink
             v-for="option in languageOptions"
             :key="option.code"
             :to="switchLocalePath(option.code)"
             :hreflang="option.code"
             :class="[
-              'lang-link flex min-h-9 items-center rounded-[6px] px-3 text-sm font-bold transition-colors',
-              locale === option.code ? 'bg-white text-brand-primary shadow-sm' : 'text-brand-600 hover:text-brand-900',
+              'flex min-h-8 items-center rounded-full px-2.5 text-xs font-bold transition-colors',
+              locale === option.code ? 'bg-ink text-white' : 'text-slate-500 hover:text-ink',
             ]"
             :aria-current="locale === option.code ? 'true' : undefined"
           >
             {{ option.label }}
           </NuxtLink>
         </div>
-        <BaseButton variant="primary" @click="scrollToContact">
+        <button
+          type="button"
+          class="inline-flex min-h-11 items-center rounded-full bg-cobalt-700 px-5 text-sm font-semibold text-white transition-colors hover:bg-cobalt-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-cobalt-600 focus-visible:ring-offset-2"
+          @click="scrollToContact"
+        >
           {{ t('nav.cta') }}
-        </BaseButton>
+        </button>
       </div>
 
       <button
-        class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5 hover:opacity-70 transition-opacity"
-        @click="isMenuOpen = !isMenuOpen"
+        type="button"
+        class="flex h-11 w-11 flex-col items-center justify-center gap-1.5 rounded-full transition-colors hover:bg-slate-100 lg:hidden"
         :aria-label="t('nav.menu')"
+        :aria-expanded="isMenuOpen"
+        @click="isMenuOpen = !isMenuOpen"
       >
-        <span :class="['w-6 h-0.5 bg-brand-900 transition-all', isMenuOpen && 'rotate-45 translate-y-2']"></span>
-        <span :class="['w-6 h-0.5 bg-brand-900 transition-all', isMenuOpen && 'opacity-0']"></span>
-        <span :class="['w-6 h-0.5 bg-brand-900 transition-all', isMenuOpen && '-rotate-45 -translate-y-2']"></span>
+        <span :class="['h-0.5 w-5 bg-ink transition-transform', isMenuOpen && 'translate-y-2 rotate-45']"></span>
+        <span :class="['h-0.5 w-5 bg-ink transition-opacity', isMenuOpen && 'opacity-0']"></span>
+        <span :class="['h-0.5 w-5 bg-ink transition-transform', isMenuOpen && '-translate-y-2 -rotate-45']"></span>
       </button>
     </nav>
 
     <transition
-      enter-active-class="transition-all duration-300"
-      leave-active-class="transition-all duration-300"
-      enter-from-class="opacity-0 -translate-y-4"
-      leave-to-class="opacity-0 -translate-y-4"
+      enter-active-class="transition duration-200 ease-out"
+      leave-active-class="transition duration-150 ease-in"
+      enter-from-class="opacity-0 -translate-y-2"
+      leave-to-class="opacity-0 -translate-y-2"
     >
-      <div
-        v-if="isMenuOpen"
-        class="md:hidden bg-white border-t border-brand-100 px-4 py-4"
-      >
-        <div class="flex flex-col gap-3">
-          <a
-            :href="`${localePath('/')}#services`"
-            class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
-            @click="isMenuOpen = false"
+      <div v-if="isMenuOpen" class="border-t border-slate-200 bg-white px-4 pb-5 pt-2 lg:hidden">
+        <a
+          v-for="link in links"
+          :key="link.hash"
+          :href="`${localePath('/')}#${link.hash}`"
+          class="block border-b border-slate-100 py-3.5 text-base font-semibold text-ink"
+          @click="isMenuOpen = false"
+        >
+          {{ t(link.label) }}
+        </a>
+        <div class="mt-4 flex rounded-full border border-slate-200 p-1" :aria-label="t('nav.languageLabel')" role="group">
+          <NuxtLink
+            v-for="option in languageOptions"
+            :key="option.code"
+            :to="switchLocalePath(option.code)"
+            :hreflang="option.code"
+            :class="[
+              'flex min-h-10 flex-1 items-center justify-center rounded-full text-sm font-bold transition-colors',
+              locale === option.code ? 'bg-ink text-white' : 'text-slate-500',
+            ]"
+            :aria-current="locale === option.code ? 'true' : undefined"
           >
-            {{ t('nav.services') }}
-          </a>
-          <a
-            :href="`${localePath('/')}#cases`"
-            class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
-            @click="isMenuOpen = false"
-          >
-            {{ t('nav.cases') }}
-          </a>
-          <a
-            :href="`${localePath('/')}#process`"
-            class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
-            @click="isMenuOpen = false"
-          >
-            {{ t('nav.process') }}
-          </a>
-          <a
-            :href="`${localePath('/')}#contact`"
-            class="text-brand-900 font-medium hover:text-brand-primary transition-colors py-3"
-            @click="isMenuOpen = false"
-          >
-            {{ t('nav.contact') }}
-          </a>
-          <div class="flex rounded-brand border border-brand-100 bg-brand-50 p-1" :aria-label="t('nav.languageLabel')" role="group">
-            <NuxtLink
-              v-for="option in languageOptions"
-              :key="option.code"
-              :to="switchLocalePath(option.code)"
-              :hreflang="option.code"
-              :class="[
-                'lang-link flex min-h-10 flex-1 items-center justify-center rounded-[6px] px-3 text-sm font-bold transition-colors',
-                locale === option.code ? 'bg-white text-brand-primary shadow-sm' : 'text-brand-600 hover:text-brand-900',
-              ]"
-              :aria-current="locale === option.code ? 'true' : undefined"
-            >
-              {{ option.label }}
-            </NuxtLink>
-          </div>
-          <BaseButton
-            variant="primary"
-            class="w-full"
-            @click="scrollToContact"
-          >
-            {{ t('nav.cta') }}
-          </BaseButton>
+            {{ option.label }}
+          </NuxtLink>
         </div>
+        <button
+          type="button"
+          class="mt-3 flex min-h-12 w-full items-center justify-center rounded-full bg-cobalt-700 font-semibold text-white"
+          @click="scrollToContact"
+        >
+          {{ t('nav.cta') }}
+        </button>
       </div>
     </transition>
   </header>
@@ -139,46 +97,57 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { siteConfig } from '~/config/site'
 import { languageOptions } from '~/i18n/messages'
+
+const links = [
+  { hash: 'services', label: 'nav.services' },
+  { hash: 'cases', label: 'nav.cases' },
+  { hash: 'process', label: 'nav.process' },
+  { hash: 'development', label: 'nav.dev' },
+  { hash: 'faq', label: 'nav.faq' },
+]
 
 const isMenuOpen = ref(false)
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
-const route = useRoute()
 const router = useRouter()
 
 const scrollToContact = () => {
   isMenuOpen.value = false
 
-  if (route.path !== localePath('/')) {
+  // Any page with its own contact form scrolls to it; the rest go to the home page form
+  const element = document.getElementById('contact')
+
+  if (!element) {
     router.push(`${localePath('/')}#contact`)
     return
   }
 
-  const element = document.getElementById('contact')
-  element?.scrollIntoView({ behavior: 'smooth' })
+  element.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
 <style scoped>
-a {
+.nav-link {
   position: relative;
 }
 
-a:not(.lang-link)::after {
+.nav-link::after {
   content: '';
   position: absolute;
-  bottom: 0;
   left: 0;
-  width: 0;
-  height: 0.125rem;
-  background-color: #0B63F6;
-  transition: width 200ms ease;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 2px;
+  background: #e3a512;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-a:not(.lang-link):hover::after {
-  width: 100%;
+.nav-link:hover::after {
+  transform: scaleX(1);
 }
 </style>

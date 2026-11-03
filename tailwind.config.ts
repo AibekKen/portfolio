@@ -22,6 +22,24 @@ export default {
           dark: "#061B4E",
           "dark-alt": "#0B2A6F",
         },
+        // AI Studio palette: cobalt carries the hero, gold is the single warm accent
+        cobalt: {
+          600: "#0B5AE6",
+          700: "#0A47C2",
+          800: "#08379A",
+          900: "#072A78",
+          950: "#051C52",
+        },
+        gold: {
+          200: "#FFE7A3",
+          300: "#FFD866",
+          400: "#F7C531",
+          500: "#E3A512",
+        },
+        ink: "#0E1630",
+      },
+      fontFamily: {
+        sans: ["Onest", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
       },
       borderRadius: {
         brand: "16px",

@@ -1,3 +1,4 @@
+import { aiMessages } from './ai'
 import { caseMessages } from './cases'
 
 export const languageOptions = [
@@ -15,9 +16,11 @@ export const messages = {
       ogDescription: 'We design and build iOS and Android apps with a backend, admin panel, and integrations.',
     },
     nav: {
-      services: 'Services',
+      services: 'Solutions',
       cases: 'Cases',
-      process: 'Process',
+      process: 'How we work',
+      dev: 'Development',
+      faq: 'FAQ',
       contact: 'Contacts',
       cta: 'Free estimate',
       menu: 'Menu',
@@ -106,7 +109,7 @@ export const messages = {
         title: 'Websites that explain the offer and bring real requests',
         text: 'We build company websites, service pages, portfolios, and landing pages with a clear route from first screen to contact.',
         meta: 'Fast business websites and landing pages: clear structure, responsive design, SEO basics and lead forms. Send your task and get a free estimate.',
-        seoTitle: 'Business Website and Landing Page Development — Kenzcore',
+        seoTitle: 'Business Website and Landing Page Development · kenzcore AI Studio',
         illustrationLabel: 'Website launch board',
         stats: [
           { value: '01', label: 'Structure before visuals' },
@@ -135,7 +138,7 @@ export const messages = {
         title: 'Mobile applications for products, teams, and customer workflows',
         text: 'We design and build practical iOS and Android apps around the core action: requests, profiles, orders, notifications, and integrations.',
         meta: 'iOS and Android apps for orders, bookings, deliveries and customer accounts: from MVP to release, with backend and integrations. Free estimate.',
-        seoTitle: 'Mobile App Development for Business — Kenzcore',
+        seoTitle: 'Mobile App Development for Business · kenzcore AI Studio',
         illustrationLabel: 'Mobile app interface',
         stats: [
           { value: 'iOS', label: 'Apple-ready flow' },
@@ -293,6 +296,7 @@ export const messages = {
       home: 'Back to home',
     },
     cases: caseMessages.en,
+    ai: aiMessages.en,
     contact: {
       title: 'Ready to discuss your project?',
       subtitle: 'Leave a request and we will contact you, clarify the task, and suggest a possible solution.',
@@ -313,7 +317,7 @@ export const messages = {
       submitError: 'Could not send the request. Please write to us on WhatsApp, Telegram, or email.',
     },
     footer: {
-      tagline: 'Mobile app development',
+      tagline: 'AI solutions and development',
       navigation: 'Navigation',
       services: 'Services',
       contacts: 'Contacts',
@@ -341,9 +345,11 @@ export const messages = {
       ogDescription: 'Проектируем и разрабатываем iOS и Android приложения с сервером, админ-панелью и интеграциями.',
     },
     nav: {
-      services: 'Услуги',
+      services: 'Решения',
       cases: 'Кейсы',
-      process: 'Процесс',
+      process: 'Как работаем',
+      dev: 'Разработка',
+      faq: 'Вопросы',
       contact: 'Контакты',
       cta: 'Бесплатная оценка',
       menu: 'Меню',
@@ -432,7 +438,7 @@ export const messages = {
         title: 'Сайты, которые объясняют предложение и приводят заявки',
         text: 'Создаём сайты компаний, страницы услуг, портфолио и лендинги с понятным маршрутом от первого экрана до контакта.',
         meta: 'Быстрые сайты и лендинги для бизнеса: понятная структура, адаптивный дизайн, SEO-база и формы заявок. Опишите задачу — оценим бесплатно.',
-        seoTitle: 'Разработка сайтов и лендингов для бизнеса — Kenzcore',
+        seoTitle: 'Разработка сайтов и лендингов для бизнеса · kenzcore AI Studio',
         illustrationLabel: 'Панель запуска сайта',
         stats: [
           { value: '01', label: 'Структура до визуала' },
@@ -461,7 +467,7 @@ export const messages = {
         title: 'Мобильные приложения для продуктов, команд и клиентских сценариев',
         text: 'Проектируем и разрабатываем iOS/Android приложения вокруг главного действия: заявки, профили, заказы, уведомления и интеграции.',
         meta: 'iOS и Android приложения для заказов, записи, доставки и личных кабинетов: от MVP до запуска, с сервером и интеграциями. Бесплатная оценка.',
-        seoTitle: 'Мобильные приложения для бизнеса под ключ — Kenzcore',
+        seoTitle: 'Мобильные приложения для бизнеса под ключ · kenzcore AI Studio',
         illustrationLabel: 'Интерфейс мобильного приложения',
         stats: [
           { value: 'iOS', label: 'Готовность к Apple flow' },
@@ -619,6 +625,7 @@ export const messages = {
       home: 'На главную',
     },
     cases: caseMessages.ru,
+    ai: aiMessages.ru,
     contact: {
       title: 'Готовы обсудить ваш проект?',
       subtitle: 'Оставьте заявку — мы свяжемся с вами, уточним задачу и предложим возможное решение.',
@@ -639,7 +646,7 @@ export const messages = {
       submitError: 'Не удалось отправить заявку. Напишите нам в WhatsApp, Telegram или на email.',
     },
     footer: {
-      tagline: 'Разработка мобильных приложений',
+      tagline: 'ИИ-решения и разработка',
       navigation: 'Навигация',
       services: 'Услуги',
       contacts: 'Контакты',
@@ -667,9 +674,11 @@ export const messages = {
       ogDescription: 'Сервері, админ-панелі және интеграциялары бар iOS және Android қосымшаларын жобалап, әзірлейміз.',
     },
     nav: {
-      services: 'Қызметтер',
+      services: 'Шешімдер',
       cases: 'Кейстер',
-      process: 'Процесс',
+      process: 'Қалай жұмыс істейміз',
+      dev: 'Әзірлеу',
+      faq: 'Сұрақтар',
       contact: 'Байланыс',
       cta: 'Тегін бағалау',
       menu: 'Мәзір',
@@ -758,7 +767,7 @@ export const messages = {
         title: 'Ұсынысты түсіндіріп, нақты өтінім әкелетін сайттар',
         text: 'Бірінші экраннан байланысқа дейін түсінікті бағыты бар компания сайттарын, қызмет беттерін, портфолио және лендингтер жасаймыз.',
         meta: 'Бизнеске жылдам сайттар мен лендингтер: түсінікті құрылым, адаптив дизайн, SEO негізі және өтінім формалары. Міндетті жазыңыз — тегін бағалаймыз.',
-        seoTitle: 'Бизнеске сайттар мен лендингтер жасау — Kenzcore',
+        seoTitle: 'Бизнеске сайттар мен лендингтер жасау · kenzcore AI Studio',
         illustrationLabel: 'Сайтты іске қосу панелі',
         stats: [
           { value: '01', label: 'Алдымен құрылым' },
@@ -787,7 +796,7 @@ export const messages = {
         title: 'Өнімдерге, командаларға және клиент сценарийлеріне арналған мобильді қосымшалар',
         text: 'iOS/Android қосымшаларын негізгі әрекет айналасында жобалаймыз және әзірлейміз: өтінімдер, профильдер, тапсырыстар, хабарламалар және интеграциялар.',
         meta: 'Тапсырыстар, жазылу, жеткізу және жеке кабинеттер үшін iOS және Android қосымшалары: MVP-ден іске қосуға дейін, сервермен және интеграциялармен. Тегін бағалау.',
-        seoTitle: 'Бизнеске арналған мобильді қосымшалар — Kenzcore',
+        seoTitle: 'Бизнеске арналған мобильді қосымшалар · kenzcore AI Studio',
         illustrationLabel: 'Мобильді қосымша интерфейсі',
         stats: [
           { value: 'iOS', label: 'Apple flow дайындығы' },
@@ -945,6 +954,7 @@ export const messages = {
       home: 'Басты бетке',
     },
     cases: caseMessages.kk,
+    ai: aiMessages.kk,
     contact: {
       title: 'Жобаңызды талқылауға дайынсыз ба?',
       subtitle: 'Өтінім қалдырыңыз, біз сізбен байланысып, тапсырманы нақтылап, ықтимал шешім ұсынамыз.',
@@ -965,7 +975,7 @@ export const messages = {
       submitError: 'Өтінімді жіберу мүмкін болмады. Бізге WhatsApp, Telegram немесе email арқылы жазыңыз.',
     },
     footer: {
-      tagline: 'Мобильді қосымшалар әзірлеу',
+      tagline: 'ЖИ шешімдері және әзірлеу',
       navigation: 'Навигация',
       services: 'Қызметтер',
       contacts: 'Байланыс',

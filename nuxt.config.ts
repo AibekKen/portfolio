@@ -18,6 +18,12 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/styles/main.css'],
+  // The AI Studio page became the home page
+  routeRules: {
+    '/ai': { redirect: { to: '/', statusCode: 301 } },
+    '/en/ai': { redirect: { to: '/en', statusCode: 301 } },
+    '/kk/ai': { redirect: { to: '/kk', statusCode: 301 } },
+  },
   modules: ['@nuxtjs/i18n'],
   i18n: {
     // Russian lives at the root; other languages get their own URLs so each version is indexable
@@ -54,7 +60,10 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
         { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icon-192x192.png' },
-        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/icon-512x512.png' }
+        { rel: 'icon', type: 'image/png', sizes: '512x512', href: '/icon-512x512.png' },
+        { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+        { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Onest:wght@400..800&display=swap' },
       ],
       noscript: [
         {

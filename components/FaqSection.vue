@@ -2,7 +2,7 @@
   <section id="faq" class="section-padding bg-white">
     <div class="section-container max-w-4xl">
       <h2 class="mb-8 text-center text-3xl font-bold text-brand-900 md:mb-10 md:text-4xl lg:text-5xl">
-        {{ t('faq.title') }}
+        {{ t(`${ns}.title`) }}
       </h2>
 
       <div class="space-y-3">
@@ -31,8 +31,12 @@ type FaqItem = {
   answer: string
 }
 
+// ns lets other pages (e.g. /ai) reuse the section with their own questions
+const props = withDefaults(defineProps<{ ns?: string }>(), { ns: 'faq' })
+const ns = computed(() => props.ns)
+
 const { t, tm } = useI18n()
-const items = computed(() => tm('faq.items') as FaqItem[])
+const items = computed(() => tm(`${props.ns}.items`) as FaqItem[])
 
 useHead(() => ({
   script: [
