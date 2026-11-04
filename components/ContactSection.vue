@@ -203,7 +203,13 @@
 import { reactive, ref } from 'vue'
 import { siteConfig, whatsappLink } from '~/config/site'
 
-const props = withDefaults(defineProps<{ topic?: 'apps' | 'ai' }>(), { topic: 'apps' })
+const props = withDefaults(defineProps<{
+  topic?: 'apps' | 'ai'
+  // Namespace with title, subtitle and descriptionPlaceholder, e.g. 'automation.contact'
+  copyNs?: string
+  // Index into ai.contact.interests that starts selected
+  defaultInterest?: number
+}>(), { topic: 'apps', copyNs: undefined, defaultInterest: undefined })
 
 const { trackLead, trackContactClick } = useAdsConversion()
 
@@ -229,8 +235,9 @@ const { t, tm, locale } = useI18n()
 const localePath = useLocalePath()
 const { getAdSource } = useAdSource()
 
-const interests = ref<string[]>([])
 const interestOptions = computed(() => (props.topic === 'ai' ? tm('ai.contact.interests') as string[] : []))
+const preselected = props.defaultInterest === undefined ? undefined : interestOptions.value[props.defaultInterest]
+const interests = ref<string[]>(preselected ? [preselected] : [])
 
 const toggleInterest = (option: string) => {
   interests.value = interests.value.includes(option)
@@ -240,7 +247,7 @@ const toggleInterest = (option: string) => {
 
 // The AI page overrides the heading and hint; every other string is shared
 const copy = (key: 'title' | 'subtitle' | 'descriptionPlaceholder') =>
-  props.topic === 'ai' ? t(`ai.contact.${key}`) : t(`contact.${key}`)
+  t(`${props.copyNs ?? (props.topic === 'ai' ? 'ai.contact' : 'contact')}.${key}`)
 
 const validate = () => {
   errors.name = form.name.length >= 2 ? '' : t('contact.validation.name')

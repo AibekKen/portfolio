@@ -1,4 +1,5 @@
 import { aiMessages } from './ai'
+import { automationMessages } from './automation'
 import { caseMessages } from './cases'
 
 export const languageOptions = [
@@ -16,6 +17,7 @@ export const messages = {
       ogDescription: 'We design and build iOS and Android apps with a backend, admin panel, and integrations.',
     },
     nav: {
+      automation: 'Automation',
       services: 'Solutions',
       cases: 'Cases',
       process: 'How we work',
@@ -297,6 +299,7 @@ export const messages = {
     },
     cases: caseMessages.en,
     ai: aiMessages.en,
+    automation: automationMessages.en,
     contact: {
       title: 'Ready to discuss your project?',
       subtitle: 'Leave a request and we will contact you, clarify the task, and suggest a possible solution.',
@@ -345,6 +348,7 @@ export const messages = {
       ogDescription: 'Проектируем и разрабатываем iOS и Android приложения с сервером, админ-панелью и интеграциями.',
     },
     nav: {
+      automation: 'Автоматизация',
       services: 'Решения',
       cases: 'Кейсы',
       process: 'Как работаем',
@@ -626,6 +630,7 @@ export const messages = {
     },
     cases: caseMessages.ru,
     ai: aiMessages.ru,
+    automation: automationMessages.ru,
     contact: {
       title: 'Готовы обсудить ваш проект?',
       subtitle: 'Оставьте заявку — мы свяжемся с вами, уточним задачу и предложим возможное решение.',
@@ -674,6 +679,7 @@ export const messages = {
       ogDescription: 'Сервері, админ-панелі және интеграциялары бар iOS және Android қосымшаларын жобалап, әзірлейміз.',
     },
     nav: {
+      automation: 'Автоматтандыру',
       services: 'Шешімдер',
       cases: 'Кейстер',
       process: 'Қалай жұмыс істейміз',
@@ -955,6 +961,7 @@ export const messages = {
     },
     cases: caseMessages.kk,
     ai: aiMessages.kk,
+    automation: automationMessages.kk,
     contact: {
       title: 'Жобаңызды талқылауға дайынсыз ба?',
       subtitle: 'Өтінім қалдырыңыз, біз сізбен байланысып, тапсырманы нақтылап, ықтимал шешім ұсынамыз.',

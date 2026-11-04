@@ -4,15 +4,15 @@
 export const aiMessages = {
   ru: {
     seo: {
-      title: 'Внедрение ИИ в бизнес: чат-боты, RAG и локальные LLM · kenzcore AI Studio',
-      description: 'kenzcore AI Studio в Алматы внедряет ИИ в бизнес: чат-боты для WhatsApp и Telegram, ассистенты по вашим документам (RAG), локальные LLM на ваших серверах, автоматизация и разработка приложений. Бесплатная оценка.',
+      title: 'ИИ для бизнеса: автоматизация процессов, чат-боты и локальные LLM · kenzcore AI Studio',
+      description: 'kenzcore AI Studio в Алматы внедряет ИИ в бизнес: автоматизация процессов с ИИ-агентами, чат-боты для WhatsApp и Telegram, ассистенты по вашим документам (RAG), локальные LLM на ваших серверах. Бесплатная оценка.',
       ogTitle: 'kenzcore AI Studio: ИИ-решения для бизнеса',
       ogDescription: 'ИИ-боты, поиск по вашим документам и своя языковая модель на ваших серверах. Начинаем с пилота.',
     },
     hero: {
       eyebrow: 'kenzcore AI Studio · Алматы, Казахстан',
       title: 'Внедряем ИИ, который берёт на себя рутину вашей команды',
-      text: 'Боты, которые отвечают клиентам. Ассистенты, которые знают ваши документы. Языковые модели, которые работают на ваших серверах и не отдают данные наружу.',
+      text: 'Агенты сами разбирают заявки, письма и документы. Боты отвечают клиентам. Ассистенты знают ваши регламенты. Всё это может работать на ваших серверах, не отдавая данные наружу.',
       primary: 'Обсудить задачу',
       secondary: 'Написать в WhatsApp',
       note: 'Первая консультация и оценка бесплатно. Начинаем с пилота на ваших данных.',
@@ -22,6 +22,14 @@ export const aiMessages = {
       tabsLabel: 'Примеры решений',
       typing: 'печатает',
       scenarios: [
+        {
+          id: 'agent',
+          tab: 'Агент',
+          channel: 'Почта · отдел продаж',
+          question: 'Нужно 40 мешков цемента М500 в Алмалинский район до пятницы, оплата по счёту. ТОО «Пример»',
+          answer: 'Разобрал заявку: цемент М500, 40 мешков, Алмалинский район, до пятницы, оплата по счёту, клиент ТОО «Пример».',
+          meta: 'Сделка создана в CRM, менеджер получил задачу выставить счёт',
+        },
         {
           id: 'bot',
           tab: 'ИИ-бот',
@@ -93,6 +101,13 @@ export const aiMessages = {
       more: 'Подробнее',
       items: [
         {
+          id: 'agents',
+          title: 'ИИ-агенты и автоматизация процессов',
+          text: 'Заявки из мессенджеров и почты сами попадают в CRM, счета и договоры разбираются в таблицы, отчёты собираются без людей. Агент работает по вашим правилам, спорные случаи отдаёт человеку.',
+          tools: ['CRM', 'Почта', 'Таблицы', 'API'],
+          href: '/services/ai-automation',
+        },
+        {
           id: 'bots',
           title: 'ИИ-боты и ассистенты',
           text: 'Для WhatsApp, Telegram и сайта. Отвечают клиентам, принимают и квалифицируют заявки, передают сложные вопросы оператору.',
@@ -110,12 +125,6 @@ export const aiMessages = {
           text: 'Подбираем модель и железо, устанавливаем, настраиваем и подключаем к вашим системам. Данные остаются внутри компании, можно работать без интернета.',
           tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
           href: '#local-llm',
-        },
-        {
-          id: 'agents',
-          title: 'ИИ-агенты и автоматизация',
-          text: 'Обработка заявок, писем, документов и отчётов по вашим правилам.',
-          tools: ['n8n', 'API', 'CRM и таблицы'],
         },
         {
           id: 'dev',
@@ -285,15 +294,15 @@ export const aiMessages = {
 
   en: {
     seo: {
-      title: 'AI for Business: Chatbots, RAG and Local LLMs · kenzcore AI Studio',
-      description: 'kenzcore AI Studio in Almaty brings AI into business: chatbots for WhatsApp and Telegram, assistants over your documents (RAG), local LLMs on your own servers, automation and app development. Free estimate.',
+      title: 'AI for Business: Process Automation, Chatbots and Local LLMs · kenzcore AI Studio',
+      description: 'kenzcore AI Studio in Almaty brings AI into business: process automation with AI agents, chatbots for WhatsApp and Telegram, assistants over your documents (RAG), local LLMs on your own servers. Free estimate.',
       ogTitle: 'kenzcore AI Studio: AI solutions for business',
       ogDescription: 'AI bots, search over your documents and your own language model on your servers. We start with a pilot.',
     },
     hero: {
       eyebrow: 'kenzcore AI Studio · Almaty, Kazakhstan',
       title: 'We put AI to work on your team\'s routine',
-      text: 'Bots that answer your customers. Assistants that know your documents. Language models that run on your own servers and keep data inside.',
+      text: 'Agents handle requests, emails and documents on their own. Bots answer your customers. Assistants know your regulations. All of it can run on your own servers and keep data inside.',
       primary: 'Discuss your task',
       secondary: 'Write on WhatsApp',
       note: 'The first consultation and estimate are free. We start with a pilot on your data.',
@@ -303,6 +312,14 @@ export const aiMessages = {
       tabsLabel: 'Solution examples',
       typing: 'typing',
       scenarios: [
+        {
+          id: 'agent',
+          tab: 'Agent',
+          channel: 'Email · sales',
+          question: 'We need 40 bags of M500 cement in Almaly district by Friday, payment by invoice. Primer LLP',
+          answer: 'Request parsed: M500 cement, 40 bags, Almaly district, by Friday, payment by invoice, client Primer LLP.',
+          meta: 'A deal is created in the CRM, a manager got a task to issue the invoice',
+        },
         {
           id: 'bot',
           tab: 'AI bot',
@@ -374,6 +391,13 @@ export const aiMessages = {
       more: 'Learn more',
       items: [
         {
+          id: 'agents',
+          title: 'AI agents and process automation',
+          text: 'Requests from messengers and email land in the CRM on their own, invoices and contracts are parsed into spreadsheets, reports are compiled without people. The agent follows your rules and hands unclear cases to a person.',
+          tools: ['CRM', 'Email', 'Spreadsheets', 'API'],
+          href: '/services/ai-automation',
+        },
+        {
           id: 'bots',
           title: 'AI bots and assistants',
           text: 'For WhatsApp, Telegram and your website. They answer customers, take and qualify requests, and hand complex questions to an operator.',
@@ -391,12 +415,6 @@ export const aiMessages = {
           text: 'We choose the model and hardware, install, tune and connect it to your systems. Data stays inside the company and it can work offline.',
           tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
           href: '#local-llm',
-        },
-        {
-          id: 'agents',
-          title: 'AI agents and automation',
-          text: 'Handling requests, emails, documents and reports by your rules.',
-          tools: ['n8n', 'API', 'CRM and sheets'],
         },
         {
           id: 'dev',
@@ -566,15 +584,15 @@ export const aiMessages = {
 
   kk: {
     seo: {
-      title: 'Бизнеске ЖИ енгізу: чат-боттар, RAG және локалды LLM · kenzcore AI Studio',
-      description: 'Алматыдағы kenzcore AI Studio бизнеске ЖИ енгізеді: WhatsApp пен Telegram-ға арналған чат-боттар, құжаттарыңыз бойынша ассистенттер (RAG), өз серверіңіздегі локалды LLM, автоматтандыру және қосымшалар әзірлеу. Тегін бағалау.',
+      title: 'Бизнеске арналған ЖИ: процестерді автоматтандыру, чат-боттар және локалды LLM · kenzcore AI Studio',
+      description: 'Алматыдағы kenzcore AI Studio бизнеске ЖИ енгізеді: ЖИ-агенттермен процестерді автоматтандыру, WhatsApp пен Telegram-ға арналған чат-боттар, құжаттарыңыз бойынша ассистенттер (RAG), өз серверіңіздегі локалды LLM. Тегін бағалау.',
       ogTitle: 'kenzcore AI Studio: бизнеске арналған ЖИ шешімдері',
       ogDescription: 'ЖИ-боттар, құжаттар бойынша іздеу және өз серверіңіздегі жеке тіл моделі. Пилоттан бастаймыз.',
     },
     hero: {
       eyebrow: 'kenzcore AI Studio · Алматы, Қазақстан',
       title: 'Командаңыздың күнделікті жұмысын ЖИ-ге тапсырамыз',
-      text: 'Клиенттерге жауап беретін боттар. Құжаттарыңызды білетін ассистенттер. Өз серверіңізде жұмыс істеп, деректерді сыртқа шығармайтын тіл модельдері.',
+      text: 'Агенттер өтінімдерді, хаттар мен құжаттарды өзі талдайды. Боттар клиенттерге жауап береді. Ассистенттер регламенттеріңізді біледі. Мұның бәрі деректерді сыртқа шығармай, өз серверіңізде жұмыс істей алады.',
       primary: 'Міндетті талқылау',
       secondary: 'WhatsApp-қа жазу',
       note: 'Алғашқы кеңес пен бағалау тегін. Өз деректеріңізде пилоттан бастаймыз.',
@@ -584,6 +602,14 @@ export const aiMessages = {
       tabsLabel: 'Шешімдер мысалдары',
       typing: 'жазып жатыр',
       scenarios: [
+        {
+          id: 'agent',
+          tab: 'Агент',
+          channel: 'Пошта · сату бөлімі',
+          question: 'Жұмаға дейін Алмалы ауданына М500 цементінің 40 қабы керек, төлем шот бойынша. «Пример» ЖШС',
+          answer: 'Өтінім талданды: М500 цементі, 40 қап, Алмалы ауданы, жұмаға дейін, төлем шот бойынша, клиент «Пример» ЖШС.',
+          meta: 'CRM-де мәміле құрылды, менеджер шот жазу тапсырмасын алды',
+        },
         {
           id: 'bot',
           tab: 'ЖИ-бот',
@@ -655,6 +681,13 @@ export const aiMessages = {
       more: 'Толығырақ',
       items: [
         {
+          id: 'agents',
+          title: 'ЖИ-агенттер және процестерді автоматтандыру',
+          text: 'Мессенджерлер мен поштадан келген өтінімдер CRM-ге өзі түседі, шоттар мен шарттар кестелерге талданады, есептер адамсыз жиналады. Агент сіздің ережелеріңізбен жұмыс істеп, күмәнді жағдайларды адамға береді.',
+          tools: ['CRM', 'Пошта', 'Кестелер', 'API'],
+          href: '/services/ai-automation',
+        },
+        {
           id: 'bots',
           title: 'ЖИ-боттар және ассистенттер',
           text: 'WhatsApp, Telegram және сайтқа арналған. Клиенттерге жауап береді, өтінімдерді қабылдап саралайды, күрделі сұрақтарды операторға береді.',
@@ -672,12 +705,6 @@ export const aiMessages = {
           text: 'Модель мен жабдықты таңдап, орнатамыз, баптаймыз және жүйелеріңізге қосамыз. Деректер компания ішінде қалады, интернетсіз жұмыс істеуге болады.',
           tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
           href: '#local-llm',
-        },
-        {
-          id: 'agents',
-          title: 'ЖИ-агенттер және автоматтандыру',
-          text: 'Өтінімдерді, хаттарды, құжаттар мен есептерді сіздің ережелеріңіз бойынша өңдеу.',
-          tools: ['n8n', 'API', 'CRM және кестелер'],
         },
         {
           id: 'dev',

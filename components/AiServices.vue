@@ -36,14 +36,14 @@
             >
               {{ tool }}
             </span>
-            <a
+            <NuxtLink
               v-if="service.href"
-              :href="service.href"
+              :to="service.href.startsWith('#') ? service.href : localePath(service.href)"
               :class="['ml-auto inline-flex items-center gap-1 text-sm font-bold', layout[service.id]?.link]"
             >
               {{ t('ai.services.more') }}
               <span aria-hidden="true">→</span>
-            </a>
+            </NuxtLink>
           </div>
         </article>
       </div>
@@ -87,8 +87,16 @@ const light: TileStyle = {
 
 // Tiles differ in size and tone so the most important offers stand out
 const layout: Record<string, TileStyle> = {
-  bots: { ...light, tile: `${light.tile} lg:col-span-3` },
-  rag: { ...light, tile: `${light.tile} lg:col-span-3` },
+  agents: {
+    tile: 'bg-gold-200 md:col-span-2 lg:col-span-4 lg:min-h-[19rem]',
+    number: 'text-ink/60',
+    title: 'text-ink md:text-4xl',
+    text: 'text-ink/80 md:text-lg',
+    chip: 'bg-white/70 text-ink',
+    link: 'text-ink hover:text-cobalt-800',
+  },
+  bots: { ...light, tile: `${light.tile} lg:col-span-2` },
+  rag: { ...light, tile: `${light.tile} lg:col-span-2` },
   local: {
     tile: 'bg-cobalt-900 md:col-span-2 lg:col-span-4 lg:min-h-[19rem]',
     number: 'text-gold-300',
@@ -97,19 +105,12 @@ const layout: Record<string, TileStyle> = {
     chip: 'bg-white/10 text-blue-50',
     link: 'text-gold-300 hover:text-gold-200',
   },
-  agents: {
-    tile: 'bg-gold-200 lg:col-span-2',
-    number: 'text-ink/60',
-    title: 'text-ink',
-    text: 'text-ink/75',
-    chip: 'bg-white/70 text-ink',
-    link: 'text-ink',
-  },
   dev: { ...light, tile: `${light.tile} lg:col-span-3` },
   audit: { ...light, tile: `${light.tile} lg:col-span-3` },
 }
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 const services = computed(() => tm('ai.services.items') as AiService[])
 const stack = computed(() => tm('ai.stack.items') as string[])
 </script>

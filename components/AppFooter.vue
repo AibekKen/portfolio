@@ -15,7 +15,7 @@
           <h3 class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">{{ t('nav.services') }}</h3>
           <ul class="mt-4 space-y-2.5 text-sm">
             <li v-for="service in services" :key="service.id">
-              <a :href="`${localePath('/')}${service.href?.startsWith('#') ? service.href : '#services'}`" class="text-slate-300 transition-colors hover:text-white">{{ service.title }}</a>
+              <NuxtLink :to="serviceTarget(service.href)" class="text-slate-300 transition-colors hover:text-white">{{ service.title }}</NuxtLink>
             </li>
           </ul>
         </div>
@@ -80,4 +80,12 @@ const { t, tm, locale } = useI18n()
 const localePath = useLocalePath()
 const services = computed(() => tm('ai.services.items') as FooterService[])
 const devItems = computed(() => tm('ai.dev.items') as DevItem[])
+
+const serviceTarget = (href?: string) => {
+  if (href && !href.startsWith('#')) {
+    return localePath(href)
+  }
+
+  return `${localePath('/')}${href ?? '#services'}`
+}
 </script>

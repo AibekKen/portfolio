@@ -4,14 +4,14 @@
       <BrandMark />
 
       <div class="hidden items-center gap-7 whitespace-nowrap lg:flex">
-        <a
+        <NuxtLink
           v-for="link in links"
-          :key="link.hash"
-          :href="`${localePath('/')}#${link.hash}`"
+          :key="link.label"
+          :to="linkTarget(link)"
           class="nav-link text-[0.95rem] font-medium text-slate-600 transition-colors hover:text-ink"
         >
           {{ t(link.label) }}
-        </a>
+        </NuxtLink>
       </div>
 
       <div class="hidden items-center gap-3 lg:flex">
@@ -59,15 +59,15 @@
       leave-to-class="opacity-0 -translate-y-2"
     >
       <div v-if="isMenuOpen" class="border-t border-slate-200 bg-white px-4 pb-5 pt-2 lg:hidden">
-        <a
+        <NuxtLink
           v-for="link in links"
-          :key="link.hash"
-          :href="`${localePath('/')}#${link.hash}`"
+          :key="link.label"
+          :to="linkTarget(link)"
           class="block border-b border-slate-100 py-3.5 text-base font-semibold text-ink"
           @click="isMenuOpen = false"
         >
           {{ t(link.label) }}
-        </a>
+        </NuxtLink>
         <div class="mt-4 flex rounded-full border border-slate-200 p-1" :aria-label="t('nav.languageLabel')" role="group">
           <NuxtLink
             v-for="option in languageOptions"
@@ -99,10 +99,12 @@
 import { ref } from 'vue'
 import { languageOptions } from '~/i18n/messages'
 
-const links = [
+type NavLink = { label: string, hash?: string, page?: string }
+
+const links: NavLink[] = [
   { hash: 'services', label: 'nav.services' },
+  { page: '/services/ai-automation', label: 'nav.automation' },
   { hash: 'cases', label: 'nav.cases' },
-  { hash: 'process', label: 'nav.process' },
   { hash: 'development', label: 'nav.dev' },
   { hash: 'faq', label: 'nav.faq' },
 ]
@@ -112,6 +114,8 @@ const { locale, t } = useI18n()
 const localePath = useLocalePath()
 const switchLocalePath = useSwitchLocalePath()
 const router = useRouter()
+
+const linkTarget = (link: NavLink) => (link.page ? localePath(link.page) : `${localePath('/')}#${link.hash}`)
 
 const scrollToContact = () => {
   isMenuOpen.value = false
