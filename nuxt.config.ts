@@ -54,6 +54,13 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'ru'
       },
+      // Shared link preview settings; each page sets og:image itself
+      meta: [
+        { property: 'og:site_name', content: 'kenzcore AI Studio' },
+        { property: 'og:image:width', content: '1200' },
+        { property: 'og:image:height', content: '630' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+      ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
         { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },

@@ -28,7 +28,7 @@ export const siteConfig = {
   // Full-size logo for structured data
   logoFull: '/brand/kenzcore-logo.png',
   // 1200×630 link preview image (Open Graph)
-  ogImage: '/brand/og-image.jpg',
+  ogImage: '/brand/og-ai-studio.jpg',
   tagline: 'AI solutions and software for business',
   description:
     'AI chatbots, RAG over company documents, local LLM deployment, automation, and app development.',
