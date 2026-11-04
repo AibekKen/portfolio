@@ -15,7 +15,7 @@ export const aiMessages = {
       text: 'Агенты сами разбирают заявки, письма и документы. Боты отвечают клиентам. Ассистенты знают ваши регламенты. Всё это может работать на ваших серверах, не отдавая данные наружу.',
       primary: 'Обсудить задачу',
       secondary: 'Написать в WhatsApp',
-      note: 'Первая консультация и оценка бесплатно. Начинаем с пилота на ваших данных.',
+      note: 'ИИ-бот от 20 000 ₸ в месяц, автоматизация процессов от 300 000 ₸. Консультация и оценка бесплатно.',
     },
     demo: {
       label: 'Как это выглядит',
@@ -70,7 +70,7 @@ export const aiMessages = {
         {
           tag: 'ИИ-бот',
           problem: 'Менеджеры весь день отвечают на одни и те же вопросы, а вечером и в выходные заявки теряются.',
-          solution: 'Бот отвечает за секунды в WhatsApp, Telegram и на сайте, а горячие заявки сразу передаёт менеджеру в CRM.',
+          solution: 'Бот отвечает за секунды в WhatsApp, Telegram, Instagram и на сайте, а горячие заявки сразу передаёт менеджеру в amoCRM, Bitrix24 или другую CRM.',
         },
         {
           tag: 'Поиск по документам',
@@ -85,7 +85,7 @@ export const aiMessages = {
         {
           tag: 'Автоматизация',
           problem: 'Заявки, письма и документы разбирают вручную и переносят из одной системы в другую.',
-          solution: 'ИИ-агент разбирает входящие, заполняет CRM и таблицы, готовит черновики ответов и отчёты.',
+          solution: 'ИИ-агент разбирает входящие, заполняет CRM, 1С и таблицы, готовит черновики ответов и отчёты.',
         },
         {
           tag: 'Разработка',
@@ -102,16 +102,18 @@ export const aiMessages = {
       items: [
         {
           id: 'agents',
+          price: 'от 300 000 ₸',
           title: 'ИИ-агенты и автоматизация процессов',
           text: 'Заявки из мессенджеров и почты сами попадают в CRM, счета и договоры разбираются в таблицы, отчёты собираются без людей. Агент работает по вашим правилам, спорные случаи отдаёт человеку.',
-          tools: ['CRM', 'Почта', 'Таблицы', 'API'],
+          tools: ['1С', 'amoCRM', 'Bitrix24', 'Почта', 'Таблицы'],
           href: '/services/ai-automation',
         },
         {
           id: 'bots',
+          price: 'от 20 000 ₸ в месяц',
           title: 'ИИ-боты и ассистенты',
-          text: 'Для WhatsApp, Telegram и сайта. Отвечают клиентам, принимают и квалифицируют заявки, передают сложные вопросы оператору.',
-          tools: ['WhatsApp', 'Telegram', 'Виджет на сайт', 'CRM'],
+          text: 'Для WhatsApp, Telegram, Instagram, TikTok и сайта. Отвечают клиентам, принимают и квалифицируют заявки, передают сложные вопросы оператору.',
+          tools: ['WhatsApp', 'Telegram', 'Instagram', 'TikTok', 'Сайт'],
           href: '/services/whatsapp-bot',
         },
         {
@@ -122,6 +124,7 @@ export const aiMessages = {
         },
         {
           id: 'local',
+          price: 'от 1 000 000 ₸ + сервер',
           title: 'Локальные LLM на ваших серверах',
           text: 'Подбираем модель и железо, устанавливаем, настраиваем и подключаем к вашим системам. Данные остаются внутри компании, можно работать без интернета.',
           tools: ['Ваш сервер', 'Без интернета', 'Открытые модели'],
@@ -129,6 +132,7 @@ export const aiMessages = {
         },
         {
           id: 'dev',
+          price: 'приложения от 300 000 ₸',
           title: 'Разработка с помощью ИИ',
           text: 'Мобильные приложения, сайты и веб-системы. ИИ ускоряет работу, за архитектуру и качество отвечает инженер.',
           tools: ['iOS и Android', 'Веб', 'Backend'],
@@ -141,6 +145,11 @@ export const aiMessages = {
           tools: ['Аудит', 'Обучение', 'Политика данных'],
         },
       ],
+    },
+    integrations: {
+      title: 'Интегрируем с',
+      items: ['1С', 'amoCRM', 'Bitrix24', 'WhatsApp', 'Telegram', 'Instagram', 'TikTok'],
+      note: 'и любыми системами, у которых есть API',
     },
     local: {
       eyebrow: 'Локальные LLM',
@@ -238,7 +247,7 @@ export const aiMessages = {
       title: 'Делаем и сами продукты: приложения, сайты, веб-системы',
       text: 'ИИ-инструменты ускоряют разработку, а инженер отвечает за архитектуру, безопасность и код. Продукт можно сразу сделать с ИИ-функциями внутри.',
       items: [
-        { title: 'Мобильные приложения', text: 'iOS и Android для заказов, записи, доставки и личных кабинетов. С сервером и админ-панелью.', href: '/services/mobile-apps' },
+        { title: 'Мобильные приложения', text: 'iOS и Android для заказов, записи, доставки и личных кабинетов. С сервером и админ-панелью. От 300 000 ₸.', href: '/services/mobile-apps' },
         { title: 'Сайты и лендинги', text: 'Быстрые сайты, которые объясняют предложение и приводят заявки.', href: '/services/websites' },
         { title: 'Веб-системы и кабинеты', text: 'CRM, B2B-кабинеты, админ-панели и внутренние сервисы.', href: '#cases-dev' },
       ],
@@ -249,11 +258,15 @@ export const aiMessages = {
       items: [
         {
           question: 'Сколько стоит внедрение ИИ?',
-          answer: 'Зависит от задачи: простой бот и система с локальной моделью и поиском по документам сильно отличаются по объёму. После короткого описания задачи бесплатно даём оценку по этапам, чтобы можно было начать с небольшого пилота.',
+          answer: 'Ориентиры: ИИ-бот от 20 000 ₸ в месяц без оплаты за запуск, автоматизация процесса от 300 000 ₸, установка локальной LLM от 1 000 000 ₸ (сервер оплачивается отдельно), разработка приложений от 300 000 ₸. Точную сумму называем после короткого разбора задачи, оценка бесплатна.',
         },
         {
           question: 'Можно ли работать так, чтобы данные не уходили в облако?',
           answer: 'Да. Для этого устанавливаем локальную языковую модель на ваш сервер или в частное облако. Документы и запросы обрабатываются внутри вашей инфраструктуры.',
+        },
+        {
+          question: 'Подписываете NDA?',
+          answer: 'Да. Подписываем NDA до того, как вы покажете документы, переписку или данные клиентов.',
         },
         {
           question: 'Какое оборудование нужно для локальной LLM?',
@@ -266,6 +279,10 @@ export const aiMessages = {
         {
           question: 'Как быстро можно запустить пилот?',
           answer: 'Простой бот обычно запускается за несколько дней. Для поиска по документам и локальной модели срок зависит от объёма данных и интеграций, чаще всего это несколько недель. Точные сроки назовём после разбора задачи.',
+        },
+        {
+          question: 'С какими системами и мессенджерами работаете?',
+          answer: 'Интегрируем с 1С, amoCRM, Bitrix24 и другими CRM, а ботов подключаем к WhatsApp, Telegram, Instagram и TikTok. Если у системы есть API или выгрузка данных, подключим и её.',
         },
         {
           question: 'Бот будет отвечать на казахском?',
@@ -281,6 +298,7 @@ export const aiMessages = {
       title: 'Расскажите, какую задачу хотите решить',
       subtitle: 'Свяжемся с вами, уточним детали и предложим решение с бесплатной оценкой.',
       descriptionPlaceholder: 'Что нужно автоматизировать, какие данные есть (документы, переписка, база клиентов) и важно ли, чтобы они оставались у вас.',
+      privacy: 'Данные используются только для связи по заявке. Подписываем NDA до обсуждения деталей.',
       interestLabel: 'Что вас интересует',
       interests: ['ИИ-бот', 'Поиск по документам', 'Локальная LLM', 'Автоматизация', 'Приложение или сайт', 'Пока не знаю'],
     },
@@ -302,7 +320,7 @@ export const aiMessages = {
       text: 'Agents handle requests, emails and documents on their own. Bots answer your customers. Assistants know your regulations. All of it can run on your own servers and keep data inside.',
       primary: 'Discuss your task',
       secondary: 'Write on WhatsApp',
-      note: 'The first consultation and estimate are free. We start with a pilot on your data.',
+      note: 'AI bot from 20,000 ₸ per month, process automation from 300,000 ₸. Consultation and estimate are free.',
     },
     demo: {
       label: 'What it looks like',
@@ -357,7 +375,7 @@ export const aiMessages = {
         {
           tag: 'AI bot',
           problem: 'Managers answer the same questions all day, and requests get lost in the evenings and on weekends.',
-          solution: 'A bot answers in seconds on WhatsApp, Telegram and your website, and passes hot leads straight to a manager in the CRM.',
+          solution: 'A bot answers in seconds on WhatsApp, Telegram, Instagram and your website, and passes hot leads straight to a manager in amoCRM, Bitrix24 or another CRM.',
         },
         {
           tag: 'Document search',
@@ -372,7 +390,7 @@ export const aiMessages = {
         {
           tag: 'Automation',
           problem: 'Requests, emails and documents are sorted by hand and copied from one system to another.',
-          solution: 'An AI agent sorts incoming items, fills in the CRM and spreadsheets, and drafts replies and reports.',
+          solution: 'An AI agent sorts incoming items, fills in the CRM, 1C and spreadsheets, and drafts replies and reports.',
         },
         {
           tag: 'Development',
@@ -389,16 +407,18 @@ export const aiMessages = {
       items: [
         {
           id: 'agents',
+          price: 'from 300,000 ₸',
           title: 'AI agents and process automation',
           text: 'Requests from messengers and email land in the CRM on their own, invoices and contracts are parsed into spreadsheets, reports are compiled without people. The agent follows your rules and hands unclear cases to a person.',
-          tools: ['CRM', 'Email', 'Spreadsheets', 'API'],
+          tools: ['1C', 'amoCRM', 'Bitrix24', 'Email', 'Spreadsheets'],
           href: '/services/ai-automation',
         },
         {
           id: 'bots',
+          price: 'from 20,000 ₸ per month',
           title: 'AI bots and assistants',
-          text: 'For WhatsApp, Telegram and your website. They answer customers, take and qualify requests, and hand complex questions to an operator.',
-          tools: ['WhatsApp', 'Telegram', 'Website widget', 'CRM'],
+          text: 'For WhatsApp, Telegram, Instagram, TikTok and your website. They answer customers, take and qualify requests, and hand complex questions to an operator.',
+          tools: ['WhatsApp', 'Telegram', 'Instagram', 'TikTok', 'Website'],
           href: '/services/whatsapp-bot',
         },
         {
@@ -409,6 +429,7 @@ export const aiMessages = {
         },
         {
           id: 'local',
+          price: 'from 1,000,000 ₸ + server',
           title: 'Local LLMs on your servers',
           text: 'We choose the model and hardware, install, tune and connect it to your systems. Data stays inside the company and it can work offline.',
           tools: ['Your server', 'Works offline', 'Open models'],
@@ -416,6 +437,7 @@ export const aiMessages = {
         },
         {
           id: 'dev',
+          price: 'apps from 300,000 ₸',
           title: 'AI-assisted development',
           text: 'Mobile apps, websites and web systems. AI speeds up the work, an engineer owns architecture and quality.',
           tools: ['iOS and Android', 'Web', 'Backend'],
@@ -428,6 +450,11 @@ export const aiMessages = {
           tools: ['Audit', 'Training', 'Data policy'],
         },
       ],
+    },
+    integrations: {
+      title: 'We integrate with',
+      items: ['1C', 'amoCRM', 'Bitrix24', 'WhatsApp', 'Telegram', 'Instagram', 'TikTok'],
+      note: 'and any system with an API',
     },
     local: {
       eyebrow: 'Local LLMs',
@@ -525,7 +552,7 @@ export const aiMessages = {
       title: 'We also build the products: apps, websites, web systems',
       text: 'AI tools speed up development while an engineer owns the architecture, security and code. Your product can ship with AI features from day one.',
       items: [
-        { title: 'Mobile apps', text: 'iOS and Android for orders, bookings, deliveries and customer accounts. With a backend and admin panel.', href: '/services/mobile-apps' },
+        { title: 'Mobile apps', text: 'iOS and Android for orders, bookings, deliveries and customer accounts. With a backend and admin panel. From 300,000 ₸.', href: '/services/mobile-apps' },
         { title: 'Websites and landing pages', text: 'Fast websites that explain your offer and bring in requests.', href: '/services/websites' },
         { title: 'Web systems and portals', text: 'CRMs, B2B portals, admin panels and internal tools.', href: '#cases-dev' },
       ],
@@ -536,11 +563,15 @@ export const aiMessages = {
       items: [
         {
           question: 'How much does it cost to bring AI into a business?',
-          answer: 'It depends on the task: a simple bot and a system with a local model and document search differ a lot in scope. After a short description we give a free estimate by stages, so you can start with a small pilot.',
+          answer: 'As a guide: an AI bot from 20,000 ₸ per month with no setup fee, process automation from 300,000 ₸, a local LLM installation from 1,000,000 ₸ (the server is paid separately), app development from 300,000 ₸. We name the exact amount after a short review of the task; the estimate is free.',
         },
         {
           question: 'Can we work so that data never goes to the cloud?',
           answer: 'Yes. We install a local language model on your server or in a private cloud. Documents and requests are processed inside your infrastructure.',
+        },
+        {
+          question: 'Do you sign an NDA?',
+          answer: 'Yes. We sign an NDA before you share any documents, correspondence or customer data.',
         },
         {
           question: 'What hardware does a local LLM need?',
@@ -553,6 +584,10 @@ export const aiMessages = {
         {
           question: 'How fast can a pilot launch?',
           answer: 'A simple bot usually launches in a few days. For document search and a local model the timeline depends on the data volume and integrations, most often a few weeks. We name exact dates after reviewing the task.',
+        },
+        {
+          question: 'Which systems and messengers do you work with?',
+          answer: 'We integrate with 1C, amoCRM, Bitrix24 and other CRMs, and connect bots to WhatsApp, Telegram, Instagram and TikTok. If a system has an API or a data export, we will connect it too.',
         },
         {
           question: 'Will the bot answer in Kazakh?',
@@ -568,6 +603,7 @@ export const aiMessages = {
       title: 'Tell us what you want to solve',
       subtitle: 'We will get back to you, clarify the details and suggest a solution with a free estimate.',
       descriptionPlaceholder: 'What needs automating, what data you have (documents, correspondence, a customer base) and whether it must stay with you.',
+      privacy: 'Your details are used only to reply to your request. We sign an NDA before discussing specifics.',
       interestLabel: 'What are you interested in',
       interests: ['AI bot', 'Document search', 'Local LLM', 'Automation', 'App or website', 'Not sure yet'],
     },
@@ -589,7 +625,7 @@ export const aiMessages = {
       text: 'Агенттер өтінімдерді, хаттар мен құжаттарды өзі талдайды. Боттар клиенттерге жауап береді. Ассистенттер регламенттеріңізді біледі. Мұның бәрі деректерді сыртқа шығармай, өз серверіңізде жұмыс істей алады.',
       primary: 'Міндетті талқылау',
       secondary: 'WhatsApp-қа жазу',
-      note: 'Алғашқы кеңес пен бағалау тегін. Өз деректеріңізде пилоттан бастаймыз.',
+      note: 'ЖИ-бот айына 20 000 ₸-ден, процестерді автоматтандыру 300 000 ₸-ден. Кеңес пен бағалау тегін.',
     },
     demo: {
       label: 'Бұл қалай көрінеді',
@@ -644,7 +680,7 @@ export const aiMessages = {
         {
           tag: 'ЖИ-бот',
           problem: 'Менеджерлер күні бойы бірдей сұрақтарға жауап береді, ал кешке және демалыста өтінімдер жоғалады.',
-          solution: 'Бот WhatsApp, Telegram және сайтта бірнеше секундта жауап береді, ыстық өтінімдерді бірден CRM-дегі менеджерге жібереді.',
+          solution: 'Бот WhatsApp, Telegram, Instagram және сайтта бірнеше секундта жауап береді, ыстық өтінімдерді бірден amoCRM, Bitrix24 немесе басқа CRM-дегі менеджерге жібереді.',
         },
         {
           tag: 'Құжаттар бойынша іздеу',
@@ -659,7 +695,7 @@ export const aiMessages = {
         {
           tag: 'Автоматтандыру',
           problem: 'Өтінімдер, хаттар мен құжаттар қолмен өңделіп, бір жүйеден екіншісіне көшіріледі.',
-          solution: 'ЖИ-агент кіріс хаттарды талдап, CRM мен кестелерді толтырады, жауаптар мен есептердің жобасын дайындайды.',
+          solution: 'ЖИ-агент кіріс хаттарды талдап, CRM, 1С және кестелерді толтырады, жауаптар мен есептердің жобасын дайындайды.',
         },
         {
           tag: 'Әзірлеу',
@@ -676,16 +712,18 @@ export const aiMessages = {
       items: [
         {
           id: 'agents',
+          price: '300 000 ₸-ден',
           title: 'ЖИ-агенттер және процестерді автоматтандыру',
           text: 'Мессенджерлер мен поштадан келген өтінімдер CRM-ге өзі түседі, шоттар мен шарттар кестелерге талданады, есептер адамсыз жиналады. Агент сіздің ережелеріңізбен жұмыс істеп, күмәнді жағдайларды адамға береді.',
-          tools: ['CRM', 'Пошта', 'Кестелер', 'API'],
+          tools: ['1С', 'amoCRM', 'Bitrix24', 'Пошта', 'Кестелер'],
           href: '/services/ai-automation',
         },
         {
           id: 'bots',
+          price: 'айына 20 000 ₸-ден',
           title: 'ЖИ-боттар және ассистенттер',
-          text: 'WhatsApp, Telegram және сайтқа арналған. Клиенттерге жауап береді, өтінімдерді қабылдап саралайды, күрделі сұрақтарды операторға береді.',
-          tools: ['WhatsApp', 'Telegram', 'Сайттағы виджет', 'CRM'],
+          text: 'WhatsApp, Telegram, Instagram, TikTok және сайтқа арналған. Клиенттерге жауап береді, өтінімдерді қабылдап саралайды, күрделі сұрақтарды операторға береді.',
+          tools: ['WhatsApp', 'Telegram', 'Instagram', 'TikTok', 'Сайт'],
           href: '/services/whatsapp-bot',
         },
         {
@@ -696,6 +734,7 @@ export const aiMessages = {
         },
         {
           id: 'local',
+          price: '1 000 000 ₸-ден + сервер',
           title: 'Сіздің серверлеріңіздегі локалды LLM',
           text: 'Модель мен жабдықты таңдап, орнатамыз, баптаймыз және жүйелеріңізге қосамыз. Деректер компания ішінде қалады, интернетсіз жұмыс істеуге болады.',
           tools: ['Сіздің серверіңіз', 'Интернетсіз', 'Ашық модельдер'],
@@ -703,6 +742,7 @@ export const aiMessages = {
         },
         {
           id: 'dev',
+          price: 'қосымшалар 300 000 ₸-ден',
           title: 'ЖИ көмегімен әзірлеу',
           text: 'Мобильді қосымшалар, сайттар және веб-жүйелер. ЖИ жұмысты жылдамдатады, архитектура мен сапаға инженер жауап береді.',
           tools: ['iOS және Android', 'Веб', 'Backend'],
@@ -715,6 +755,11 @@ export const aiMessages = {
           tools: ['Аудит', 'Оқыту', 'Деректер саясаты'],
         },
       ],
+    },
+    integrations: {
+      title: 'Біріктіреміз',
+      items: ['1С', 'amoCRM', 'Bitrix24', 'WhatsApp', 'Telegram', 'Instagram', 'TikTok'],
+      note: 'және API бар кез келген жүйемен',
     },
     local: {
       eyebrow: 'Локалды LLM',
@@ -812,7 +857,7 @@ export const aiMessages = {
       title: 'Өнімдердің өзін де жасаймыз: қосымшалар, сайттар, веб-жүйелер',
       text: 'ЖИ құралдары әзірлеуді жылдамдатады, ал архитектура, қауіпсіздік және код үшін инженер жауап береді. Өнімді бірден ЖИ функцияларымен жасауға болады.',
       items: [
-        { title: 'Мобильді қосымшалар', text: 'Тапсырыс, жазылу, жеткізу және жеке кабинеттерге арналған iOS және Android. Сервер мен әкімші панелімен.', href: '/services/mobile-apps' },
+        { title: 'Мобильді қосымшалар', text: 'Тапсырыс, жазылу, жеткізу және жеке кабинеттерге арналған iOS және Android. Сервер мен әкімші панелімен. 300 000 ₸-ден.', href: '/services/mobile-apps' },
         { title: 'Сайттар мен лендингтер', text: 'Ұсынысыңызды түсіндіріп, өтінім әкелетін жылдам сайттар.', href: '/services/websites' },
         { title: 'Веб-жүйелер мен кабинеттер', text: 'CRM, B2B кабинеттер, әкімші панельдері және ішкі сервистер.', href: '#cases-dev' },
       ],
@@ -823,11 +868,15 @@ export const aiMessages = {
       items: [
         {
           question: 'Бизнеске ЖИ енгізу қанша тұрады?',
-          answer: 'Міндетке байланысты: қарапайым бот пен локалды модель және құжаттар бойынша іздеуі бар жүйенің көлемі әртүрлі. Міндетті қысқаша сипаттағаннан кейін кезеңдер бойынша тегін бағалау береміз, сондықтан шағын пилоттан бастауға болады.',
+          answer: 'Бағдар ретінде: ЖИ-бот айына 20 000 ₸-ден, іске қосу ақысыз, процесті автоматтандыру 300 000 ₸-ден, локалды LLM орнату 1 000 000 ₸-ден (сервер бөлек төленеді), қосымшалар әзірлеу 300 000 ₸-ден. Нақты соманы міндетті қысқаша талдағаннан кейін айтамыз, бағалау тегін.',
         },
         {
           question: 'Деректер бұлтқа кетпейтіндей жұмыс істеуге бола ма?',
           answer: 'Иә. Локалды тіл моделін сіздің серверіңізге немесе жеке бұлтқа орнатамыз. Құжаттар мен сұраулар сіздің инфрақұрылымыңыз ішінде өңделеді.',
+        },
+        {
+          question: 'NDA-ға қол қоясыздар ма?',
+          answer: 'Иә. Құжаттарды, хат алмасуды немесе клиент деректерін көрсетпес бұрын NDA-ға қол қоямыз.',
         },
         {
           question: 'Локалды LLM үшін қандай жабдық қажет?',
@@ -840,6 +889,10 @@ export const aiMessages = {
         {
           question: 'Пилотты қаншалықты тез іске қосуға болады?',
           answer: 'Қарапайым бот әдетте бірнеше күнде іске қосылады. Құжаттар бойынша іздеу мен локалды модельдің мерзімі деректер көлемі мен интеграцияларға байланысты, көбіне бірнеше апта. Нақты мерзімді міндетті талдағаннан кейін айтамыз.',
+        },
+        {
+          question: 'Қандай жүйелер мен мессенджерлермен жұмыс істейсіздер?',
+          answer: '1С, amoCRM, Bitrix24 және басқа CRM-мен біріктіреміз, ал боттарды WhatsApp, Telegram, Instagram және TikTok-қа қосамыз. Жүйеде API немесе деректерді шығару болса, оны да қосамыз.',
         },
         {
           question: 'Бот қазақша жауап бере ме?',
@@ -855,6 +908,7 @@ export const aiMessages = {
       title: 'Қандай міндетті шешкіңіз келетінін айтыңыз',
       subtitle: 'Сізбен байланысып, мәліметтерді нақтылаймыз және тегін бағалаумен шешім ұсынамыз.',
       descriptionPlaceholder: 'Нені автоматтандыру керек, қандай деректер бар (құжаттар, хат-хабар, клиенттер базасы) және олар сізде қалуы маңызды ма.',
+      privacy: 'Деректер тек осы өтінім бойынша байланысу үшін қолданылады. Мәліметтерді талқыламас бұрын NDA-ға қол қоямыз.',
       interestLabel: 'Сізді не қызықтырады',
       interests: ['ЖИ-бот', 'Құжаттар бойынша іздеу', 'Локалды LLM', 'Автоматтандыру', 'Қосымша немесе сайт', 'Әзірге білмеймін'],
     },

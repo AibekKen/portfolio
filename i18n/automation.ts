@@ -5,7 +5,7 @@ export const automationMessages = {
   ru: {
     seo: {
       title: 'ИИ-автоматизация бизнес-процессов: заявки, документы, отчёты · kenzcore AI Studio',
-      description: 'Автоматизируем рутину с помощью ИИ: заявки из WhatsApp, Telegram и почты сами попадают в CRM, счета и договоры разбираются в таблицы, отчёты собираются без людей. Пилот на одном процессе, бесплатная оценка.',
+      description: 'Автоматизируем рутину с помощью ИИ: заявки из WhatsApp, Telegram и почты сами попадают в CRM, счета и договоры разбираются в таблицы, отчёты собираются без людей. От 300 000 ₸, пилот на одном процессе, бесплатная оценка.',
       ogTitle: 'ИИ-автоматизация бизнес-процессов · kenzcore AI Studio',
       ogDescription: 'ИИ-агенты разбирают заявки, документы и почту по вашим правилам и передают спорные случаи человеку.',
     },
@@ -16,7 +16,7 @@ export const automationMessages = {
       text: 'ИИ-агент читает письма, сообщения и файлы так же, как сотрудник: понимает, что в них, заполняет CRM и таблицы, готовит ответы. Работает по вашим правилам, а спорные случаи отдаёт человеку.',
       primary: 'Обсудить процесс',
       secondary: 'Написать в WhatsApp',
-      note: 'Начинаем с пилота на одном процессе. Оценка бесплатно.',
+      note: 'От 300 000 ₸. Начинаем с пилота на одном процессе, оценка бесплатно.',
     },
     flow: {
       label: 'Пример: заявка из почты',
@@ -36,8 +36,8 @@ export const automationMessages = {
       eyebrow: 'Что автоматизируем',
       title: 'Процессы, которые ИИ может взять на себя',
       items: [
-        { title: 'Обработка заявок', text: 'Заявки из WhatsApp, Telegram, почты и с сайта агент разбирает, уточняет недостающее, создаёт сделку в CRM и ставит задачу менеджеру.' },
-        { title: 'Документы', text: 'Из счетов, накладных, актов и договоров достаёт реквизиты, суммы и позиции и переносит их в таблицу или учётную систему.' },
+        { title: 'Обработка заявок', text: 'Заявки из WhatsApp, Telegram, Instagram, почты и с сайта агент разбирает, уточняет недостающее, создаёт сделку в amoCRM, Bitrix24 или другой CRM и ставит задачу менеджеру.' },
+        { title: 'Документы', text: 'Из счетов, накладных, актов и договоров достаёт реквизиты, суммы и позиции и переносит их в таблицу или 1С.' },
         { title: 'Почта и ответы клиентам', text: 'Сортирует входящие, помечает срочное и готовит черновики ответов по вашей базе знаний. Сотрудник только проверяет и отправляет.' },
         { title: 'Отчёты', text: 'Собирает данные из нескольких систем и каждое утро присылает руководителю сводку в Telegram.' },
         { title: 'Сверка и контроль', text: 'Сравнивает данные между системами и находит расхождения, дубли и пропуски.' },
@@ -50,7 +50,7 @@ export const automationMessages = {
       items: [
         { title: 'Спорное решает человек', text: 'Агент действует в рамках сценария. Если он не уверен или сумма выше заданного порога, задача уходит сотруднику.' },
         { title: 'Каждое действие видно', text: 'Ведём журнал: что агент получил, что решил и что сделал. Ошибку легко найти, а правило уточнить.' },
-        { title: 'Подключаем ваши системы', text: 'CRM, почта, мессенджеры, таблицы и любые системы с API. Менять привычные инструменты не нужно.' },
+        { title: 'Подключаем ваши системы', text: '1С, amoCRM, Bitrix24, почта, мессенджеры, таблицы и любые системы с API. Менять привычные инструменты не нужно.' },
         { title: 'Данные можно не отдавать наружу', text: 'Агент может работать на локальной модели на вашем сервере, если документы нельзя отправлять в облако.' },
       ],
     },
@@ -75,9 +75,10 @@ export const automationMessages = {
       items: [
         { question: 'Какие процессы подходят для автоматизации?', answer: 'Повторяющиеся задачи с понятным результатом: разбор заявок, писем и документов, перенос данных между системами, отчёты, сверки. На первой встрече поможем выбрать процесс, где эффект будет заметнее всего.' },
         { question: 'Что будет, если ИИ ошибётся?', answer: 'Агент работает в рамках правил, а неуверенные и рискованные случаи передаёт человеку. Все действия записываются в журнал, поэтому ошибку легко найти и исправить, а правило уточнить.' },
-        { question: 'С какими системами можно связать агента?', answer: 'С CRM, почтой, мессенджерами, таблицами и любыми системами, у которых есть API или выгрузка данных. Конкретный способ подключения обсудим после разбора процесса.' },
+        { question: 'С какими системами можно связать агента?', answer: 'С 1С, amoCRM, Bitrix24 и другими CRM, с почтой, WhatsApp, Telegram, Instagram, TikTok, таблицами и любыми системами, у которых есть API или выгрузка данных. Конкретный способ подключения обсудим после разбора процесса.' },
         { question: 'Нужен ли нам свой программист?', answer: 'Нет. Мы настраиваем, запускаем и сопровождаем агента. Вашей команде нужно описать процесс и проверить результат на пилоте.' },
-        { question: 'Сколько стоит автоматизация?', answer: 'Зависит от процесса и количества систем. После разбора даём бесплатную оценку по этапам. Обычно начинаем с пилота на одном сценарии, чтобы вы увидели эффект до больших вложений.' },
+        { question: 'Сколько стоит автоматизация?', answer: 'От 300 000 ₸. Итоговая сумма зависит от процесса и количества систем, после разбора даём бесплатную оценку по этапам. Обычно начинаем с пилота на одном сценарии, чтобы вы увидели эффект до больших вложений.' },
+        { question: 'Подписываете NDA?', answer: 'Да. Подписываем NDA до того, как вы покажете документы, переписку или данные клиентов.' },
         { question: 'Можно ли автоматизировать без отправки данных в облако?', answer: 'Да. Агент может работать на локальной языковой модели, установленной на вашем сервере.' },
       ],
     },
@@ -91,7 +92,7 @@ export const automationMessages = {
   en: {
     seo: {
       title: 'AI Business Process Automation: Requests, Documents, Reports · kenzcore AI Studio',
-      description: 'We automate routine work with AI: requests from WhatsApp, Telegram and email land in your CRM on their own, invoices and contracts are parsed into spreadsheets, reports are compiled without people. A pilot on one process, free estimate.',
+      description: 'We automate routine work with AI: requests from WhatsApp, Telegram and email land in your CRM on their own, invoices and contracts are parsed into spreadsheets, reports are compiled without people. From 300,000 ₸, a pilot on one process, free estimate.',
       ogTitle: 'AI business process automation · kenzcore AI Studio',
       ogDescription: 'AI agents handle requests, documents and email by your rules and pass unclear cases to a person.',
     },
@@ -102,7 +103,7 @@ export const automationMessages = {
       text: 'An AI agent reads emails, messages and files the way an employee does: it understands what is in them, fills in the CRM and spreadsheets and drafts replies. It works by your rules and hands unclear cases to a person.',
       primary: 'Discuss a process',
       secondary: 'Write on WhatsApp',
-      note: 'We start with a pilot on one process. The estimate is free.',
+      note: 'From 300,000 ₸. We start with a pilot on one process; the estimate is free.',
     },
     flow: {
       label: 'Example: a request by email',
@@ -122,8 +123,8 @@ export const automationMessages = {
       eyebrow: 'What we automate',
       title: 'Processes AI can take off your team',
       items: [
-        { title: 'Request handling', text: 'The agent reads requests from WhatsApp, Telegram, email and your website, asks for missing details, creates a deal in the CRM and assigns a manager.' },
-        { title: 'Documents', text: 'It pulls bank details, amounts and line items from invoices, waybills, acts and contracts into a spreadsheet or accounting system.' },
+        { title: 'Request handling', text: 'The agent reads requests from WhatsApp, Telegram, Instagram, email and your website, asks for missing details, creates a deal in amoCRM, Bitrix24 or another CRM and assigns a manager.' },
+        { title: 'Documents', text: 'It pulls bank details, amounts and line items from invoices, waybills, acts and contracts into a spreadsheet or 1C.' },
         { title: 'Email and customer replies', text: 'It sorts incoming mail, flags urgent items and drafts replies from your knowledge base. An employee only checks and sends.' },
         { title: 'Reports', text: 'It gathers data from several systems and sends the manager a summary in Telegram every morning.' },
         { title: 'Reconciliation', text: 'It compares data across systems and finds mismatches, duplicates and gaps.' },
@@ -136,7 +137,7 @@ export const automationMessages = {
       items: [
         { title: 'A person decides unclear cases', text: 'The agent acts within the scenario. If it is not sure or an amount is above a set threshold, the task goes to an employee.' },
         { title: 'Every action is visible', text: 'We keep a log of what the agent received, decided and did. Mistakes are easy to find and rules easy to refine.' },
-        { title: 'We connect your systems', text: 'CRM, email, messengers, spreadsheets and any system with an API. You do not have to change the tools you use.' },
+        { title: 'We connect your systems', text: '1C, amoCRM, Bitrix24, email, messengers, spreadsheets and any system with an API. You do not have to change the tools you use.' },
         { title: 'Data can stay inside', text: 'The agent can run on a local model on your server if documents cannot be sent to the cloud.' },
       ],
     },
@@ -161,9 +162,10 @@ export const automationMessages = {
       items: [
         { question: 'Which processes are a good fit?', answer: 'Repetitive tasks with a clear result: handling requests, emails and documents, moving data between systems, reports, reconciliations. At the first meeting we help you pick the process with the most visible effect.' },
         { question: 'What if the AI makes a mistake?', answer: 'The agent works within rules and passes uncertain or risky cases to a person. Every action is logged, so a mistake is easy to find and fix and the rule easy to refine.' },
-        { question: 'Which systems can the agent connect to?', answer: 'CRMs, email, messengers, spreadsheets and any system with an API or data export. We agree on the exact connection after reviewing the process.' },
+        { question: 'Which systems can the agent connect to?', answer: '1C, amoCRM, Bitrix24 and other CRMs, email, WhatsApp, Telegram, Instagram, TikTok, spreadsheets and any system with an API or data export. We agree on the exact connection after reviewing the process.' },
         { question: 'Do we need our own developer?', answer: 'No. We set up, launch and support the agent. Your team only needs to describe the process and check the result during the pilot.' },
-        { question: 'How much does automation cost?', answer: 'It depends on the process and the number of systems. After the review we give a free estimate by stages. We usually start with a pilot on one scenario so you see the effect before a big investment.' },
+        { question: 'How much does automation cost?', answer: 'From 300,000 ₸. The final amount depends on the process and the number of systems; after the review we give a free estimate by stages. We usually start with a pilot on one scenario so you see the effect before a big investment.' },
+        { question: 'Do you sign an NDA?', answer: 'Yes. We sign an NDA before you share any documents, correspondence or customer data.' },
         { question: 'Can we automate without sending data to the cloud?', answer: 'Yes. The agent can run on a local language model installed on your server.' },
       ],
     },
@@ -177,7 +179,7 @@ export const automationMessages = {
   kk: {
     seo: {
       title: 'Бизнес-процестерді ЖИ көмегімен автоматтандыру: өтінімдер, құжаттар, есептер · kenzcore AI Studio',
-      description: 'Күнделікті жұмысты ЖИ көмегімен автоматтандырамыз: WhatsApp, Telegram және поштадан келген өтінімдер CRM-ге өзі түседі, шоттар мен шарттар кестелерге талданады, есептер адамсыз жиналады. Бір процестегі пилот, тегін бағалау.',
+      description: 'Күнделікті жұмысты ЖИ көмегімен автоматтандырамыз: WhatsApp, Telegram және поштадан келген өтінімдер CRM-ге өзі түседі, шоттар мен шарттар кестелерге талданады, есептер адамсыз жиналады. 300 000 ₸-ден, бір процестегі пилот, тегін бағалау.',
       ogTitle: 'Бизнес-процестерді ЖИ көмегімен автоматтандыру · kenzcore AI Studio',
       ogDescription: 'ЖИ-агенттер өтінімдерді, құжаттар мен поштаны сіздің ережелеріңіз бойынша өңдеп, күмәнді жағдайларды адамға береді.',
     },
@@ -188,7 +190,7 @@ export const automationMessages = {
       text: 'ЖИ-агент хаттарды, хабарламалар мен файлдарды қызметкер сияқты оқиды: ішінде не барын түсініп, CRM мен кестелерді толтырады, жауаптар дайындайды. Сіздің ережелеріңіз бойынша жұмыс істейді, ал күмәнді жағдайларды адамға береді.',
       primary: 'Процесті талқылау',
       secondary: 'WhatsApp-қа жазу',
-      note: 'Бір процестегі пилоттан бастаймыз. Бағалау тегін.',
+      note: '300 000 ₸-ден. Бір процестегі пилоттан бастаймыз, бағалау тегін.',
     },
     flow: {
       label: 'Мысал: поштадан келген өтінім',
@@ -208,8 +210,8 @@ export const automationMessages = {
       eyebrow: 'Нені автоматтандырамыз',
       title: 'ЖИ өз мойнына ала алатын процестер',
       items: [
-        { title: 'Өтінімдерді өңдеу', text: 'Агент WhatsApp, Telegram, пошта және сайттан келген өтінімдерді талдап, жетіспейтінін нақтылайды, CRM-де мәміле құрып, менеджерге тапсырма қояды.' },
-        { title: 'Құжаттар', text: 'Шоттардан, жүкқұжаттардан, актілер мен шарттардан деректемелерді, сомалар мен позицияларды алып, кестеге немесе есеп жүйесіне көшіреді.' },
+        { title: 'Өтінімдерді өңдеу', text: 'Агент WhatsApp, Telegram, Instagram, пошта және сайттан келген өтінімдерді талдап, жетіспейтінін нақтылайды, amoCRM, Bitrix24 немесе басқа CRM-де мәміле құрып, менеджерге тапсырма қояды.' },
+        { title: 'Құжаттар', text: 'Шоттардан, жүкқұжаттардан, актілер мен шарттардан деректемелерді, сомалар мен позицияларды алып, кестеге немесе 1С-ке көшіреді.' },
         { title: 'Пошта және клиенттерге жауап', text: 'Кіріс хаттарды сұрыптап, шұғылын белгілейді және білім қорыңыз бойынша жауаптардың жобасын дайындайды. Қызметкер тек тексеріп, жібереді.' },
         { title: 'Есептер', text: 'Бірнеше жүйеден деректерді жинап, әр таң сайын басшыға Telegram-да қорытынды жібереді.' },
         { title: 'Салыстыру және бақылау', text: 'Жүйелер арасындағы деректерді салыстырып, сәйкессіздіктерді, қайталанулар мен олқылықтарды табады.' },
@@ -222,7 +224,7 @@ export const automationMessages = {
       items: [
         { title: 'Күмәндіні адам шешеді', text: 'Агент сценарий аясында әрекет етеді. Сенімсіз болса немесе сома белгіленген шектен асса, тапсырма қызметкерге өтеді.' },
         { title: 'Әр әрекет көрінеді', text: 'Агент не алғанын, не шешкенін және не істегенін журналға жазамыз. Қатені табу және ережені нақтылау оңай.' },
-        { title: 'Жүйелеріңізді қосамыз', text: 'CRM, пошта, мессенджерлер, кестелер және API бар кез келген жүйе. Үйреншікті құралдарды өзгертудің қажеті жоқ.' },
+        { title: 'Жүйелеріңізді қосамыз', text: '1С, amoCRM, Bitrix24, пошта, мессенджерлер, кестелер және API бар кез келген жүйе. Үйреншікті құралдарды өзгертудің қажеті жоқ.' },
         { title: 'Деректерді сыртқа бермеуге болады', text: 'Құжаттарды бұлтқа жіберуге болмаса, агент сіздің серверіңіздегі локалды модельде жұмыс істей алады.' },
       ],
     },
@@ -247,9 +249,10 @@ export const automationMessages = {
       items: [
         { question: 'Қандай процестер автоматтандыруға жарайды?', answer: 'Нәтижесі түсінікті қайталанатын тапсырмалар: өтінімдерді, хаттар мен құжаттарды талдау, деректерді жүйелер арасында көшіру, есептер, салыстырулар. Алғашқы кездесуде әсері ең байқалатын процесті таңдауға көмектесеміз.' },
         { question: 'ЖИ қателессе не болады?', answer: 'Агент ережелер аясында жұмыс істейді, ал сенімсіз және тәуекелді жағдайларды адамға береді. Барлық әрекеттер журналға жазылады, сондықтан қатені табу және түзету, ережені нақтылау оңай.' },
-        { question: 'Агентті қандай жүйелермен байланыстыруға болады?', answer: 'CRM, пошта, мессенджерлер, кестелер және API немесе деректерді шығаруы бар кез келген жүйемен. Нақты қосылу тәсілін процесті талдағаннан кейін келісеміз.' },
+        { question: 'Агентті қандай жүйелермен байланыстыруға болады?', answer: '1С, amoCRM, Bitrix24 және басқа CRM, пошта, WhatsApp, Telegram, Instagram, TikTok, кестелер және API немесе деректерді шығаруы бар кез келген жүйемен. Нақты қосылу тәсілін процесті талдағаннан кейін келісеміз.' },
         { question: 'Бізге өз бағдарламашымыз керек пе?', answer: 'Жоқ. Агентті біз баптаймыз, іске қосамыз және сүйемелдейміз. Командаңызға процесті сипаттап, пилоттағы нәтижені тексеру ғана қажет.' },
-        { question: 'Автоматтандыру қанша тұрады?', answer: 'Процеске және жүйелер санына байланысты. Талдаудан кейін кезеңдер бойынша тегін бағалау береміз. Әдетте бір сценарийдегі пилоттан бастаймыз, сонда үлкен шығынға дейін әсерді көресіз.' },
+        { question: 'Автоматтандыру қанша тұрады?', answer: '300 000 ₸-ден. Түпкі сома процеске және жүйелер санына байланысты, талдаудан кейін кезеңдер бойынша тегін бағалау береміз. Әдетте бір сценарийдегі пилоттан бастаймыз, сонда үлкен шығынға дейін әсерді көресіз.' },
+        { question: 'NDA-ға қол қоясыздар ма?', answer: 'Иә. Құжаттарды, хат алмасуды немесе клиент деректерін көрсетпес бұрын NDA-ға қол қоямыз.' },
         { question: 'Деректерді бұлтқа жібермей автоматтандыруға бола ма?', answer: 'Иә. Агент сіздің серверіңізге орнатылған локалды тіл моделінде жұмыс істей алады.' },
       ],
     },

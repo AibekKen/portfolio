@@ -5,19 +5,19 @@ export const landingMessages = {
   ru: {
     whatsappBot: {
       seo: {
-        title: 'ИИ-бот для WhatsApp и Telegram: отвечает клиентам и принимает заявки · kenzcore AI Studio',
-        description: 'Разрабатываем ИИ-ботов для WhatsApp, Telegram и сайта: отвечают клиентам за секунды круглосуточно, принимают заказы, передают горячие заявки менеджеру в CRM. Понимают русский, казахский и английский. Бесплатная оценка.',
+        title: 'ИИ-бот для WhatsApp, Telegram и Instagram: отвечает клиентам и принимает заявки · kenzcore AI Studio',
+        description: 'Разрабатываем ИИ-ботов для WhatsApp, Telegram, Instagram, TikTok и сайта: отвечают клиентам за секунды круглосуточно, принимают заказы, передают горячие заявки менеджеру в CRM. Русский, казахский и английский. От 20 000 ₸ в месяц.',
         ogTitle: 'ИИ-бот для WhatsApp и Telegram · kenzcore AI Studio',
         ogDescription: 'Бот отвечает клиентам круглосуточно, принимает заявки и передаёт сложные вопросы менеджеру.',
       },
       back: 'На главную',
       hero: {
-        eyebrow: 'ИИ-бот для WhatsApp и Telegram',
+        eyebrow: 'ИИ-бот для WhatsApp, Telegram, Instagram и TikTok',
         title: 'Бот отвечает клиентам за секунды, а менеджеры получают готовые заявки',
-        text: 'ИИ-бот знает ваш прайс, условия доставки и частые вопросы. Он отвечает в WhatsApp, Telegram и на сайте круглосуточно, собирает данные заказа и передаёт горячих клиентов менеджеру.',
+        text: 'ИИ-бот знает ваш прайс, условия доставки и частые вопросы. Он отвечает в WhatsApp, Telegram, Instagram, TikTok и на сайте круглосуточно, собирает данные заказа и передаёт горячих клиентов менеджеру.',
         primary: 'Обсудить бота',
         secondary: 'Написать в WhatsApp',
-        note: 'Пилот на ваших реальных вопросах. Оценка бесплатно.',
+        note: 'От 20 000 ₸ в месяц, без оплаты за запуск. Пилот на ваших реальных вопросах.',
       },
       chat: {
         label: 'Пример: вечер пятницы, менеджеры уже ушли',
@@ -48,8 +48,8 @@ export const landingMessages = {
         items: [
           { title: 'Отвечает только по вашим данным', text: 'Если ответа нет в прайсе или базе знаний, бот не выдумывает, а зовёт менеджера.' },
           { title: 'Вы видите все переписки', text: 'Диалоги сохраняются, их можно просмотреть и поправить ответы бота.' },
-          { title: 'Подключается к вашей CRM', text: 'Заявки попадают туда, где менеджеры уже работают, а не в отдельную систему.' },
-          { title: 'Работает в нескольких каналах', text: 'Один бот для WhatsApp, Telegram и виджета на сайте с общей базой знаний.' },
+          { title: 'Подключается к вашей CRM', text: 'amoCRM, Bitrix24, 1С и другие: заявки попадают туда, где менеджеры уже работают.' },
+          { title: 'Работает в нескольких каналах', text: 'Один бот для WhatsApp, Telegram, Instagram, TikTok и сайта с общей базой знаний.' },
         ],
       },
       case: {
@@ -76,9 +76,9 @@ export const landingMessages = {
       faq: {
         title: 'Вопросы о ботах',
         items: [
-          { question: 'Как бот подключается к WhatsApp?', answer: 'Через WhatsApp Business API. Поможем подключить ваш номер или новый. Для Telegram создаётся отдельный бот, для сайта ставится виджет.' },
+          { question: 'Как бот подключается к мессенджерам?', answer: 'WhatsApp подключаем через WhatsApp Business API и помогаем подключить ваш номер или новый. Для Telegram создаётся отдельный бот, для сайта ставится виджет. Instagram и TikTok тоже подключаем.' },
           { question: 'Что если бот не знает ответа?', answer: 'Он не придумывает, а передаёт диалог менеджеру со всей перепиской. Такие вопросы мы потом добавляем в базу знаний.' },
-          { question: 'Сколько стоит бот?', answer: 'Зависит от количества сценариев, каналов и интеграций. После разбора даём бесплатную оценку. Сообщения в WhatsApp Business API дополнительно оплачиваются по тарифам Meta.' },
+          { question: 'Сколько стоит бот?', answer: 'От 20 000 ₸ в месяц, отдельной оплаты за запуск нет. Итоговая сумма зависит от количества сценариев, каналов и интеграций, оценка бесплатна. Сообщения в WhatsApp Business API дополнительно оплачиваются по тарифам Meta.' },
           { question: 'Бот понимает казахский?', answer: 'Да, современные модели работают с русским, казахским и английским. На пилоте проверяем качество ответов на нужных вам языках.' },
           { question: 'Можно ли изменить ответы бота потом?', answer: 'Да. Прайс, условия и база знаний обновляются без переделки бота.' },
         ],
@@ -86,13 +86,13 @@ export const landingMessages = {
       contact: {
         title: 'Расскажите, на какие вопросы должен отвечать бот',
         subtitle: 'Разберём ваши переписки, предложим сценарии и дадим бесплатную оценку.',
-        descriptionPlaceholder: 'Где пишут клиенты (WhatsApp, Telegram, сайт), о чём чаще всего спрашивают, сколько обращений в день и есть ли CRM.',
+        descriptionPlaceholder: 'Где пишут клиенты (WhatsApp, Telegram, Instagram, TikTok, сайт), о чём чаще всего спрашивают, сколько обращений в день и есть ли CRM.',
       },
     },
     localLlm: {
       seo: {
         title: 'Установка локальной LLM на ваш сервер: ИИ без передачи данных в облако · kenzcore AI Studio',
-        description: 'Устанавливаем и настраиваем локальные языковые модели (Llama, Qwen, Mistral, DeepSeek) на серверах компании: ИИ-чат для сотрудников, поиск по документам и API для ваших систем. Данные не покидают ваш контур. Бесплатная оценка.',
+        description: 'Устанавливаем и настраиваем локальные языковые модели (Llama, Qwen, Mistral, DeepSeek) на серверах компании: ИИ-чат для сотрудников, поиск по документам и API для ваших систем. Данные не покидают ваш контур. Установка от 1 000 000 ₸.',
         ogTitle: 'Локальная LLM на вашем сервере · kenzcore AI Studio',
         ogDescription: 'ИИ для документов и данных, которые нельзя отправлять в ChatGPT. Модель работает внутри вашей инфраструктуры.',
       },
@@ -103,7 +103,7 @@ export const landingMessages = {
         text: 'Устанавливаем языковую модель на ваш сервер или в закрытый контур. Сотрудники работают с договорами, перепиской и клиентскими данными через ИИ, а данные не покидают компанию.',
         primary: 'Обсудить установку',
         secondary: 'Написать в WhatsApp',
-        note: 'Подберём модель и сервер под задачу. Оценка бесплатно.',
+        note: 'Установка от 1 000 000 ₸, сервер оплачивается отдельно. Оценка бесплатно.',
       },
       server: {
         label: 'Как это устроено',
@@ -166,6 +166,8 @@ export const landingMessages = {
       faq: {
         title: 'Вопросы о локальных LLM',
         items: [
+          { question: 'Сколько стоит установка?', answer: 'От 1 000 000 ₸ за работу: подбор и установка модели, база документов, чат и API. Сервер в цену не входит: подойдёт ваш, арендованный или в частном облаке, его конфигурацию подберём. Точную сумму называем после разбора задачи.' },
+          { question: 'Подписываете NDA?', answer: 'Да. Подписываем NDA до того, как вы покажете документы, переписку или данные клиентов.' },
           { question: 'Какой сервер нужен?', answer: 'Зависит от размера модели и числа пользователей. Небольшим моделям хватает одного сервера с современной видеокартой, крупным нужно больше памяти GPU. Подберём конфигурацию и подскажем, где арендовать сервер, если своего нет.' },
           { question: 'Насколько локальная модель хуже ChatGPT?', answer: 'Лучшие облачные модели сильнее в сложных рассуждениях. Но для работы с вашими документами, письмами и типовыми задачами открытых моделей обычно достаточно. На пилоте сравниваем на ваших реальных примерах.' },
           { question: 'Какие модели устанавливаете?', answer: 'Открытые модели, например Llama, Qwen, Mistral и DeepSeek. Выбор зависит от языка, задачи и сервера.' },
@@ -184,19 +186,19 @@ export const landingMessages = {
   en: {
     whatsappBot: {
       seo: {
-        title: 'AI Bot for WhatsApp and Telegram: Answers Customers and Takes Requests · kenzcore AI Studio',
-        description: 'We build AI bots for WhatsApp, Telegram and websites: they answer customers in seconds around the clock, take orders and pass hot leads to a manager in the CRM. Russian, Kazakh and English. Free estimate.',
+        title: 'AI Bot for WhatsApp, Telegram and Instagram: Answers Customers and Takes Requests · kenzcore AI Studio',
+        description: 'We build AI bots for WhatsApp, Telegram, Instagram, TikTok and websites: they answer customers in seconds around the clock, take orders and pass hot leads to a manager in the CRM. Russian, Kazakh and English. From 20,000 ₸ per month.',
         ogTitle: 'AI bot for WhatsApp and Telegram · kenzcore AI Studio',
         ogDescription: 'The bot answers customers around the clock, takes requests and passes complex questions to a manager.',
       },
       back: 'Home',
       hero: {
-        eyebrow: 'AI bot for WhatsApp and Telegram',
+        eyebrow: 'AI bot for WhatsApp, Telegram, Instagram and TikTok',
         title: 'The bot answers customers in seconds and managers get ready-made requests',
-        text: 'The AI bot knows your price list, delivery terms and common questions. It answers on WhatsApp, Telegram and your website around the clock, collects order details and passes hot customers to a manager.',
+        text: 'The AI bot knows your price list, delivery terms and common questions. It answers on WhatsApp, Telegram, Instagram, TikTok and your website around the clock, collects order details and passes hot customers to a manager.',
         primary: 'Discuss a bot',
         secondary: 'Write on WhatsApp',
-        note: 'A pilot on your real questions. The estimate is free.',
+        note: 'From 20,000 ₸ per month with no setup fee. A pilot on your real questions.',
       },
       chat: {
         label: 'Example: Friday evening, the managers have gone home',
@@ -227,8 +229,8 @@ export const landingMessages = {
         items: [
           { title: 'Answers only from your data', text: 'If the answer is not in the price list or knowledge base, the bot does not invent one and calls a manager instead.' },
           { title: 'You see every conversation', text: 'Chats are saved so you can review them and correct the bot\'s answers.' },
-          { title: 'Connects to your CRM', text: 'Requests land where your managers already work, not in a separate system.' },
-          { title: 'Works across channels', text: 'One bot for WhatsApp, Telegram and a website widget with a shared knowledge base.' },
+          { title: 'Connects to your CRM', text: 'amoCRM, Bitrix24, 1C and others: requests land where your managers already work.' },
+          { title: 'Works across channels', text: 'One bot for WhatsApp, Telegram, Instagram, TikTok and your website with a shared knowledge base.' },
         ],
       },
       case: {
@@ -255,9 +257,9 @@ export const landingMessages = {
       faq: {
         title: 'Questions about bots',
         items: [
-          { question: 'How does the bot connect to WhatsApp?', answer: 'Through the WhatsApp Business API. We help connect your number or a new one. Telegram gets its own bot and the website gets a widget.' },
+          { question: 'How does the bot connect to messengers?', answer: 'WhatsApp connects through the WhatsApp Business API, and we help connect your number or a new one. Telegram gets its own bot and the website gets a widget. We connect Instagram and TikTok too.' },
           { question: 'What if the bot does not know the answer?', answer: 'It does not make one up. It passes the conversation to a manager with the full history, and we add such questions to the knowledge base later.' },
-          { question: 'How much does a bot cost?', answer: 'It depends on the number of scenarios, channels and integrations. After a review we give a free estimate. WhatsApp Business API messages are billed separately at Meta\'s rates.' },
+          { question: 'How much does a bot cost?', answer: 'From 20,000 ₸ per month with no separate setup fee. The final amount depends on the number of scenarios, channels and integrations; the estimate is free. WhatsApp Business API messages are billed separately at Meta\'s rates.' },
           { question: 'Does the bot understand Kazakh?', answer: 'Yes, modern models work with Russian, Kazakh and English. During the pilot we check answer quality in the languages you need.' },
           { question: 'Can the bot\'s answers be changed later?', answer: 'Yes. The price list, terms and knowledge base can be updated without rebuilding the bot.' },
         ],
@@ -265,13 +267,13 @@ export const landingMessages = {
       contact: {
         title: 'Tell us what the bot should answer',
         subtitle: 'We will review your chats, suggest scenarios and give a free estimate.',
-        descriptionPlaceholder: 'Where customers write (WhatsApp, Telegram, website), what they ask most, how many messages a day and whether you have a CRM.',
+        descriptionPlaceholder: 'Where customers write (WhatsApp, Telegram, Instagram, TikTok, website), what they ask most, how many messages a day and whether you have a CRM.',
       },
     },
     localLlm: {
       seo: {
         title: 'Local LLM on Your Server: AI Without Sending Data to the Cloud · kenzcore AI Studio',
-        description: 'We install and configure local language models (Llama, Qwen, Mistral, DeepSeek) on company servers: an AI chat for staff, search over documents and an API for your systems. Data never leaves your perimeter. Free estimate.',
+        description: 'We install and configure local language models (Llama, Qwen, Mistral, DeepSeek) on company servers: an AI chat for staff, search over documents and an API for your systems. Data never leaves your perimeter. Installation from 1,000,000 ₸.',
         ogTitle: 'Local LLM on your server · kenzcore AI Studio',
         ogDescription: 'AI for documents and data that cannot go to ChatGPT. The model runs inside your infrastructure.',
       },
@@ -282,7 +284,7 @@ export const landingMessages = {
         text: 'We install a language model on your server or inside a closed network. Staff work with contracts, correspondence and customer data through AI, and the data never leaves the company.',
         primary: 'Discuss an installation',
         secondary: 'Write on WhatsApp',
-        note: 'We will pick the model and server for the task. The estimate is free.',
+        note: 'Installation from 1,000,000 ₸; the server is paid separately. The estimate is free.',
       },
       server: {
         label: 'How it works',
@@ -345,6 +347,8 @@ export const landingMessages = {
       faq: {
         title: 'Questions about local LLMs',
         items: [
+          { question: 'How much does an installation cost?', answer: 'From 1,000,000 ₸ for the work: choosing and installing the model, the document base, the chat and the API. The server is not included: your own, a rented one or a private cloud will do, and we will size it. We name the exact amount after reviewing the task.' },
+          { question: 'Do you sign an NDA?', answer: 'Yes. We sign an NDA before you share any documents, correspondence or customer data.' },
           { question: 'What server is needed?', answer: 'It depends on the model size and the number of users. Small models run on one server with a modern graphics card; larger ones need more GPU memory. We will size a configuration and suggest where to rent a server if you have none.' },
           { question: 'How much worse is a local model than ChatGPT?', answer: 'The best cloud models are stronger at complex reasoning. For work with your documents, emails and routine tasks, open models are usually enough. During the pilot we compare them on your real examples.' },
           { question: 'Which models do you install?', answer: 'Open models such as Llama, Qwen, Mistral and DeepSeek. The choice depends on the language, the task and the server.' },
@@ -363,19 +367,19 @@ export const landingMessages = {
   kk: {
     whatsappBot: {
       seo: {
-        title: 'WhatsApp пен Telegram-ға арналған ЖИ-бот: клиенттерге жауап беріп, өтінім қабылдайды · kenzcore AI Studio',
-        description: 'WhatsApp, Telegram және сайтқа ЖИ-боттар жасаймыз: клиенттерге тәулік бойы бірнеше секундта жауап береді, тапсырыс қабылдайды, ыстық өтінімдерді CRM-дегі менеджерге береді. Орыс, қазақ және ағылшын тілдері. Тегін бағалау.',
+        title: 'WhatsApp, Telegram және Instagram-ға арналған ЖИ-бот: клиенттерге жауап беріп, өтінім қабылдайды · kenzcore AI Studio',
+        description: 'WhatsApp, Telegram, Instagram, TikTok және сайтқа ЖИ-боттар жасаймыз: клиенттерге тәулік бойы бірнеше секундта жауап береді, тапсырыс қабылдайды, ыстық өтінімдерді CRM-дегі менеджерге береді. Орыс, қазақ және ағылшын тілдері. Айына 20 000 ₸-ден.',
         ogTitle: 'WhatsApp пен Telegram-ға арналған ЖИ-бот · kenzcore AI Studio',
         ogDescription: 'Бот клиенттерге тәулік бойы жауап беріп, өтінім қабылдайды және күрделі сұрақтарды менеджерге береді.',
       },
       back: 'Басты бетке',
       hero: {
-        eyebrow: 'WhatsApp пен Telegram-ға арналған ЖИ-бот',
+        eyebrow: 'WhatsApp, Telegram, Instagram және TikTok-қа арналған ЖИ-бот',
         title: 'Бот клиенттерге бірнеше секундта жауап береді, ал менеджерлер дайын өтінім алады',
-        text: 'ЖИ-бот прайсыңызды, жеткізу шарттарын және жиі қойылатын сұрақтарды біледі. WhatsApp, Telegram және сайтта тәулік бойы жауап беріп, тапсырыс деректерін жинайды және ыстық клиенттерді менеджерге береді.',
+        text: 'ЖИ-бот прайсыңызды, жеткізу шарттарын және жиі қойылатын сұрақтарды біледі. WhatsApp, Telegram, Instagram, TikTok және сайтта тәулік бойы жауап беріп, тапсырыс деректерін жинайды және ыстық клиенттерді менеджерге береді.',
         primary: 'Ботты талқылау',
         secondary: 'WhatsApp-қа жазу',
-        note: 'Нақты сұрақтарыңыздағы пилот. Бағалау тегін.',
+        note: 'Айына 20 000 ₸-ден, іске қосу ақысыз. Нақты сұрақтарыңыздағы пилот.',
       },
       chat: {
         label: 'Мысал: жұма кеші, менеджерлер кетіп қалған',
@@ -406,8 +410,8 @@ export const landingMessages = {
         items: [
           { title: 'Тек сіздің деректеріңіз бойынша жауап береді', text: 'Жауап прайста немесе білім қорында болмаса, бот ойдан шығармай, менеджерді шақырады.' },
           { title: 'Барлық хат алмасуды көресіз', text: 'Диалогтар сақталады, оларды қарап, бот жауаптарын түзетуге болады.' },
-          { title: 'CRM-ге қосылады', text: 'Өтінімдер жеке жүйеге емес, менеджерлер жұмыс істеп жүрген жерге түседі.' },
-          { title: 'Бірнеше арнада жұмыс істейді', text: 'WhatsApp, Telegram және сайт виджеті үшін ортақ білім қоры бар бір бот.' },
+          { title: 'CRM-ге қосылады', text: 'amoCRM, Bitrix24, 1С және басқалары: өтінімдер менеджерлер жұмыс істеп жүрген жерге түседі.' },
+          { title: 'Бірнеше арнада жұмыс істейді', text: 'WhatsApp, Telegram, Instagram, TikTok және сайт үшін ортақ білім қоры бар бір бот.' },
         ],
       },
       case: {
@@ -434,9 +438,9 @@ export const landingMessages = {
       faq: {
         title: 'Боттар туралы сұрақтар',
         items: [
-          { question: 'Бот WhatsApp-қа қалай қосылады?', answer: 'WhatsApp Business API арқылы. Өз нөміріңізді немесе жаңа нөмірді қосуға көмектесеміз. Telegram үшін жеке бот жасалады, сайтқа виджет орнатылады.' },
+          { question: 'Бот мессенджерлерге қалай қосылады?', answer: 'WhatsApp-ты WhatsApp Business API арқылы қосамыз, өз нөміріңізді немесе жаңа нөмірді қосуға көмектесеміз. Telegram үшін жеке бот жасалады, сайтқа виджет орнатылады. Instagram мен TikTok-ты да қосамыз.' },
           { question: 'Бот жауапты білмесе не болады?', answer: 'Ойдан шығармайды, диалогты бүкіл тарихымен менеджерге береді. Мұндай сұрақтарды кейін білім қорына қосамыз.' },
-          { question: 'Бот қанша тұрады?', answer: 'Сценарийлер, арналар және интеграциялар санына байланысты. Талдаудан кейін тегін бағалау береміз. WhatsApp Business API хабарламалары Meta тарифтері бойынша бөлек төленеді.' },
+          { question: 'Бот қанша тұрады?', answer: 'Айына 20 000 ₸-ден, іске қосу үшін бөлек төлем жоқ. Түпкі сома сценарийлер, арналар және интеграциялар санына байланысты, бағалау тегін. WhatsApp Business API хабарламалары Meta тарифтері бойынша бөлек төленеді.' },
           { question: 'Бот қазақша түсінеді ме?', answer: 'Иә, заманауи модельдер орыс, қазақ және ағылшын тілдерімен жұмыс істейді. Пилотта қажетті тілдердегі жауап сапасын тексереміз.' },
           { question: 'Бот жауаптарын кейін өзгертуге бола ма?', answer: 'Иә. Прайс, шарттар және білім қоры ботты қайта жасамай-ақ жаңартылады.' },
         ],
@@ -444,13 +448,13 @@ export const landingMessages = {
       contact: {
         title: 'Бот қандай сұрақтарға жауап беруі керегін айтыңыз',
         subtitle: 'Хат алмасуыңызды талдап, сценарийлер ұсынамыз және тегін бағалау береміз.',
-        descriptionPlaceholder: 'Клиенттер қайда жазады (WhatsApp, Telegram, сайт), көбіне не сұрайды, күніне қанша өтініш келеді және CRM бар ма.',
+        descriptionPlaceholder: 'Клиенттер қайда жазады (WhatsApp, Telegram, Instagram, TikTok, сайт), көбіне не сұрайды, күніне қанша өтініш келеді және CRM бар ма.',
       },
     },
     localLlm: {
       seo: {
         title: 'Серверіңізге локалды LLM орнату: деректерді бұлтқа жібермей ЖИ · kenzcore AI Studio',
-        description: 'Компания серверлеріне локалды тіл модельдерін (Llama, Qwen, Mistral, DeepSeek) орнатып, баптаймыз: қызметкерлерге ЖИ-чат, құжаттар бойынша іздеу және жүйелеріңізге API. Деректер контурыңыздан шықпайды. Тегін бағалау.',
+        description: 'Компания серверлеріне локалды тіл модельдерін (Llama, Qwen, Mistral, DeepSeek) орнатып, баптаймыз: қызметкерлерге ЖИ-чат, құжаттар бойынша іздеу және жүйелеріңізге API. Деректер контурыңыздан шықпайды. Орнату 1 000 000 ₸-ден.',
         ogTitle: 'Серверіңіздегі локалды LLM · kenzcore AI Studio',
         ogDescription: 'ChatGPT-ге жіберуге болмайтын құжаттар мен деректерге арналған ЖИ. Модель сіздің инфрақұрылымыңыз ішінде жұмыс істейді.',
       },
@@ -461,7 +465,7 @@ export const landingMessages = {
         text: 'Тіл моделін сіздің серверіңізге немесе жабық контурға орнатамыз. Қызметкерлер шарттармен, хат алмасумен және клиент деректерімен ЖИ арқылы жұмыс істейді, ал деректер компаниядан шықпайды.',
         primary: 'Орнатуды талқылау',
         secondary: 'WhatsApp-қа жазу',
-        note: 'Міндетке сай модель мен сервер таңдаймыз. Бағалау тегін.',
+        note: 'Орнату 1 000 000 ₸-ден, сервер бөлек төленеді. Бағалау тегін.',
       },
       server: {
         label: 'Бұл қалай құрылған',
@@ -524,6 +528,8 @@ export const landingMessages = {
       faq: {
         title: 'Локалды LLM туралы сұрақтар',
         items: [
+          { question: 'Орнату қанша тұрады?', answer: 'Жұмыс үшін 1 000 000 ₸-ден: модельді таңдау және орнату, құжаттар қоры, чат және API. Сервер бағаға кірмейді: өзіңіздікі, жалға алынған немесе жеке бұлттағы сервер жарайды, конфигурациясын таңдаймыз. Нақты соманы міндетті талдағаннан кейін айтамыз.' },
+          { question: 'NDA-ға қол қоясыздар ма?', answer: 'Иә. Құжаттарды, хат алмасуды немесе клиент деректерін көрсетпес бұрын NDA-ға қол қоямыз.' },
           { question: 'Қандай сервер керек?', answer: 'Модель көлемі мен пайдаланушылар санына байланысты. Шағын модельдерге заманауи бейнекартасы бар бір сервер жеткілікті, ірілеріне GPU жады көбірек керек. Конфигурация таңдап, серверіңіз болмаса, қайдан жалдауға болатынын айтамыз.' },
           { question: 'Локалды модель ChatGPT-ден қаншалықты нашар?', answer: 'Ең үздік бұлттық модельдер күрделі ойлауда күштірек. Бірақ құжаттарыңызбен, хаттармен және типтік міндеттермен жұмыс үшін ашық модельдер әдетте жеткілікті. Пилотта нақты мысалдарыңызда салыстырамыз.' },
           { question: 'Қандай модельдер орнатасыздар?', answer: 'Llama, Qwen, Mistral және DeepSeek сияқты ашық модельдер. Таңдау тілге, міндетке және серверге байланысты.' },

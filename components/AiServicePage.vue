@@ -167,7 +167,10 @@ const props = withDefaults(defineProps<{
   defaultInterest?: number
   // Show the Good Deal quote instead of the case points
   showQuote?: boolean
-}>(), { defaultInterest: undefined, showQuote: false })
+  // Starting price in tenge for structured data; monthly for subscriptions
+  minPrice?: number
+  monthly?: boolean
+}>(), { defaultInterest: undefined, showQuote: false, minPrice: undefined, monthly: false })
 
 const { t, tm, te, locale } = useI18n()
 const localePath = useLocalePath()
@@ -204,6 +207,20 @@ useHead(() => ({
         url: `${siteConfig.url}${localePath(props.path)}`,
         areaServed: 'KZ',
         provider: { '@id': `${siteConfig.url}/#organization`, name: siteConfig.name },
+        ...(props.minPrice
+          ? {
+              offers: {
+                '@type': 'Offer',
+                priceCurrency: 'KZT',
+                priceSpecification: {
+                  '@type': 'UnitPriceSpecification',
+                  minPrice: props.minPrice,
+                  priceCurrency: 'KZT',
+                  ...(props.monthly ? { unitText: 'MONTH' } : {}),
+                },
+              },
+            }
+          : {}),
       }),
     },
   ],

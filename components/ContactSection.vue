@@ -117,7 +117,7 @@
           </form>
 
           <p class="mt-6 text-center text-xs text-brand-600">
-            {{ t('contact.privacy') }}
+            {{ topic === 'ai' ? t('ai.contact.privacy') : t('contact.privacy') }}
           </p>
         </div>
 

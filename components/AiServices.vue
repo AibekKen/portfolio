@@ -19,9 +19,14 @@
           :key="service.id"
           :class="['tile flex flex-col rounded-[22px] p-6 md:p-8', layout[service.id]?.tile]"
         >
-          <span :class="['text-sm font-bold tabular-nums', layout[service.id]?.number]">
-            {{ String(index + 1).padStart(2, '0') }}
-          </span>
+          <div class="flex items-start justify-between gap-3">
+            <span :class="['text-sm font-bold tabular-nums', layout[service.id]?.number]">
+              {{ String(index + 1).padStart(2, '0') }}
+            </span>
+            <span v-if="service.price" :class="['rounded-full px-3 py-1 text-right text-xs font-bold', layout[service.id]?.price]">
+              {{ service.price }}
+            </span>
+          </div>
           <h3 :class="['mt-6 text-2xl font-extrabold leading-tight tracking-tight md:text-[1.7rem]', layout[service.id]?.title]">
             {{ service.title }}
           </h3>
@@ -48,6 +53,13 @@
         </article>
       </div>
 
+      <div class="mt-10 flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
+        <p class="shrink-0 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">{{ t('ai.integrations.title') }}</p>
+        <p class="text-base font-semibold leading-relaxed text-ink">
+          {{ `${integrations.join(' · ')} ` }}<span class="font-normal text-slate-500">{{ t('ai.integrations.note') }}</span>
+        </p>
+      </div>
+
     </div>
   </section>
 </template>
@@ -59,6 +71,7 @@ type AiService = {
   text: string
   tools: string[]
   href?: string
+  price?: string
 }
 
 type TileStyle = {
@@ -68,6 +81,7 @@ type TileStyle = {
   text: string
   chip: string
   link: string
+  price: string
 }
 
 const light: TileStyle = {
@@ -77,6 +91,7 @@ const light: TileStyle = {
   text: 'text-slate-600',
   chip: 'bg-slate-100 text-slate-700',
   link: 'text-cobalt-700 hover:text-cobalt-900',
+  price: 'bg-cobalt-700/[0.07] text-cobalt-700',
 }
 
 // Tiles differ in size and tone so the most important offers stand out
@@ -88,6 +103,7 @@ const layout: Record<string, TileStyle> = {
     text: 'text-ink/80 md:text-lg',
     chip: 'bg-white/70 text-ink',
     link: 'text-ink hover:text-cobalt-800',
+    price: 'bg-ink text-white',
   },
   bots: { ...light, tile: `${light.tile} lg:col-span-2` },
   rag: { ...light, tile: `${light.tile} lg:col-span-2` },
@@ -98,6 +114,7 @@ const layout: Record<string, TileStyle> = {
     text: 'text-blue-100 md:text-lg',
     chip: 'bg-white/10 text-blue-50',
     link: 'text-gold-300 hover:text-gold-200',
+    price: 'bg-gold-300 text-ink',
   },
   dev: { ...light, tile: `${light.tile} lg:col-span-3` },
   audit: { ...light, tile: `${light.tile} lg:col-span-3` },
@@ -106,4 +123,5 @@ const layout: Record<string, TileStyle> = {
 const { t, tm } = useI18n()
 const localePath = useLocalePath()
 const services = computed(() => tm('ai.services.items') as AiService[])
+const integrations = computed(() => tm('ai.integrations.items') as string[])
 </script>
