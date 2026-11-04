@@ -46,7 +46,8 @@ const { trackContactClick } = useAdsConversion()
 
 const scrolledPastHero = ref(false)
 const contactInView = ref(false)
-const visible = computed(() => scrolledPastHero.value && !contactInView.value)
+// The sales demo pages carry their own call to action
+const visible = computed(() => scrolledPastHero.value && !contactInView.value && !route.path.includes('/demo'))
 
 // App development pages keep their own WhatsApp greeting
 const topic = computed(() => (/mobile-apps|websites|razrabotka/.test(route.path) ? 'apps' : 'ai'))
