@@ -36,6 +36,14 @@
             <p class="text-lg font-extrabold">{{ t('ai.local.honestTitle') }}</p>
             <p class="mt-2 text-base leading-relaxed text-ink/80">{{ t('ai.local.honestText') }}</p>
           </div>
+
+          <NuxtLink
+            :to="localePath('/services/local-llm')"
+            class="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full border border-white/30 px-6 font-semibold text-white transition-colors hover:bg-white/10"
+          >
+            {{ t('ai.services.more') }}
+            <span aria-hidden="true">→</span>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -49,6 +57,7 @@ type Benefit = {
 }
 
 const { t, tm } = useI18n()
+const localePath = useLocalePath()
 const benefits = computed(() => tm('ai.local.items') as Benefit[])
 const steps = computed(() => tm('ai.local.steps') as string[])
 </script>

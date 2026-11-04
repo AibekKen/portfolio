@@ -1,6 +1,7 @@
 <template>
   <div>
     <NuxtPage />
+    <MobileContactBar />
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 import { aiMessages } from './ai'
 import { automationMessages } from './automation'
+import { landingMessages } from './landings'
 import { caseMessages } from './cases'
 
 export const languageOptions = [
@@ -300,6 +301,7 @@ export const messages = {
     cases: caseMessages.en,
     ai: aiMessages.en,
     automation: automationMessages.en,
+    landings: landingMessages.en,
     contact: {
       title: 'Ready to discuss your project?',
       subtitle: 'Leave a request and we will contact you, clarify the task, and suggest a possible solution.',
@@ -631,6 +633,7 @@ export const messages = {
     cases: caseMessages.ru,
     ai: aiMessages.ru,
     automation: automationMessages.ru,
+    landings: landingMessages.ru,
     contact: {
       title: 'Готовы обсудить ваш проект?',
       subtitle: 'Оставьте заявку — мы свяжемся с вами, уточним задачу и предложим возможное решение.',
@@ -962,6 +965,7 @@ export const messages = {
     cases: caseMessages.kk,
     ai: aiMessages.kk,
     automation: automationMessages.kk,
+    landings: landingMessages.kk,
     contact: {
       title: 'Жобаңызды талқылауға дайынсыз ба?',
       subtitle: 'Өтінім қалдырыңыз, біз сізбен байланысып, тапсырманы нақтылап, ықтимал шешім ұсынамыз.',

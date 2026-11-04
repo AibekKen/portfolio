@@ -10,6 +10,8 @@ const locales = [
 const pages: { path: string, locales?: string[], priority: string }[] = [
   { path: '/', priority: '1.0' },
   { path: '/services/ai-automation', priority: '0.9' },
+  { path: '/services/whatsapp-bot', priority: '0.9' },
+  { path: '/services/local-llm', priority: '0.9' },
   { path: '/razrabotka-mobilnyh-prilozheniy', locales: ['ru'], priority: '0.9' },
   { path: '/services/mobile-apps', priority: '0.8' },
   { path: '/services/websites', priority: '0.6' },

@@ -73,7 +73,7 @@ export const aiMessages = {
           solution: 'Бот отвечает за секунды в WhatsApp, Telegram и на сайте, а горячие заявки сразу передаёт менеджеру в CRM.',
         },
         {
-          tag: 'RAG',
+          tag: 'Поиск по документам',
           problem: 'Сотрудники тратят время на поиск ответов в регламентах, прайсах и папках с договорами.',
           solution: 'Ассистент отвечает по вашим документам и показывает, откуда взят ответ. Новичкам проще войти в работу.',
         },
@@ -112,19 +112,20 @@ export const aiMessages = {
           title: 'ИИ-боты и ассистенты',
           text: 'Для WhatsApp, Telegram и сайта. Отвечают клиентам, принимают и квалифицируют заявки, передают сложные вопросы оператору.',
           tools: ['WhatsApp', 'Telegram', 'Виджет на сайт', 'CRM'],
+          href: '/services/whatsapp-bot',
         },
         {
           id: 'rag',
-          title: 'RAG: ИИ по вашим документам',
+          title: 'ИИ-ассистент по вашим документам',
           text: 'Ассистент, который отвечает по регламентам, каталогам, договорам и переписке и всегда показывает источник ответа.',
-          tools: ['PDF и Docs', 'Векторная база', 'Права доступа'],
+          tools: ['Договоры', 'Регламенты', 'Ответ с источником'],
         },
         {
           id: 'local',
           title: 'Локальные LLM на ваших серверах',
           text: 'Подбираем модель и железо, устанавливаем, настраиваем и подключаем к вашим системам. Данные остаются внутри компании, можно работать без интернета.',
-          tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
-          href: '#local-llm',
+          tools: ['Ваш сервер', 'Без интернета', 'Открытые модели'],
+          href: '/services/local-llm',
         },
         {
           id: 'dev',
@@ -243,10 +244,6 @@ export const aiMessages = {
       ],
       more: 'Подробнее',
     },
-    stack: {
-      title: 'С чем работаем',
-      items: ['Claude', 'GPT', 'Gemini', 'Llama', 'Qwen', 'Mistral', 'DeepSeek', 'Ollama', 'vLLM', 'llama.cpp', 'LangChain', 'LlamaIndex', 'pgvector', 'Qdrant', 'n8n', 'Python', 'Node.js', 'Docker'],
-    },
     faq: {
       title: 'Частые вопросы',
       items: [
@@ -363,7 +360,7 @@ export const aiMessages = {
           solution: 'A bot answers in seconds on WhatsApp, Telegram and your website, and passes hot leads straight to a manager in the CRM.',
         },
         {
-          tag: 'RAG',
+          tag: 'Document search',
           problem: 'Staff waste time digging for answers in regulations, price lists and folders of contracts.',
           solution: 'An assistant answers from your documents and shows where the answer came from. New hires get up to speed faster.',
         },
@@ -402,19 +399,20 @@ export const aiMessages = {
           title: 'AI bots and assistants',
           text: 'For WhatsApp, Telegram and your website. They answer customers, take and qualify requests, and hand complex questions to an operator.',
           tools: ['WhatsApp', 'Telegram', 'Website widget', 'CRM'],
+          href: '/services/whatsapp-bot',
         },
         {
           id: 'rag',
-          title: 'RAG: AI over your documents',
+          title: 'An AI assistant for your documents',
           text: 'An assistant that answers from your regulations, catalogs, contracts and correspondence and always shows the source.',
-          tools: ['PDF and Docs', 'Vector database', 'Access rights'],
+          tools: ['Contracts', 'Regulations', 'Answers with sources'],
         },
         {
           id: 'local',
           title: 'Local LLMs on your servers',
           text: 'We choose the model and hardware, install, tune and connect it to your systems. Data stays inside the company and it can work offline.',
-          tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
-          href: '#local-llm',
+          tools: ['Your server', 'Works offline', 'Open models'],
+          href: '/services/local-llm',
         },
         {
           id: 'dev',
@@ -533,10 +531,6 @@ export const aiMessages = {
       ],
       more: 'Learn more',
     },
-    stack: {
-      title: 'What we work with',
-      items: ['Claude', 'GPT', 'Gemini', 'Llama', 'Qwen', 'Mistral', 'DeepSeek', 'Ollama', 'vLLM', 'llama.cpp', 'LangChain', 'LlamaIndex', 'pgvector', 'Qdrant', 'n8n', 'Python', 'Node.js', 'Docker'],
-    },
     faq: {
       title: 'Frequently asked questions',
       items: [
@@ -653,7 +647,7 @@ export const aiMessages = {
           solution: 'Бот WhatsApp, Telegram және сайтта бірнеше секундта жауап береді, ыстық өтінімдерді бірден CRM-дегі менеджерге жібереді.',
         },
         {
-          tag: 'RAG',
+          tag: 'Құжаттар бойынша іздеу',
           problem: 'Қызметкерлер регламенттерден, прайстардан және шарттар папкаларынан жауап іздеуге уақыт жоғалтады.',
           solution: 'Ассистент құжаттарыңыз бойынша жауап беріп, оның қайдан алынғанын көрсетеді. Жаңа қызметкерлер жұмысқа тез кіріседі.',
         },
@@ -692,19 +686,20 @@ export const aiMessages = {
           title: 'ЖИ-боттар және ассистенттер',
           text: 'WhatsApp, Telegram және сайтқа арналған. Клиенттерге жауап береді, өтінімдерді қабылдап саралайды, күрделі сұрақтарды операторға береді.',
           tools: ['WhatsApp', 'Telegram', 'Сайттағы виджет', 'CRM'],
+          href: '/services/whatsapp-bot',
         },
         {
           id: 'rag',
-          title: 'RAG: құжаттарыңыз бойынша ЖИ',
+          title: 'Құжаттарыңыз бойынша ЖИ-ассистент',
           text: 'Регламенттер, каталогтар, шарттар мен хат-хабарлар бойынша жауап беретін және әрқашан дереккөзді көрсететін ассистент.',
-          tools: ['PDF және Docs', 'Векторлық база', 'Қол жеткізу құқықтары'],
+          tools: ['Шарттар', 'Регламенттер', 'Дереккөзі бар жауап'],
         },
         {
           id: 'local',
           title: 'Сіздің серверлеріңіздегі локалды LLM',
           text: 'Модель мен жабдықты таңдап, орнатамыз, баптаймыз және жүйелеріңізге қосамыз. Деректер компания ішінде қалады, интернетсіз жұмыс істеуге болады.',
-          tools: ['Ollama', 'vLLM', 'Llama', 'Qwen', 'Mistral'],
-          href: '#local-llm',
+          tools: ['Сіздің серверіңіз', 'Интернетсіз', 'Ашық модельдер'],
+          href: '/services/local-llm',
         },
         {
           id: 'dev',
@@ -822,10 +817,6 @@ export const aiMessages = {
         { title: 'Веб-жүйелер мен кабинеттер', text: 'CRM, B2B кабинеттер, әкімші панельдері және ішкі сервистер.', href: '#cases-dev' },
       ],
       more: 'Толығырақ',
-    },
-    stack: {
-      title: 'Немен жұмыс істейміз',
-      items: ['Claude', 'GPT', 'Gemini', 'Llama', 'Qwen', 'Mistral', 'DeepSeek', 'Ollama', 'vLLM', 'llama.cpp', 'LangChain', 'LlamaIndex', 'pgvector', 'Qdrant', 'n8n', 'Python', 'Node.js', 'Docker'],
     },
     faq: {
       title: 'Жиі қойылатын сұрақтар',

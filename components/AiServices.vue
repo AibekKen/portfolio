@@ -48,12 +48,6 @@
         </article>
       </div>
 
-      <div class="mt-10 flex flex-col gap-4 md:flex-row md:items-baseline md:gap-6">
-        <p class="shrink-0 text-xs font-bold uppercase tracking-[0.16em] text-slate-400">{{ t('ai.stack.title') }}</p>
-        <ul class="flex flex-wrap gap-x-5 gap-y-2">
-          <li v-for="item in stack" :key="item" class="text-sm font-semibold text-slate-600">{{ item }}</li>
-        </ul>
-      </div>
     </div>
   </section>
 </template>
@@ -112,5 +106,4 @@ const layout: Record<string, TileStyle> = {
 const { t, tm } = useI18n()
 const localePath = useLocalePath()
 const services = computed(() => tm('ai.services.items') as AiService[])
-const stack = computed(() => tm('ai.stack.items') as string[])
 </script>

@@ -375,7 +375,7 @@
       </section>
     </main>
 
-    <footer class="border-t border-brand-100 bg-brand-50 py-8">
+    <footer class="border-t border-brand-100 bg-brand-50 pb-28 pt-8 lg:pb-8">
       <div class="section-container flex flex-col justify-between gap-4 text-sm text-brand-600 md:flex-row">
         <p>© 2026 {{ siteConfig.name }}. Разработка мобильных приложений для бизнеса.</p>
         <div class="flex flex-wrap gap-4">
